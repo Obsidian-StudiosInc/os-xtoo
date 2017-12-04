@@ -22,7 +22,7 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="BSD-3-clause"
 SLOT="0"
 
-DEPEND=">=virtual/jdk-1.8"
+DEPEND=">=virtual/jdk-1.9"
 
 RDEPEND=">=virtual/jre-1.8"
 
