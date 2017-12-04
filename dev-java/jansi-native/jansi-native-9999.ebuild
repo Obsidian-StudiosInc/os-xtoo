@@ -27,7 +27,7 @@ SLOT="0"
 CP_DEPEND="dev-java/hawtjni-runtime:0"
 
 DEPEND="${CP_DEPEND}
-	>=virtual/jdk-1.8"
+	>=virtual/jdk-1.9"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
