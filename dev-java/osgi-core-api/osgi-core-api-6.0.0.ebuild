@@ -19,7 +19,7 @@ CP_DEPEND="dev-java/osgi-annotation:0"
 
 DEPEND="app-arch/unzip:0
 	${CP_DEPEND}
-	>=virtual/jdk-1.8"
+	>=virtual/jdk-1.9"
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-1.8"
