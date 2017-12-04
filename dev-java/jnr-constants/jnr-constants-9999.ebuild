@@ -23,7 +23,7 @@ DESCRIPTION="Java Native Runtime constants"
 LICENSE="|| ( Apache-2.0 LGPL-3 )"
 SLOT="0"
 
-DEPEND=">=virtual/jdk-1.8"
+DEPEND=">=virtual/jdk-1.9"
 
 RDEPEND=">=virtual/jre-1.8"
 
