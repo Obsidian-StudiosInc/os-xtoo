@@ -27,7 +27,7 @@ HOMEPAGE="https://lucene.apache.org/"
 LICENSE="Apache-2.0"
 SLOT="$(get_major_version)"
 
-DEPEND=">=virtual/jdk-1.8"
+DEPEND=">=virtual/jdk-1.9"
 
 RDEPEND=">=virtual/jre-1.8"
 
