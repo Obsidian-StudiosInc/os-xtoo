@@ -77,7 +77,7 @@ the [bugs for ecrire being ignored...](https://github.com/Obsidian-StudiosInc/ec
 ## Netbeans IDE
 Work is underway to package 
 [Netbeans](https://github.com/apache/incubator-netbeans) 9 from source. 
-THere is no ETA at this time when this will be done, or initial work in 
+There is no ETA at this time when this will be done, or initial work in 
 a usable state. We do use Netbeans as our primary IDE for C and Java.
 
 ## Eclipse IDE
