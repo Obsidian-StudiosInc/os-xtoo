@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="app-arch/unzip:0
-	>=virtual/jdk-1.8"
+	>=virtual/jdk-1.9"
 
 RDEPEND=">=virtual/jre-1.8"
 
