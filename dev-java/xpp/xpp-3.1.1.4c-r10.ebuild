@@ -21,7 +21,7 @@ case ${SLOT} in
 		;;
 	3)	LICENSE+=" JDOM LGPL-2.1+"
 		SRC_URI="${BASE_URI}dist/java-repository/"
-		SRC_URI+="${MY_PN}/distributions/${MY_P}_src.tgz"
+		SRC_URI+="${MY_PN}/distributions/${MY_P}_src.zip"
 		;;
 esac
 
