@@ -6,7 +6,7 @@ EAPI="7"
 JAVA_PKG_IUSE="doc source"
 
 CP_DEPEND="
-	dev-java/javax-jms-api:2
+	dev-java/javax-jms-api:0
 	dev-java/javamail:0
 "
 
