@@ -17,7 +17,7 @@ fi
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/codemodel:2
+	dev-java/codemodel:0
 "
 
 inherit java-pkg
