@@ -32,7 +32,7 @@ CP_DEPEND="
 	dev-java/jackson-dataformat-yaml:${JACKSON_SLOT}
 	dev-java/jansi:0
 	dev-java/javax-activation:0
-	dev-java/javax-jms-api:2
+	dev-java/javax-jms-api:0
 	dev-java/jcommander:0
 	dev-java/jctools-core:2
 	dev-java/jeromq:0
