@@ -46,7 +46,7 @@ S="${WORKDIR}/${MY_S}/${PN}"
 
 JAVA_SRC_DIR="
 	src/main/java/
-	src/gui
+	src/gui/main
 "
 
 java_prepare() {
