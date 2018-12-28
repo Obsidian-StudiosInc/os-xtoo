@@ -46,11 +46,14 @@ src_prepare() {
 }
 
 src_configure() {
-	local mytype="Release"
+	local mycmakeargs mytype
+
+	mytype="Release"
 	use debug && mytype="Debug"
-	local mycmakeargs=(
+	mycmakeargs=(
 		-DCMAKE_BUILD_TYPE=${mytype}
 		-DCMAKE_DOC=$(usex doc)
+		-DHAVE_MUSL=$(usex elibc_musl)
 	)
 	cmake-utils_src_configure
 }
