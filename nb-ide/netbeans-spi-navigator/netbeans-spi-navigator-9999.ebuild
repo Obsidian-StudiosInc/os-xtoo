@@ -8,6 +8,7 @@ NB_CLUSTER="ide"
 inherit java-netbeans
 
 CP_DEPEND="
+	~nb-ide/netbeans-api-annotations-common-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-awt-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-filesystems-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-loaders-${PV}:${SLOT}
