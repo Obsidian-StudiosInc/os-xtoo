@@ -7,6 +7,10 @@ NB_CLUSTER="ide"
 
 inherit java-netbeans
 
-DEPEND=">=virtual/jdk-9"
+CP_DEPEND="~nb-ide/netbeans-openide-util-${PV}:${SLOT}"
 
-RDEPEND=">=virtual/jre-9"
+DEPEND="${CP_DEPEND}
+	>=virtual/jdk-9"
+
+RDEPEND="${CP_DEPEND}
+	>=virtual/jre-9"
