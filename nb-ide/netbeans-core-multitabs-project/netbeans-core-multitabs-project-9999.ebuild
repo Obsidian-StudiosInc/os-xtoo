@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-NB_CLUSTER="platform"
+NB_CLUSTER="ide"
 
 inherit java-netbeans
 
