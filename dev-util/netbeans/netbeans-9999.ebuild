@@ -5,7 +5,7 @@ EAPI="7"
 
 inherit desktop java-netbeans
 
-DEPEND=">=virtual/jdk-9:*"
+DEPEND=">=virtual/jdk-11:*"
 
 ANTLR3_SLOT="3"
 ANTLR4_SLOT="4"
@@ -74,7 +74,6 @@ RDEPEND="
 	~nb-ide/${PN}-html-editor-${PV}:${SLOT}
 	~nb-ide/${PN}-html-parser-${PV}:${SLOT}
 	~nb-ide/${PN}-i18n-${PV}:${SLOT}
-	~nb-ide/${PN}-ide-${PV}:${SLOT}
 	~nb-ide/${PN}-ide-kit-${PV}:${SLOT}
 	~nb-ide/${PN}-java-api-common-${PV}:${SLOT}
 	~nb-ide/${PN}-java-debug-${PV}:${SLOT}
@@ -151,18 +150,18 @@ RDEPEND="
 	nb-plugins/flow-netbeans-markdown:0
 	nb-plugins/nb-cmake-completion:0
 	nb-plugins/nb-darcula:0
-	>=virtual/jdk-9:*
+	>=virtual/jdk-11:*
 "
 
 S="${S%*${PN}}"
 
-#o.n.bootstrap/launcher/unix/nbexec
-NB_LAUNCHER="ide/launcher/unix/${PN}"
+#platform/o.n.bootstrap/launcher/unix/nbexec
+NB_LAUNCHER="nb/ide.launcher/unix/${PN}"
 
 src_prepare() {
 	default
 	sed -i -e 's/,\?java.\(activation\|xml.bind\),\?//g' \
-		ide/launcher/${PN}.conf \
+		nb/ide.launcher/${PN}.conf \
 		|| die "Failed to sed/fix ${PN}.conf for java 11, drop mods"
 
 	sed -i -e 's|"${userdir}"/etc|/etc/'${PN}'-'${SLOT}'|' -e 's|$X/||g' \
@@ -199,21 +198,21 @@ src_install() {
 
 	dodir /etc/${my_pn}
 	insinto /etc/${my_pn}
-	doins ide/launcher/${PN}.conf
-	doins ide/launcher/${PN}.clusters
+	doins nb/ide.launcher/${PN}.conf
+	doins nb/ide.launcher/${PN}.clusters
 
 	dodir /usr/share/${my_pn}/{bin,core,docs,lib,modules}
 	dodir /usr/share/${my_pn}/config/Module{s,AutoDeps}
 
 	insinto /usr/share/${my_pn}
-	doins core.kit/release/VERSION.txt
+	doins platform/core.kit/release/VERSION.txt
 #	newins	"?" moduleCluster.properties
 
 	exeinto /usr/share/${my_pn}/bin
 	doexe ${NB_LAUNCHER}
 
 	exeinto /usr/share/${my_pn}/lib
-	doexe o.n.bootstrap/launcher/unix/nbexec
+	doexe platform/o.n.bootstrap/launcher/unix/nbexec
 
 	# symlink etc and launchers/bins
 	dosym ../../../etc/${my_pn} /usr/share/${my_pn}/etc
@@ -441,7 +440,7 @@ src_install() {
 	icon_dir=/usr/share/icons/hicolor/128x128/apps
 	dodir ${icon_dir}
 	insinto ${icon_dir}
-	newins ide.branding/release/${PN}.png ${icon}
+	newins nb/ide.branding/release/${PN}.png ${icon}
 	dosym ../../..${icon_dir}/${icon} /usr/share/pixmaps/${icon}
 
 	make_desktop_entry ${my_pn} "Netbeans ${SLOT}" ${my_pn} Development
