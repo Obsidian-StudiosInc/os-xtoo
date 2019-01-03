@@ -8,7 +8,7 @@ NB_CLUSTER="platform"
 inherit java-netbeans
 
 CP_DEPEND="
-	dev-java/jna:4
+	dev-java/jna:5
 	~nb-ide/netbeans-api-annotations-common-${PV}:${SLOT}
 	~nb-ide/netbeans-o-n-core-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-util-${PV}:${SLOT}
@@ -28,4 +28,8 @@ java_prepare() {
 	sed -i -e "59,60d" \
 		src/org/netbeans/core/network/utils/HostnameUtils.java \
 		|| die "Failed to remove windows support"
+
+	sed -i -e "s|getString(0L, true|getWideString(0L|g" \
+		src/org/netbeans/core/network/proxy/windows/WindowsNetworkProxy.java \
+		|| die "Failed to fix/update jna changes"
 }
