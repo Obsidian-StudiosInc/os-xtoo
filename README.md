@@ -97,7 +97,8 @@ versions in ebuilds. Java versions will be based on the version of Java
 used during build time of any given package. This elimites the need to 
 update versions in ebuilds for newer versions of Java. This also 
 provides means to have all jars built for a specific Java release. 
-Rather than a mixed system with some jars for 6, 7, 8, 9, 10, 11, etc. 
+Rather than a mixed system with some jars for 6, 7, 8, 9, 10, 11, 12, 
+13, etc.
 
 If needed this can be overriden globally for all packages in make.conf, or
 [java-util-2.eclass](https://github.com/Obsidian-StudiosInc/os-xtoo/blob/master/eclass/java-utils-2.eclass#L70), 
@@ -155,17 +156,17 @@ Contributions are welcomed!
 
 ## Netbeans IDE
 Work is underway to package 
-[Netbeans](https://github.com/apache/incubator-netbeans) 9 from source. 
+[Netbeans](https://github.com/apache/incubator-netbeans) from source. 
 Netbeans is presently in a initial usable state. Working on addressing 
-Java 10/11 specific isssues. Which Java 10/11 fixes may come from upstream 
+Java 11+ specific isssues. Which Java 11+ fixes may come from upstream 
 and/or go to upstream, or maybe come from YOU! Those are welcome and are 
 general issues not related to ebuilds or how Netbeans is packaged in 
-this overlay. Just general Netbeans 9 porting issues.
+this overlay. Just general Netbeans porting issues.
 
 There is no ETA at this time when this work will be completed. We do 
 use Netbeans as our primary IDE for C and Java. Presently using Netbeans 
-9 snapshot builds under JDK 11. Till Oracle releases the rest of the 
-modules we need for packaging from source.
+snapshot builds under JDK 11. Till we can package the rest of the  
+modules we need.
 
 See [Netbeans Apache Transition 
 page](https://cwiki.apache.org/confluence/display/NETBEANS/Apache+Transition) 
