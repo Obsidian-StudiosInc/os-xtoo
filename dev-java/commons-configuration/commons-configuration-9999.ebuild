@@ -27,6 +27,7 @@ CP_DEPEND="
 	dev-java/commons-jxpath:0
 	dev-java/commons-lang:3
 	dev-java/commons-logging:0
+	dev-java/commons-text:0
 	dev-java/commons-vfs:2
 	dev-java/jackson-core:${JACKSON_SLOT}
 	dev-java/jackson-databind:${JACKSON_SLOT}
