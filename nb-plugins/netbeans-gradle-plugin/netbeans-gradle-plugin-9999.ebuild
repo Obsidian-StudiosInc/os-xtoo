@@ -22,7 +22,7 @@ SLOT="0"
 
 GRADLE_SLOT="0"
 JTRIM_SLOT="0"
-NB_SLOT="9"
+NB_SLOT="10"
 
 CP_DEPEND="
 	dev-java/jsr305:0
