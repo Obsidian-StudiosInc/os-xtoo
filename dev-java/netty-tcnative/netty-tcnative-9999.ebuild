@@ -23,7 +23,7 @@ SLOT="${PV%%.*}"
 
 CDEPEND="
 	dev-libs/apr:1=
-	dev-libs/openssl:0=
+	dev-libs/openssl:=
 "
 
 RDEPEND+="${CDEPEND}"
