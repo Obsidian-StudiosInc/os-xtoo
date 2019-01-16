@@ -58,8 +58,6 @@ RDEPEND+=" dev-lang/ruby:${RUBY_VERSION}"
 
 S="${WORKDIR}/${P}"
 
-PATCHES=( "${FILESDIR}/bash-launcher.patch" )
-
 JAVA_SRC_DIR="core/src/main/resources core/src/main/java"
 JAVAC_ARGS+=" --add-exports java.base/sun.nio.cs=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports jdk.unsupported/sun.misc=ALL-UNNAMED "
@@ -117,7 +115,7 @@ src_compile() {
 src_install() {
 	java-pkg-simple_src_install
 
-	newbin bin/jruby.bash jruby
+	newbin "${FILESDIR}/jruby.bash" jruby
 	dobin bin/j{irb{,_swing},rubyc}
 
 #	insinto "${RUBY_HOME}"
