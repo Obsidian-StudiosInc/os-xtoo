@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -8,23 +8,12 @@ inherit eutils java-vm prefix
 SLOT="${PV%%.*}"
 [[ ${SLOT} == *_* ]] && SLOT="${PV%%_*}"
 
-BASE_URI="https://download"
-RESTRICT="preserve-libs strip"
+RESTRICT="preserve-libs strip fetch"
 
-if [[ ${PV} == *_pre* ]]; then
-	JDK_URI="http://jdk.java.net/${SLOT}/"
-	BASE_URI+=".java.net/java/early_access/jdk${SLOT}/${PV##*_pre}/BCL"
-	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
-elif [[ ${PV} == *_rc* ]]; then
-	JDK_URI="http://jdk.java.net/${SLOT}/"
-	BASE_URI+=".java.net/java/early_access/jdk${SLOT}/${PV##*_rc}/BCL"
-	MY_PV="${PV%%_*}+${PV##*_rc}"
-else
-	JDK_URI="http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html"
-	BASE_URI="http://download.oracle.com/otn-pub/java/jdk/${PV}+13/"
-	MY_PV="${PV}"
-	RESTRICT+=" fetch"
-fi
+JDK_URI="https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html"
+BASE_URI="http://download.oracle.com/otn-pub/java/jdk/${PV}+7/"
+MY_PV="${PV}"
+
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/jdk-${MY_PV}_linux-x64_bin.tar.gz"
 	KEYWORDS="-* ~amd64"
