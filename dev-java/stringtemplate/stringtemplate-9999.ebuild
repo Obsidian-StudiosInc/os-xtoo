@@ -40,7 +40,8 @@ java_prepare() {
 		src/org/stringtemplate/v4/gui/JTreeScopeStackModel.java \
 		|| die "Failed to sed/fix method"
 
-	sed -i -e "s|= r.getTree|= (CommonTree)r.getTree|" \
+	sed -i -e "/CommonTreeNodeStream;/iimport org.antlr.runtime.tree.CommonTree;" \
+		-e "s|= r.getTree|= (CommonTree)r.getTree|" \
 		src/org/stringtemplate/v4/compiler/Compiler.java \
 		|| die "Failed to sed/fix cast"
 }
