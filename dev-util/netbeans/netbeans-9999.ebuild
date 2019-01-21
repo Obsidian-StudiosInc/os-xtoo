@@ -166,8 +166,13 @@ src_prepare() {
 
 	sed -i -e 's|"${userdir}"/etc|/etc/'${PN}'-'${SLOT}'|' -e 's|$X/||g' \
 		-e '/-clusters/d' -e '/netbeans\.accept_license/d' \
+		-e 's|'\''"$netbeans_jdkhome"'\''|"${JAVA_HOME}"|' \
 		${NB_LAUNCHER} \
 		|| die "Failed to sed/update launcher script"
+
+	sed -i -e '/-z "$jdkhome"/ijdkhome="${JAVA_HOME}"' \
+		platform/o.n.bootstrap/launcher/unix/nbexec \
+		|| die "Failed to sed/update jdkhome in launcher script"
 }
 
 src_compile() {
