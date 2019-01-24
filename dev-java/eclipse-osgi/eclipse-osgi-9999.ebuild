@@ -38,9 +38,15 @@ S="${WORKDIR}/${MY_S}/bundles/org.${PN//-/.}/"
 
 JAVA_SRC_DIR="container supplement"
 
+# Requires classes from IBM openj9
+if [[ ${PV} == 4.10 ]]; then
+	JAVA_RM_FILES="container/src/org/eclipse/osgi/internal/cds"
+fi
+
 java_prepare() {
 	local f
 
+	if [[ ${PV} == 4.8 ]]; then
 	for f in $(grep -l -m1 "Module" -r *);do
 		sed -i -e "/org.eclipse.osgi.container.Module;/d" \
 			-e "s| Module | org.eclipse.osgi.container.Module |g" \
@@ -58,4 +64,10 @@ java_prepare() {
 	sed -i -e "s|class org.eclipse.osgi.container.|class |" \
 		container/src/org/eclipse/osgi/container/Module.java \
 		|| die "Failed to revert previous sed"
+	else
+		# Remove support for CDS classes that require IBM openj9
+		sed -i -e "/CDSHookConfigurator/d" \
+			container/src/org/eclipse/osgi/internal/hookregistry/HookRegistry.java \
+			|| die "Failed to revert previous sed"
+	fi
 }
