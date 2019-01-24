@@ -24,6 +24,7 @@ CP_DEPEND="
 	~dev-java/eclipse-core-jobs-${PV}:${SLOT}
 	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
+	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
 	~dev-java/eclipse-text-${PV}:${SLOT}
@@ -44,7 +45,7 @@ JAVA_SRC_DIR="projection src"
 
 java_prepare() {
 	# bad temporary hack to work around for the following!!!!
-	# CodeMiningManager.java:185: error: incompatible types:
+	# CodeMiningManager.java:223: error: incompatible types:
 	# inferred type does not conform to lower bound(s)
 	# return codeMinings.stream().collect(Collectors.groupingBy(ICodeMining::getPosition, LinkedHashMap::new,
 	#
@@ -52,7 +53,8 @@ java_prepare() {
 	# lower bound(s): ICodeMining
 	# where CAP#1 is a fresh type-variable:
 	# CAP#1 extends ICodeMining from capture of ? extends ICodeMining
-	sed -i -e '185,186d' -e '187i\\t\treturn null;' \
+	sed -i -e '/codeMinings.stream/d' \
+		-e 's/Collectors.mapping.*/\t\treturn null;/' \
 		src/org/eclipse/jface/internal/text/codemining/CodeMiningManager.java \
 		|| die "Failed to sed/remove troublesome code"
 }
