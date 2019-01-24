@@ -50,7 +50,14 @@ S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
 JAVA_SRC_DIR="launching support"
 
 java_prepare() {
-	sed -i -e "113d;117,120d" \
+	local my_sed
+
+	if [[ ${PV} == 4.8 ]]; then
+		my_sed="113d;117,120d"
+	elif [[ ${PV} == 4.10 ]]; then
+		my_sed="116d;120,123d"
+	fi
+	sed -i -e "${my_sed}" \
 		launching/org/eclipse/jdt/internal/launching/SocketListenConnectorProcess.java \
 		|| die "Failed to sed/remove IOException from multi-catch"
 }
