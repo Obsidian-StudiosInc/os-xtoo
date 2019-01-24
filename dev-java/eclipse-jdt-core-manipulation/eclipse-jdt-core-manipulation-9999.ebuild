@@ -21,6 +21,8 @@ SLOT="${PV/.${PV#*.*.*}/}"
 
 CP_DEPEND="
 	~dev-java/eclipse-core-expressions-${PV}:${SLOT}
+	~dev-java/eclipse-core-filebuffers-${PV}:${SLOT}
+	~dev-java/eclipse-core-filesystem-${PV}:${SLOT}
 	~dev-java/eclipse-core-jobs-${PV}:${SLOT}
 	~dev-java/eclipse-core-resources-${PV}:${SLOT}
 	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
