@@ -106,6 +106,7 @@ RDEPEND="
 	~nb-ide/${PN}-libs-antlr4-runtime-${PV}:${SLOT}
 	~nb-ide/${PN}-libs-asm-${PV}:${SLOT}
 	~nb-ide/${PN}-libs-freemarker-${PV}:${SLOT}
+	~nb-ide/${PN}-libs-git-${PV}:${SLOT}
 	~nb-ide/${PN}-localhistory-${PV}:${SLOT}
 	~nb-ide/${PN}-localtasks-${PV}:${SLOT}
 	~nb-ide/${PN}-masterfs-linux-${PV}:${SLOT}
