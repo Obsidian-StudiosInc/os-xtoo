@@ -23,7 +23,7 @@ SLOT="${PV%%.*}"
 
 IUSE="systemd extra-webapps"
 
-ECJ_SLOT="4.8"
+ECLIPSE_SLOT="4.10"
 SAPI_SLOT="4.0"
 
 DEPEND="app-admin/pwgen
@@ -31,7 +31,7 @@ DEPEND="app-admin/pwgen
 "
 
 RDEPEND="
-	dev-java/eclipse-ecj:${ECJ_SLOT}
+	dev-java/eclipse-ecj:${ECLIPSE_SLOT}
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-bootstrap-${PV}:${SLOT}
