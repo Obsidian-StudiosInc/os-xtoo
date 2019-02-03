@@ -427,7 +427,7 @@ src_install() {
 	jars+=( ${jars_short[@]/#/xml} )
 
 	jars+=(
-		classfile diff editor favorites git i18n ide ide-kit gototest
+		classfile diff editor favorites git i18n ide-kit gototest
 		javahelp jumpto junit junit-ui keyring lexer lexer-nbbridge
 		localhistory localtasks mylyn-util o-apache-tools-ant-module
 		progress-ui properties properties-syntax queries sampler
