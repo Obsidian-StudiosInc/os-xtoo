@@ -16,8 +16,8 @@ if [[ ${PV} == *_pre* ]]; then
 	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
 	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
 elif [[ ${PV} == *_rc* ]]; then
-	BASE_URI+="early_access/jdk${SLOT}/${PV##*_rc}/GPL"
-	MY_PV="${PV%%_*}+${PV##*_rc}"
+	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
+	MY_PV="${PV%%_*}"
 elif [[ ${PV} == 10.0.2 ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV}/19aef61b38124481863b1413dce1855f/13"
 	MY_PV="${PV}"
