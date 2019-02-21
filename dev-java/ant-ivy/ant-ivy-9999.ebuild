@@ -15,7 +15,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_P}"
 fi
 
-BC_SLOT="1.60"
+BC_SLOT="1.61"
 
 CP_DEPEND="
 	dev-java/ant-core:0
