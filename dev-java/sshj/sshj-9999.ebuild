@@ -12,7 +12,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
-BCV="1.60"
+BCV="1.61"
 
 CP_DEPEND="
 	dev-java/bcpkix:${BCV}
