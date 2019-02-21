@@ -18,7 +18,7 @@ fi
 
 SLOT="${PV/.${PV#*.*.*}/}"
 
-BCV="1.60"
+BCV="1.61"
 
 CP_DEPEND="
 	dev-java/bcpkix:${BCV}
