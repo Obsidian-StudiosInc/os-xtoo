@@ -31,6 +31,7 @@ CP_DEPEND="
 	~dev-java/aqute-resolve-${PV}:${SLOT}
 	~dev-java/bnd-annotation-${PV}:${SLOT}
 	~dev-java/bnd-exporters-${PV}:${SLOT}
+	~dev-java/bnd-reporter-${PV}:${SLOT}
 	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/jline:2
 	~dev-java/libg-${PV}:${SLOT}
