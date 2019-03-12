@@ -2,3 +2,4 @@ dev-java/eclipse-ecj
 dev-java/oracle-jdk-bin:11
 virtual/jdk:11
 virtual/jre:11
+www-servers/tomcat
