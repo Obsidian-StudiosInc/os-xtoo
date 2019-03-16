@@ -6,14 +6,15 @@ EAPI="7"
 JAVA_PKG_IUSE="doc source"
 
 MY_PN="${PN%%-*}"
-MY_PV="${PV//./_}"
-MY_P="${MY_PN^^}_${MY_PV}"
 BASE_URI="https://github.com/apache/${MY_PN}"
 
 if [[ ${PV} == 9.* ]]; then
+	MY_PV="${PV}"
+	MY_P="${MY_PN}-${MY_PV}"
 	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-	MY_S="${MY_PN}-${MY_P}"
+	MY_S="${MY_P}"
 elif [[ ${PV} != *9999* ]]; then
+	MY_PV="${PV//./_}"
 	MY_PV="${PV/_beta/}"
 	MY_P="apache-${MY_PN}-${MY_PV}-src"
 	SRC_URI="mirror://apache/${MY_PN}/${MY_PN}-${PV%%.*}/v${MY_PV}/src/${MY_P}.tar.gz"
