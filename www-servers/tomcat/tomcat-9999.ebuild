@@ -5,13 +5,11 @@ EAPI="6"
 
 JAVA_PKG_IUSE="doc source"
 
-MY_PV="${PV//./_}"
-MY_P="${PN^^}_${MY_PV}"
 BASE_URI="https://github.com/apache/${PN}"
 
 if [[ ${PV} != 9999 ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-	MY_S="${PN}-${MY_P}"
+	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	MY_S="${P}"
 fi
 
 inherit eutils java-pkg prefix systemd user
