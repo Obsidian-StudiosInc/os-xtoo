@@ -25,7 +25,7 @@ elif [[ ${PV} == 11.0.2 ]]; then
 	BASE_URI+="GA/jdk${SLOT}/7/GPL"
 	MY_PV="${PV}"
 else
-	BASE_URI+="ga/jdk${SLOT}"
+	BASE_URI+="GA/jdk${SLOT}/GPL"
 	MY_PV="${PV}"
 fi
 if [[ ${PV} != *9999* ]]; then
