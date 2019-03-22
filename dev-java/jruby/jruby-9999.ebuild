@@ -22,6 +22,7 @@ CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/asm:7
 	dev-java/commons-bsf:0
+	dev-java/backport9:0
 	dev-java/bytelist:0
 	dev-java/dirgra:0
 	dev-java/options:0
