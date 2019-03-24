@@ -7,14 +7,12 @@ JAVA_PKG_IUSE="doc source"
 JAVA_NO_COMMONS=1
 
 SLOT="${PV%%.*}"
-MY_PN="${PN}${SLOT}-project"
-MY_P="${MY_PN}-${PV}"
 
 BASE_URI="https://github.com/apache/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
-	MY_S="${PN}-${MY_P}"
+	SRC_URI="${BASE_URI}/archive/${P}.tar.gz"
+	MY_S="${PN}-${P}"
 fi
 
 CP_DEPEND="
@@ -24,6 +22,8 @@ CP_DEPEND="
 	dev-java/commons-httpclient:0
 	dev-java/commons-logging:0
 	dev-java/commons-net:0
+	dev-java/httpcomponents-client:4.5
+	dev-java/httpcomponents-core:4.4
 	dev-java/jackrabbit-webdav:0
 	dev-java/jsch:0
 "
@@ -42,3 +42,9 @@ PATCHES=( "${FILESDIR}/jackrabbit.patch" )
 #	org.apache.hadoop.conf.Configuration
 #	org.apache.hadoop.fs.*
 JAVA_RM_FILES=( src/main/java/org/apache/commons/vfs2/provider/hdfs )
+
+java_prepare() {
+	sed -i -e "/hdfs/d" \
+		src/main/java/org/apache/commons/vfs2/provider/zip/ZipFileProvider.java \
+		|| die "Failed to sed/remove Hadoop hdfs import"
+}
