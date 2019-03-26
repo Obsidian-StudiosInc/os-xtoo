@@ -19,6 +19,7 @@ GUAVA_SLOT="27"
 OPENCENSUS_SLOT="0"
 
 CP_DEPEND="
+	dev-java/animal-sniffer-annotations:0
 	dev-java/error-prone-annotations:0
 	dev-java/failureaccess:${GUAVA_SLOT}
 	~dev-java/grpc-context-${PV}:${SLOT}
