@@ -50,6 +50,7 @@ CP_DEPEND="
 	~dev-java/eclipse-swt-${PV}:${SLOT}
 	~dev-java/eclipse-text-${PV}:${SLOT}
 	~dev-java/eclipse-ui-forms-${PV}:${SLOT}
+	~dev-java/eclipse-ui-navigator-${PV}:${SLOT}
 	~dev-java/eclipse-ui-views-${PV}:${SLOT}
 	~dev-java/eclipse-ui-workbench-${PV}:${SLOT}
 	dev-java/icu4j:0
