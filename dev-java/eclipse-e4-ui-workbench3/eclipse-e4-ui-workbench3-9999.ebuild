@@ -20,9 +20,11 @@ fi
 SLOT="${PV/.${PV#*.*.*}/}"
 
 CP_DEPEND="
+	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
+	dev-java/osgi-core-api:7
 "
 
 inherit java-pkg
