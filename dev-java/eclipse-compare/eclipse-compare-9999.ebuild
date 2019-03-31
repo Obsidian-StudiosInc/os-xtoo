@@ -38,6 +38,7 @@ CP_DEPEND="
 	~dev-java/eclipse-text-${PV}:${SLOT}
 	~dev-java/eclipse-ui-editors-${PV}:${SLOT}
 	~dev-java/eclipse-ui-forms-${PV}:${SLOT}
+	~dev-java/eclipse-ui-navigator-${PV}:${SLOT}
 	~dev-java/eclipse-ui-ide-${PV}:${SLOT}
 	~dev-java/eclipse-ui-views-${PV}:${SLOT}
 	~dev-java/eclipse-ui-workbench-${PV}:${SLOT}
