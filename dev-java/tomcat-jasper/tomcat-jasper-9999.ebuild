@@ -19,7 +19,7 @@ SLOT="${PV%%.*}"
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/eclipse-ecj:4.10
+	dev-java/eclipse-ecj:4.11
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
 	~dev-java/tomcat-servlet-api-${PV}:4.0
