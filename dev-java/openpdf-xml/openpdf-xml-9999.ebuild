@@ -17,7 +17,10 @@ fi
 
 SLOT="0"
 
-CP_DEPEND="~dev-java/openpdf-${PV}:${SLOT}"
+CP_DEPEND="
+	dev-java/jsr305:0
+	~dev-java/openpdf-${PV}:${SLOT}
+"
 
 inherit java-pkg
 
