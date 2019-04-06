@@ -13,6 +13,7 @@ CP_DEPEND="
 	~nb-ide/netbeans-openide-util-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-util-lookup-${PV}:${SLOT}
 	~nb-ide/netbeans-queries-${PV}:${SLOT}
+	~nb-ide/netbeans-api-scripting-${PV}:${SLOT}
 "
 
 DEPEND="${CP_DEPEND}
