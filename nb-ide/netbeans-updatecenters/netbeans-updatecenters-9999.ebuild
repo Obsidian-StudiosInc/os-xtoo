@@ -24,5 +24,5 @@ RDEPEND="${CP_DEPEND}
 src_install() {
 	java-netbeans_src_install
 	insinto /usr/share/${PN}-${SLOT}/ks
-	doins release/core/ide.ks
+	doins ide.ks
 }
