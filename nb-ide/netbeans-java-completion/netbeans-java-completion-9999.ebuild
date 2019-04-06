@@ -26,3 +26,9 @@ DEPEND="${CP_DEPEND}
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-9"
+
+java_prepare() {
+	sed -i -e "s|completion.Tree|source.Tree|" \
+		src/org/netbeans/modules/java/completion/JavaCompletionTask.java \
+		|| die "Failed to sed/correct import"
+}
