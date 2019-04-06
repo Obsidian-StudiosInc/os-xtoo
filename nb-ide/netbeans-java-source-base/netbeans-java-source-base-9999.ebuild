@@ -15,6 +15,7 @@ CP_DEPEND="
 	~nb-ide/netbeans-api-java-${PV}:${SLOT}
 	~nb-ide/netbeans-api-java-classpath-${PV}:${SLOT}
 	~nb-ide/netbeans-api-progress-${PV}:${SLOT}
+	~nb-ide/netbeans-api-scripting-${PV}:${SLOT}
 	~nb-ide/netbeans-classfile-${PV}:${SLOT}
 	~nb-ide/netbeans-editor-document-${PV}:${SLOT}
 	~nb-ide/netbeans-editor-guards-${PV}:${SLOT}
