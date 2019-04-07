@@ -10,6 +10,7 @@ inherit java-netbeans
 CP_DEPEND="
 	dev-java/javax-annotation:0
 	~nb-ide/netbeans-api-annotations-common-${PV}:${SLOT}
+	~nb-ide/netbeans-api-scripting-${PV}:${SLOT}
 	~nb-ide/netbeans-java-api-common-${PV}:${SLOT}
 	~nb-ide/netbeans-java-j2seproject-${PV}:${SLOT}
 	~nb-ide/netbeans-o-apache-tools-ant-module-${PV}:${SLOT}
