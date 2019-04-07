@@ -12,6 +12,7 @@ CP_DEPEND="
 	~nb-ide/netbeans-api-annotations-common-${PV}:${SLOT}
 	~nb-ide/netbeans-api-progress-${PV}:${SLOT}
 	~nb-ide/netbeans-api-progress-nb-${PV}:${SLOT}
+	~nb-ide/netbeans-api-scripting-${PV}:${SLOT}
 	~nb-ide/netbeans-api-templates-${PV}:${SLOT}
 	~nb-ide/netbeans-apisupport-project-${PV}:${SLOT}
 	~nb-ide/netbeans-editor-document-${PV}:${SLOT}
