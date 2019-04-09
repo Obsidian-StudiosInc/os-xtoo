@@ -20,7 +20,7 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="GPL-3"
 SLOT="0"
 
-NB_SLOT="10"
+NB_SLOT="11"
 
 CP_DEPEND="
 	nb-ide/netbeans-editor-completion:${NB_SLOT}
