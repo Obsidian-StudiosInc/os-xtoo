@@ -18,7 +18,7 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-NB_SLOT="10"
+NB_SLOT="11"
 
 CP_DEPEND="
 	dev-java/darcula:0
