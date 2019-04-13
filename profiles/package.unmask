@@ -1,5 +1,11 @@
 dev-java/eclipse-ecj
+dev-java/jackson-annotations
+dev-java/jackson-databind
+dev-java/jackson-dataformat-xml
+dev-java/jackson-dataformat-yaml
+dev-java/jackson-module-jaxb-annotations
 dev-java/oracle-jdk-bin:11
 virtual/jdk:11
 virtual/jre:11
 www-servers/tomcat
+
