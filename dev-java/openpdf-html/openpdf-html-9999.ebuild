@@ -18,6 +18,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/jsr305:0
 	~dev-java/openpdf-${PV}:${SLOT}
 	~dev-java/openpdf-xml-${PV}:${SLOT}
 "
