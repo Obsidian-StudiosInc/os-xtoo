@@ -30,10 +30,3 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 S="${WORKDIR}/${MY_S}"
-
-java_prepare() {
-	sed -i -e "s|map = .*|map = Collections.<String, Object>emptyMap();|" \
-		-e '66i\ \ \ \ \ \ \ \ map.putAll(MDC.getCopyOfContextMap());' \
-		src/main/java/org/jboss/logging/Slf4jLoggerProvider.java \
-		|| die "Failed to sed/fix type mismatch"
-}
