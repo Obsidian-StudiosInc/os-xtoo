@@ -17,7 +17,10 @@ fi
 
 SLOT="0"
 
-CP_DEPEND="~dev-java/checker-qual-${PV}:${SLOT}"
+CP_DEPEND="
+	~dev-java/checker-qual-${PV}:${SLOT}
+	dev-java/plume-util:0
+"
 
 inherit java-pkg
 
@@ -45,4 +48,8 @@ java_prepare() {
 		-e "s|code\.Kinds|code.Kinds.Kind|" \
 		src/main/java/org/checkerframework/javacutil/Resolver.java \
 		|| die "Failed to sed/change java 9+ imports"
+
+	sed -i -e "s|w.bound.bound|w.bound|" \
+		src/main/java/org/checkerframework/javacutil/TypesUtils.java \
+		|| die "Failed to sed/fix missing symbol"
 }
