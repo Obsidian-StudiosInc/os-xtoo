@@ -45,4 +45,9 @@ java_prepare() {
 		sed -i -e '/DoNotMock/d' "${f}" \
 			|| die "Failed to remove legacy error prone DoNotMock"
 	done
+
+	# needs android.annotation.SuppressLint
+	sed -i -e "/SuppressLint/d" \
+		src/main/java/io/grpc/internal/JndiResourceResolverFactory.java \
+		|| die "Failed to sed/remove android.annotation.SuppressLint"
 }
