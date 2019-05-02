@@ -51,6 +51,7 @@ DEPEND+=" ${GROOVY_DEPS}"
 S="${WORKDIR}/${MY_S}/${MY_MOD}"
 
 JAVAC_ARGS="--add-exports jdk.unsupported/sun.misc=ALL-UNNAMED"
+JAVA_RM_FILES=( src/main/java/io/netty/util/internal/svm/ )
 
 if [[ "${SLOT}" != "4.0" ]] ; then
 
