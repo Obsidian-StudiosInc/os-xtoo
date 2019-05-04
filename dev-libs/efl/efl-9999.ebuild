@@ -230,7 +230,6 @@ src_configure() {
 		--enable-image-loader-tga
 		--enable-image-loader-wbmp
 
-		--enable-cserve
 		--enable-libmount
 		--enable-threads
 		--enable-xinput22
