@@ -244,9 +244,6 @@ src_configure() {
 		--with-profile=$(usex debug debug release)
 		--with-glib=$(usex glib yes no)
 		--with-tests=$(usex test regular none)
-
-#		--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-aba
-		--enable-i-really-know-what-i-am-doing-and-that-this-will-probably-break-things-and-i-will-fix-them-myself-and-send-patches-abb
 	)
 
 	econf "${config[@]}"
