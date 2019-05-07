@@ -40,7 +40,6 @@ CP_DEPEND="
 	dev-java/joda-time:0
 	dev-java/joni:0
 	dev-java/jzlib:0
-	dev-java/modulator:0
 	dev-java/nailgun-server:0
 	dev-java/osgi-core-api:4
 	dev-java/slf4j-api:0
