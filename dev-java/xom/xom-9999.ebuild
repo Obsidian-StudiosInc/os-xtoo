@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="${PN^^}"
 MY_PV="${PV//./}"
 MY_P="${MY_PN}_${MY_PV}"
-BASE_URI="https://github.com/Obsidian-StudiosInc/${PN}"
+BASE_URI="https://github.com/elharo/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
@@ -30,9 +30,12 @@ SLOT="0"
 S="${WORKDIR}/${MY_S}"
 
 JAVAC_ARGS+=" --add-modules=java.xml "
+JAVAC_ARGS+=" --add-exports=java.xml/com.sun.org.apache.xerces.internal.impl=ALL-UNNAMED "
+JAVAC_ARGS+=" --add-exports=java.xml/com.sun.org.apache.xerces.internal.parsers=ALL-UNNAMED "
+JAVAC_ARGS+=" --add-exports=java.xml/com.sun.org.apache.xerces.internal.util=ALL-UNNAMED "
 
 java_prepare() {
-	rm -r src/nu/xom/{samples,tests} \
+	rm -r src/nu/xom/{samples,integrationtests,tests} \
 		src/nu/xom/tools/XHTMLJavaDoc.java \
 		|| die "Failed to remove samples/tests and extra class"
 }
