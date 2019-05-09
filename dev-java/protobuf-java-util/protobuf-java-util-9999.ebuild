@@ -19,6 +19,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/error-prone-annotations:0
 	dev-java/gson:0
 	dev-java/guava:27
 	~dev-java/protobuf-java-core-${PV}:${SLOT}
