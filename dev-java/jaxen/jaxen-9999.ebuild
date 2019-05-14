@@ -5,14 +5,11 @@ EAPI="7"
 
 JAVA_PKG_IUSE="doc source"
 
-MY_PN="${PN}"
-MY_PV="V_${PV//./_}_Final"
-MY_P="${MY_PN}-${MY_PV}"
-BASE_URI="https://github.com/codehaus/${PN}"
+BASE_URI="https://github.com/jaxen-xpath/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
-	MY_S="${MY_P}"
+	SRC_URI="${BASE_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	MY_S="${P}"
 fi
 
 CP_DEPEND="dev-java/dom4j:2"
@@ -24,10 +21,7 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="JDOM"
 SLOT="0"
 
-S="${WORKDIR}/${MY_S}/${PN}"
+S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="src/java/main/"
-JAVA_RM_FILES=(
-	src/java/main/org/jaxen/{jdom,xom}
-	src/java/main/org/w3c/dom/UserDataHandler.java
-)
+JAVA_RM_FILES=( src/java/main/org/jaxen/{jdom,xom} )
