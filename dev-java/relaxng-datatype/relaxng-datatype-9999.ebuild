@@ -6,7 +6,7 @@ EAPI="7"
 JAVA_PKG_IUSE="doc source"
 
 MY_PN="jaxb-ri"
-MY_PV="${PV}-RELEASE"
+MY_PV="${PV}-RI"
 MY_P="${MY_PN}-${MY_PV}"
 BASE_URI="https://github.com/eclipse-ee4j/${MY_PN}"
 
