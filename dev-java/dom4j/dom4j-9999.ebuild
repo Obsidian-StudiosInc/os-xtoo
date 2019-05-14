@@ -31,3 +31,15 @@ SLOT="${PV%%.*}"
 S="${WORKDIR}/${MY_S}"
 
 PATCHES=( "${FILESDIR}/xpp3-add-removeAttribute.patch" )
+
+# Needed to prevent circular dependencies
+# https://github.com/Obsidian-StudiosInc/os-xtoo/issues/71
+java_prepare() {
+	local f my_p
+
+	my_p="src/main/java/org/jaxen/dom4j"
+
+	mkdir -p "${my_p}" || die "Failed to make dir for jaxen classes"
+	cp "${FILESDIR}"/*.java "${my_p}" \
+		|| die "Failed to copy jaxen dom4j classes"
+}
