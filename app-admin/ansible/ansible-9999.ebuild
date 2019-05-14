@@ -36,6 +36,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="
+	app-portage/gentoolkit:0
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
