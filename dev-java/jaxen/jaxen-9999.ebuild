@@ -12,8 +12,6 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${P}"
 fi
 
-CP_DEPEND="dev-java/dom4j:2"
-
 inherit java-pkg
 
 DESCRIPTION="Universal Java XPath engine"
@@ -23,5 +21,7 @@ SLOT="0"
 
 S="${WORKDIR}/${MY_S}"
 
+# Needed to prevent circular dependencies
+# https://github.com/Obsidian-StudiosInc/os-xtoo/issues/71
+JAVA_RM_FILES=( src/java/main/org/jaxen/{dom4j,jdom,xom} )
 JAVA_SRC_DIR="src/java/main/"
-JAVA_RM_FILES=( src/java/main/org/jaxen/{jdom,xom} )
