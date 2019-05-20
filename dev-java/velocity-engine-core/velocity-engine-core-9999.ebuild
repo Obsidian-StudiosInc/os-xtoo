@@ -74,14 +74,14 @@ java_prepare() {
 		"${parser}" \
 		|| die "Failed to sed Parser.jjt keyword template -> t"
 
-	jjtree -STATIC=false -MULTI=true -NODE_USES_PARSER=true \
+	jjtree -STATIC=false -MULTI=true -TOKEN_MANAGER_USES_PARSER=true \
 		-OUTPUT_DIRECTORY="${d}/node" \
 		-NODE_PACKAGE="org.apache.velocity.runtime.parser.node" \
 		"${parser}" \
 		|| die "jjtree Parser.jjt failed"
 
 	javacc -LOOKAHEAD=2 \
-		-STATIC=false -MULTI=true -NODE_USES_PARSER=true \
+		-STATIC=false -MULTI=true -TOKEN_MANAGER_USES_PARSER=true \
 		-OUTPUT_DIRECTORY="${d}" \
 		-NODE_PACKAGE="org.apache.velocity.runtime.parser" \
 		"${d}/node/Parser.jj" \
