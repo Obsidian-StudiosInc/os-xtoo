@@ -18,6 +18,7 @@ fi
 CP_DEPEND="
 	dev-java/asm:7
 	dev-java/commons-logging:0
+	dev-java/jakarta-regexp:0
 	dev-java/log4j:0
 "
 
@@ -32,7 +33,10 @@ S="${WORKDIR}/${MY_S}/${PN}"
 
 java_prepare() {
 	# unbundle/un-shade asm
-	sed -i -e "s|org.apache.xbean.asm6|org.objectweb.asm|g" \
+	sed -i -e "s|org.apache.xbean.asm7|org.objectweb.asm|g" \
 		src/main/java/org/apache/xbean/recipe/XbeanAsmParameterNameLoader.java \
+		|| die "Failed to un-shade asm, make extenral"
+	sed -i -e "s|com.sun.org.apache.regexp.internal|org.apache.regexp|" \
+		src/main/java/org/apache/xbean/propertyeditor/PropertyEditors.java \
 		|| die "Failed to un-shade asm, make extenral"
 }
