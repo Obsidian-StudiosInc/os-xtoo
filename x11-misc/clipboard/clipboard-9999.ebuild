@@ -14,3 +14,6 @@ inherit e
 DESCRIPTION="A Clipboard module for E21+ desktop"
 HOMEPAGE="${E_BASE_URI}"
 LICENSE="GPL-3"
+
+DEPEND="x11-wm/enlightenment:="
+RDEPEND="${DEPEND}"
