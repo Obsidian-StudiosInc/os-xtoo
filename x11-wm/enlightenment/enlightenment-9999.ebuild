@@ -18,6 +18,8 @@ inherit e
 HOMEPAGE="https://docs.enlightenment.org"
 DESCRIPTION="Enlightenment Window manager"
 LICENSE="BSD-2"
+SLOT="${PV%*.*}"
+SLOT="${SLOT/.//}"
 S="${WORKDIR}/${P%_*}"
 
 __CONF_MODS=(
