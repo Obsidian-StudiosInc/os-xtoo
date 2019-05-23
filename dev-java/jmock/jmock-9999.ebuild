@@ -17,13 +17,10 @@ fi
 
 SLOT="0"
 
-HAMCREST_SLOT="2"
-
 CP_DEPEND="
 	dev-java/asm:7
 	dev-java/bsh:0
-	dev-java/hamcrest-core:${HAMCREST_SLOT}
-	dev-java/hamcrest-library:${HAMCREST_SLOT}
+	dev-java/hamcrest:0
 	dev-java/junit:4
 "
 
