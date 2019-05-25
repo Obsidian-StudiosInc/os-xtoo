@@ -53,7 +53,10 @@ DESCRIPTION="Java-based Ruby interpreter implementation"
 HOMEPAGE="https://${PN}.org/"
 LICENSE="|| ( EPL-1.0 GPL-2 LGPL-2.1 )"
 
-DEPEND+=" dev-lang/ruby:${RUBY_VERSION}"
+DEPEND+="
+	app-portage/portage-utils:0
+	dev-lang/ruby:${RUBY_VERSION}
+"
 RDEPEND+=" dev-lang/ruby:${RUBY_VERSION}"
 
 S="${WORKDIR}/${P}"
@@ -91,20 +94,20 @@ pkg_setup() {
 }
 
 java_prepare() {
-	einfo "Fixing properties"
-	JRUBY_CONSTANTS="core/src/main/resources/org/jruby/runtime/Constants.java"
-	for repvar in $(grep "@.*@\".*;" ${JRUBY_CONSTANTS} | sed 's:.*@\(.*\)@.*:\1:') ; do
-		VAR=$(grep "<${repvar}>" pom.xml | sed 's/.*>\(.*\)<\/.*/\1/')
-		sed -i "s/@${repvar}@/${VAR}/" \
-			${JRUBY_CONSTANTS} || die
-	done
-	sed -i "s/String VERSION = \".*\"/String VERSION = \"${PV}\"/" \
-		${JRUBY_CONSTANTS} || die
+	einfo "Setting constants"
 
-	einfo "Setting Ruby version to use."
-	sed -i -e "s/String jruby_revision = \"\"/String jruby_revision = \"${RUBY_REVISION}\"/" \
-		-e "s/String jruby_default_ruby_version = \"\"/String jruby_default_ruby_version = \"${RUBY_VERSION}\"/" \
-		${JRUBY_CONSTANTS} || die
+	sed -i -e "s|@version.ruby.major@|${RUBY_VERSION%%.*}|" \
+		-e "s|@version.ruby@|${RUBY_VERSION}|" \
+		-e "s|@version.ruby.revision@|${RUBY_REVISION}|" \
+		-e "s|@build.date@|$(date)|" \
+		-e "s|@version.jruby@|${PV}|" \
+		-e "s|@base.java.version@|$(java-pkg_get-vm-version)|" \
+		-e "s|@base.javac.version@|$(java-pkg_get-vm-version)|" \
+		-e "s|@jruby.revision@|${RUBY_REVISION}|" \
+		-e "s|@joda.time.version@|$(qlist -Iv joda-time | cut -d '-' -f 4)|" \
+		-e "s|@tzdata.version@|$(qlist -Iv timezone-data | cut -d '-' -f 4)|" \
+		"core/src/main/resources/org/jruby/runtime/Constants.java" \
+		|| die "Failed to sed Constants.java"
 }
 
 src_compile() {
