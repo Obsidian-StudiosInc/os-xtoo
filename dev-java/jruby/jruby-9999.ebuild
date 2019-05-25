@@ -61,7 +61,8 @@ RDEPEND+=" dev-lang/ruby:${RUBY_VERSION}"
 
 S="${WORKDIR}/${P}"
 
-JAVA_SRC_DIR="core/src/main/resources core/src/main/java"
+JAVA_SRC_DIR="src/main/resources src/main/java"
+JAVA_RES_DIR="src/main/resources src/main/ruby"
 JAVAC_ARGS+=" --add-exports java.base/sun.nio.cs=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports jdk.unsupported/sun.misc=ALL-UNNAMED "
 
@@ -94,6 +95,7 @@ pkg_setup() {
 }
 
 java_prepare() {
+	mv core/src ./ || die "Failed to move sources"
 	einfo "Setting constants"
 
 	sed -i -e "s|@version.ruby.major@|${RUBY_VERSION%%.*}|" \
@@ -106,8 +108,14 @@ java_prepare() {
 		-e "s|@jruby.revision@|${RUBY_REVISION}|" \
 		-e "s|@joda.time.version@|$(qlist -Iv joda-time | cut -d '-' -f 4)|" \
 		-e "s|@tzdata.version@|$(qlist -Iv timezone-data | cut -d '-' -f 4)|" \
-		"core/src/main/resources/org/jruby/runtime/Constants.java" \
+		"src/main/resources/org/jruby/runtime/Constants.java" \
 		|| die "Failed to sed Constants.java"
+
+	# Remove all the references to RubyGems as we're just going to
+	# install it through dev-ruby/rubygems.
+	find "${S}" -type f \
+		'(' '(' -path '*rubygems*' -not -name 'jruby.rb' ')' -or -name 'ubygems.rb' -or -name 'datadir.rb' ')' \
+		-delete || die "Failed to find/delete rubygems"
 }
 
 src_compile() {
@@ -121,14 +129,8 @@ src_install() {
 	newbin "${FILESDIR}/jruby.bash" jruby
 	dobin bin/j{irb{,_swing},rubyc}
 
-#	insinto "${RUBY_HOME}"
-#	doins -r "${S}"/lib/ruby/{2.3,2.4,shared}
-
-	# Remove all the references to RubyGems as we're just going to
-	# install it through dev-ruby/rubygems.
-#	find "${ED}${RUBY_HOME}" -type f \
-#		'(' '(' -path '*rubygems*' -not -name 'jruby.rb' ')' -or -name 'ubygems.rb' -or -name 'datadir.rb' ')' \
-#		-delete || die
+	insinto "${RUBY_HOME}"
+	doins -r "${S}"/lib/ruby/stdlib
 }
 
 pkg_postinst() {
