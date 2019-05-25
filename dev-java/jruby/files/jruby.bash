@@ -11,13 +11,10 @@
 #
 # -----------------------------------------------------------------------------
 
-cygwin=false
 
 # ----- Identify OS we are running under --------------------------------------
-case "`uname`" in
-  CYGWIN*) cygwin=true;;
+case "$(uname)" in
   Darwin) darwin=true;;
-  MINGW*) jruby.exe "$@"; exit $?;;
 esac
 
 # ----- Determine how to call expr (jruby/jruby#5091) -------------------------
@@ -44,7 +41,7 @@ unset JRUBY_OPTS_TEMP
 function process_special_opts {
     case $1 in
         --ng) nailgun_client=true;;
-        *) break;;
+        *) return;;
     esac
 }
 for opt in ${JRUBY_OPTS[@]}; do
@@ -74,7 +71,7 @@ fi
 # process JAVA_OPTS
 unset JAVA_OPTS_TEMP
 JAVA_OPTS_TEMP=""
-for opt in ${JAVA_OPTS[@]}; do
+for opt in "${JAVA_OPTS[@]}"; do
   case $opt in
     -server)
       JAVA_VM="-server";;
@@ -85,11 +82,11 @@ for opt in ${JAVA_OPTS[@]}; do
     -Xss*)
       JAVA_STACK=$opt;;
     *)
-      JAVA_OPTS_TEMP="${JAVA_OPTS_TEMP} $opt";;
+      JAVA_OPTS_TEMP=("${JAVA_OPTS_TEMP}" "$opt");;
   esac
 done
 
-JAVA_OPTS=$JAVA_OPTS_TEMP
+JAVA_OPTS=("${JAVA_OPTS_TEMP[@]}" "--add-opens java.base/java.io=ALL-UNNAMED")
 
 
 # If you're seeing odd exceptions, you may have a bad JVM install.
@@ -104,18 +101,9 @@ CP_DELIMITER=":"
 
 JRUBY_CP="$(jem -d -p jruby)"
 
-if $cygwin; then
-    JRUBY_CP=`cygpath -p -w "$JRUBY_CP"`
-fi
-
 # ----- Set Up The System Classpath -------------------------------------------
 
 CP="${JRUBY_PARENT_CLASSPATH}"
-
-if $cygwin; then
-    # switch delimiter only after building Unix style classpaths
-    CP_DELIMITER=";"
-fi
 
 # ----- Execute The Requested Command -----------------------------------------
 JAVA_ENCODING=""
@@ -213,7 +201,7 @@ do
         JAVA_VM=-server ;;
      --dev)
         JAVA_VM=-client
-        JAVA_OPTS="$JAVA_OPTS -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Djruby.compile.mode=OFF -Djruby.compile.invokedynamic=false" ;;
+        JAVA_OPTS=("${JAVA_OPTS[@]}" "-XX:+TieredCompilation" "-XX:TieredStopAtLevel=1" "-Djruby.compile.mode=OFF" "-Djruby.compile.invokedynamic=false") ;;
      --noclient)         # JRUBY-4296
         unset JAVA_VM ;; # For IBM JVM, neither '-client' nor '-server' is applicable
      --sample)
@@ -262,30 +250,11 @@ ruby_args=("${ruby_args[@]}" "$@")
 # Put the ruby_args back into the position arguments $1, $2 etc
 set -- "${ruby_args[@]}"
 
-JAVA_OPTS="$JAVA_OPTS $JAVA_MEM $JAVA_MEM_MIN $JAVA_STACK"
-
-if $cygwin; then
-  JRUBY_HOME=`cygpath --mixed "$JRUBY_HOME"`
-  JRUBY_SHELL=`cygpath --mixed "$JRUBY_SHELL"`
-
-  if [[ ( "${1:0:1}" = "/" ) && ( ( -f "$1" ) || ( -d "$1" )) ]]; then
-    win_arg=`cygpath -w "$1"`
-    shift
-    win_args=("$win_arg" "$@")
-    set -- "${win_args[@]}"
-  fi
-
-  # fix JLine to use UnixTerminal
-  stty -icanon min 1 -echo > /dev/null 2>&1
-  if [ $? = 0 ]; then
-    JAVA_OPTS="$JAVA_OPTS -Djline.terminal=jline.UnixTerminal"
-  fi
-
-fi
+JAVA_OPTS=("${JAVA_OPTS[@]}" "$JAVA_MEM" "$JAVA_MEM_MIN" "$JAVA_STACK")
 
 if [ "$nailgun_client" != "" ]; then
-  if [ -f $JRUBY_HOME/tool/nailgun/ng ]; then
-    exec $JRUBY_HOME/tool/nailgun/ng org.jruby.util.NailMain $mode "$@"
+  if [ -f "$JRUBY_HOME"/tool/nailgun/ng ]; then
+    exec "$JRUBY_HOME"/tool/nailgun/ng org.jruby.util.NailMain $mode "$@"
   else
     echo "error: ng executable not found; run 'make' in ${JRUBY_HOME}/tool/nailgun"
     exit 1
@@ -297,11 +266,11 @@ if [[ "$NO_BOOTCLASSPATH" != "" || "$VERIFY_JRUBY" != "" ]]; then
   fi
 
   if [[ "${java_class:-}" == "${JAVA_CLASS_NGSERVER:-}" && -n "${JRUBY_OPTS:-}" ]]; then
-    echo "warning: starting a nailgun server; discarding JRUBY_OPTS: ${JRUBY_OPTS}"
-    JRUBY_OPTS=''
+    echo "warning: starting a nailgun server; discarding JRUBY_OPTS: ${JRUBY_OPTS[*]}"
+    JRUBY_OPTS=()
   fi
 
-  "$JAVACMD" $PROFILE_ARGS $JAVA_OPTS "${java_args[@]}" \
+  "$JAVACMD" $PROFILE_ARGS "${JAVA_OPTS[@]}" "${java_args[@]}" \
     -classpath "$JRUBY_CP$CP_DELIMITER$CP$CP_DELIMITER$CLASSPATH" \
     "-Djruby.home=/usr/bin" \
     "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
@@ -317,34 +286,15 @@ if [[ "$NO_BOOTCLASSPATH" != "" || "$VERIFY_JRUBY" != "" ]]; then
       rm profile.txt
   fi
 
-  if $cygwin; then
-    stty icanon echo > /dev/null 2>&1
-  fi
-
   exit $JRUBY_STATUS
 else
-  if $cygwin; then
-    # exec does not work correctly with cygwin bash
-    "$JAVACMD" $JAVA_OPTS "${java_args[@]}" -Xbootclasspath/a:"$JRUBY_CP" \
-      -classpath "$CP$CP_DELIMITER$CLASSPATH" \
-      "-Djruby.home=/usr/bin" \
-      "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
-      "-Djruby.shell=$JRUBY_SHELL" \
-      $java_class $mode "$@"
-
-    # Record the exit status immediately, or it will be overridden.
-    JRUBY_STATUS=$?
-
-    stty icanon echo > /dev/null 2>&1
-
-    exit $JRUBY_STATUS
-  else
-    exec "$JAVACMD" $JAVA_OPTS "$JFFI_OPTS" "${java_args[@]}" -Xbootclasspath/a:"$JRUBY_CP" -classpath "$CP$CP_DELIMITER$CLASSPATH" \
-      "-Djruby.home=$JRUBY_HOME" \
-      "-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
-      "-Djruby.shell=$JRUBY_SHELL" \
-      $java_class $mode "$@"
-  fi
+#    exec "$JAVACMD" "${JAVA_OPTS[@]}" "$JFFI_OPTS" "${java_args[@]}" -Xbootclasspath/a:"$JRUBY_CP" -classpath "$CP$CP_DELIMITER$CLASSPATH" \
+    exec "$JAVACMD" ${JAVA_OPTS[@]} ${java_args[@]} \
+	-Xbootclasspath/a:"$JRUBY_CP" \
+	"-Djruby.home=$JRUBY_HOME" \
+	"-Djruby.lib=$JRUBY_HOME/lib" -Djruby.script=jruby \
+	"-Djruby.shell=$JRUBY_SHELL" \
+	$java_class $mode "$@"
 fi
 fi
 
