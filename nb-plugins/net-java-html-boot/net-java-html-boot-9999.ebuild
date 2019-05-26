@@ -3,7 +3,7 @@
 
 EAPI="7"
 
-MY_PN="incubator-netbeans-html4j"
+MY_PN="netbeans-html4j"
 MY_PV="release-${PV}"
 MY_P="${MY_PN}-${MY_PV}"
 BASE_URI="https://github.com/apache/${MY_PN}"
