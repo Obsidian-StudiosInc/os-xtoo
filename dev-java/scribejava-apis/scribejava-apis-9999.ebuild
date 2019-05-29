@@ -16,9 +16,12 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
+JACKSON_SLOT="2"
 
 CP_DEPEND="
 	dev-java/commons-codec:0
+	dev-java/jackson-core:${JACKSON_SLOT}
+	dev-java/jackson-databind:${JACKSON_SLOT}
 	~dev-java/${MY_PN}-core-${PV}:${SLOT}
 "
 
