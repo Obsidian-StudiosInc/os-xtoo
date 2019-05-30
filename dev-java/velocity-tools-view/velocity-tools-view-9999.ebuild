@@ -20,13 +20,14 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-beanutils:0
 	dev-java/commons-collections:0
-	dev-java/commons-digester:2
-	dev-java/commons-lang:2
+	dev-java/commons-digester:3
+	dev-java/commons-lang:3
 	dev-java/commons-logging:0
 	dev-java/commons-validator:0
-	dev-java/dom4j:2
-	dev-java/velocity-engine-core:0
-	java-virtuals/servlet-api:2.5
+	dev-java/slf4j-api:0
+	dev-java/velocity-engine-core:2
+	dev-java/velocity-tools-generic:0
+	java-virtuals/servlet-api:4.0
 "
 
 inherit java-pkg
@@ -35,12 +36,4 @@ DESCRIPTION="Set of tools that ease Velocity integration ${PN:15}"
 HOMEPAGE="https://velocity.apache.org/tools/"
 LICENSE="Apache-2.0"
 
-S="${WORKDIR}/${MY_S}"
-
-JAVA_RM_FILES=( src/main/java/org/apache/velocity/tools/struts )
-
-java_prepare() {
-	sed -i -e "s|kids.addAll((List<Node>)|kids.addAll(|" \
-		src/main/java/org/apache/velocity/tools/generic/XmlTool.java \
-		|| die "Failed to sed/fix for dom4j:2"
-}
+S="${WORKDIR}/${MY_S}/${PN}"
