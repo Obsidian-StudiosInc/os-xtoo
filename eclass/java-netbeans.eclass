@@ -94,6 +94,18 @@ java-netbeans_pkg_setup() {
 		die
 	fi
 
+	if [[ "${CP_DEPEND}" == *schema2beans* ]] &&
+		[[ "${CP_DEPEND}" != *o-apache-tools-ant-module* ]]; then
+		eerror "Missing netbeans-o-apache-tools-ant-module from CP_DEPEND"
+		die
+	fi
+
+	if [[ "${CP_DEPEND}" == *schema2beans* ]] &&
+		[[ "${CP_DEPEND}" != *openide-modules* ]]; then
+		eerror "Missing netbeans-openide-modules from CP_DEPEND"
+		die
+	fi
+
 	java-pkg_pkg_setup
 }
 
@@ -349,6 +361,9 @@ java-netbeans_get-processors() {
 			;;&
 		*refactoring-api*)
 			procs+=",${nbm}.refactoring.spi.impl.ScopeAnnotationProcessor"
+			;;&
+		*schema2beans*)
+			procs+=",${nbm}.schema2beansdev.Schema2BeansProcessor"
 			;;&
 		*sendopts*)
 			procs+=",${nbm}.sendopts.OptionAnnotationProcessor"
