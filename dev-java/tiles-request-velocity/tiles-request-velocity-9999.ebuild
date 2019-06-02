@@ -16,13 +16,15 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
+VELOCITY_TOOLS_SLOT=0
 
 CP_DEPEND="
 	dev-java/tiles-autotag-core-runtime:0
 	~dev-java/tiles-request-api-${PV}:${SLOT}
 	~dev-java/tiles-request-servlet-${PV}:${SLOT}
 	dev-java/velocity-engine-core:0
-	dev-java/velocity-tools-view:0
+	dev-java/velocity-tools-generic:${VELOCITY_TOOLS_SLOT}
+	dev-java/velocity-tools-view:${VELOCITY_TOOLS_SLOT}
 	java-virtuals/servlet-api:4.0
 "
 
