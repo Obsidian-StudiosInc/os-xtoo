@@ -108,7 +108,7 @@ src_install() {
 			"${dest}/lib/${jar}.jar"
 	done
 
-	dosym "../../eclipse-ecj-${ECJ_SLOT}/lib/eclipse-ecj.jar" \
+	dosym "../../eclipse-ecj-${ECLIPSE_SLOT}/lib/eclipse-ecj.jar" \
 		"${dest}/lib/eclipse-ecj.jar"
 
 	for jar in el-api jsp-api servlet-api; do
