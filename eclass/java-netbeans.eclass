@@ -116,7 +116,7 @@ java-netbeans_src_unpack() {
 	if [[ ${PV} == *9999* ]]; then
 		git-r3_src_unpack
 		default
-	elif [[ "${category}" == "nb-ide" ]]; then
+	elif [[ "${CATEGORY}" == "nb-ide" ]]; then
 		local tgz
 		tgz="${MY_P}.tar.gz"
 		echo ">>> Unpacking ${tgz} to ${PWD}"
