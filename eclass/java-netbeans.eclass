@@ -26,8 +26,7 @@ _JAVA_NETBEANS_ECLASS=1
 
 if [[ "${CATEGORY}" == nb-ide ]]; then
 	MY_MOD="${PN#*-}"
-	MY_MOD="${MY_MOD//-/.}"
-	[[ ${PV} != 9.0 ]] && MY_MOD="${NB_CLUSTER}/${MY_MOD}"
+	MY_MOD="${NB_CLUSTER}/${MY_MOD//-/.}"
 fi
 
 : "${BASE_URI:=https://github.com/apache/${MY_PN}}"
