@@ -413,7 +413,8 @@ java-netbeans_src_compile() {
 		JAVAC_ARGS+=" -processor ${procs} "
 
 		# for resources
-		JAVA_CLASSPATH_EXTRA="${res_src}"
+		JAVA_CLASSPATH_EXTRA+=":${res_src}"
+		JAVA_CLASSPATH_EXTRA="${JAVA_CLASSPATH_EXTRA#:}"
 
 		# skip jar creation
 		JAVA_NO_JAR=0
