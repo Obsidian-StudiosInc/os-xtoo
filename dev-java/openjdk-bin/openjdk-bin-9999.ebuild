@@ -18,12 +18,10 @@ if [[ ${PV} == *_pre* ]]; then
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
 	MY_PV="${PV%%_*}"
-elif [[ ${PV} == 10.0.2 ]]; then
-	BASE_URI+="GA/jdk${SLOT}/${PV}/19aef61b38124481863b1413dce1855f/13"
-	MY_PV="${PV}"
-elif [[ ${PV} == 11.0.2 ]]; then
-	BASE_URI+="GA/jdk${SLOT}/9/GPL"
-	MY_PV="${PV}"
+elif [[ ${PV} == 11* ]]; then
+	MY_PV="${PV/p/}"
+	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+/}"
+	MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
 elif [[ ${PV} == 12.0.1 ]]; then
 	BASE_URI+="GA/jdk${PV}/69cfe15208a647278a19ef0990eea691/${SLOT}/GPL"
 	MY_PV="${PV}"
@@ -31,8 +29,11 @@ else
 	BASE_URI+="GA/jdk${SLOT}/GPL"
 	MY_PV="${PV}"
 fi
+
+: "${MY_TZ:=openjdk-${MY_PV}_linux-x64_bin}"
+
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/openjdk-${MY_PV}_linux-x64_bin.tar.gz"
+	SRC_URI="${BASE_URI}/${MY_TZ}.tar.gz"
 	KEYWORDS="-* ~amd64"
 else
 	KEYWORDS="-amd64"
