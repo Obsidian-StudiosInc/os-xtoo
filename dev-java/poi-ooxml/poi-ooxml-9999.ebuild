@@ -19,7 +19,7 @@ if [[ ${PV} != 9999 ]]; then
 fi
 
 SLOT="0"
-BC_SLOT="1.61"
+BC_SLOT="0"
 
 CP_DEPEND="
 	dev-java/bcpkix:${BC_SLOT}
