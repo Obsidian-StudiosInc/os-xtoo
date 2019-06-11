@@ -29,7 +29,4 @@ S="${WORKDIR}/${MY_S}/${PN%-*}/${PN##*-}"
 java_prepare() {
 	# causes ant to not be found under java 9, need export/module?
 	rm src/main/java/module-info.java || die "Failed to remove module-info"
-	mv src{14,/main/java}/com/sun/istack/tools/ProtectedTask.java \
-		|| die "Failed to move file"
-	rm -r src/main/resources || die "Failed to remove empty res dir"
 }
