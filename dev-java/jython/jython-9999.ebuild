@@ -25,7 +25,7 @@ CP_DEPEND="
 	dev-java/antlr:${ANTLR_SLOT}
 	dev-java/asm:7
 	dev-java/commons-compress:0
-	dev-java/guava:27
+	dev-java/guava:28
 	dev-java/jffi:0
 	dev-java/jline:2
 	dev-java/jnr-constants:0
