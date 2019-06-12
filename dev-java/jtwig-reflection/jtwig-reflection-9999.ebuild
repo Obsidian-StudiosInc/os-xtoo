@@ -21,7 +21,7 @@ PARBOILED_SLOT="0"
 
 CP_DEPEND="
 	dev-java/commons-lang:3
-	dev-java/guava:27
+	dev-java/guava:28
 "
 
 inherit java-pkg
