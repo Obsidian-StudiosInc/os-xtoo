@@ -8,12 +8,11 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/commons-lang:2
+	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
-	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
-	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
@@ -30,9 +29,4 @@ java_prepare() {
 		-e "s|GradleInstallation(dir|GradleInstallation(new File(\"${EROOT}/usr/share/gradle\")|" \
 		src/main/java/org/gradle/internal/installation/CurrentGradleInstallationLocator.java \
 		|| die "Failed to sed/hard code gradle installation path"
-
-	sed -i -e "19iimport com.google.common.base.MoreObjects;" \
-		-e "s|Objects.to|MoreObjects.to|g" \
-		src/main/java/org/gradle/api/tasks/util/internal/CachingPatternSpecFactory.java \
-		|| die "Failed to sed/fix guava class change"
 }
