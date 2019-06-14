@@ -15,9 +15,12 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
+	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-execution-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-jvm-services-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
@@ -27,6 +30,7 @@ CP_DEPEND="
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/groovy-ant:0
 	dev-java/groovy-json:0
@@ -49,35 +53,11 @@ java_prepare() {
 		src/main/java/org/gradle/api/internal/classpath/DefaultModuleRegistry.java \
 		|| die "Failed to modify jar regex"
 
-	sed -i -e "s|Iterators.singletonIterator|(Iterator<TaskStateChange>)Collections.singleton|g" \
-		src/main/java/org/gradle/api/internal/changedetection/rules/PreviousSuccessTaskStateChanges.java \
-		|| die "Failed to sed/fix guava api changes"
+	sed -i -e "s|org.apache.groovy|groovy|g" \
+		src/main/java/org/gradle/initialization/DefaultGradleApiSpecProvider.java \
+		|| die "Failed to sed/change groovy package"
 
-	files=(
-		api/internal/CompositeDomainObjectSet
-		api/internal/DefaultDomainObjectCollection
-		api/internal/changedetection/rules/PreviousSuccessTaskStateChanges
-		api/internal/file/CompositeFileCollection
-		api/internal/tasks/CompositeTaskOutputPropertySpec
-		plugin/management/internal/DefaultPluginRequests
-	)
-	for f in ${files[@]}; do
-		sed -i -e "s|com.google.common.collect.Iterators|java.util.Collections|" \
-			-e "s|Iterators.empty|Collections.empty|g" \
-			src/main/java/org/gradle/${f}.java \
-			|| die "Failed to sed/fix guava api changes"
-	done
-
-	# add back import removed, switch to collections?
-	sed -i -e "/java.util.Collection;/a import com.google.common.collect.Iterators;" \
-		src/main/java/org/gradle/api/internal/CompositeDomainObjectSet.java \
-		|| die "Failed to sed/fix guava api changes"
-
-	sed -i -e 'N;s|});\n.*return|},com.google.common.util.concurrent.MoreExecutors.directExecutor());\n            return|;P;D' \
-		src/main/java/org/gradle/internal/filewatch/jdk7/WatchServiceFileWatcherBacking.java \
-		|| die "Failed to sed/fix guava api changes"
-
-	sed -i -e "s|JAVA_ISO_CONTROL|javaIsoControl()|" \
-		src/main/java/org/gradle/api/internal/tasks/userinput/DefaultUserInputHandler.java \
-		|| die "Failed to sed/fix guava api changes"
+	sed -i -e "s|RemappingClassAdapter|ClassRemapper|" \
+		src/main/java/org/gradle/process/internal/worker/child/WorkerProcessClassPathProvider.java \
+		|| die "Failed to sed/update asm api changes"
 }
