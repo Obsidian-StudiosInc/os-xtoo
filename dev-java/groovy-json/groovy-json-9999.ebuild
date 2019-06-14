@@ -28,3 +28,8 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/subprojects/${PN}"
+
+java_prepare() {
+	cp "${FILESDIR}/"*java "${S}/src/main/java/groovy/json/" \
+		|| die "Failed to copy files from 2.5.x groovy-json"
+}
