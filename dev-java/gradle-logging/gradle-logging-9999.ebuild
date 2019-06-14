@@ -25,10 +25,3 @@ CP_DEPEND="
 "
 
 inherit gradle
-
-java_prepare() {
-	sed -i -e "19iimport com.google.common.base.MoreObjects;" \
-		-e "s|Objects.to|MoreObjects.to|" \
-		src/main/java/org/gradle/internal/logging/console/Cursor.java \
-		|| die "Failed to sed/fix guava class change"
-}
