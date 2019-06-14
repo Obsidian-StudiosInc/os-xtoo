@@ -8,8 +8,10 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-io:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
-	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
+	~dev-java/gradle-messaging-${PV}:${SLOT}
+	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	dev-java/guava:27
 	dev-java/javax-inject:0
