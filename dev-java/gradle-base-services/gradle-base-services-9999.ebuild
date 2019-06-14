@@ -6,6 +6,7 @@ EAPI="7"
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/asm:7
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
 	dev-java/guava:28
