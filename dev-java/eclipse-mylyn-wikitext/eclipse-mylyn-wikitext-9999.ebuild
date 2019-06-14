@@ -31,3 +31,12 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/wikitext/core/${MY_MOD}/"
+
+java_prepare() {
+	local f
+
+	for f in $(grep -l -m1 StringUtil -r src ); do
+	 sed -i -e "s|helper.StringUtil|internal.StringUtil|g" "${f}" \
+		|| die "Failed to sed/fix jsoup class package change"
+	done
+}
