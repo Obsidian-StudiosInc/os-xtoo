@@ -19,9 +19,3 @@ CP_DEPEND="
 "
 
 inherit gradle
-
-java_prepare() {
-	sed -i -e "s|Objects|MoreObjects|g" \
-		src/main/java/org/gradle/tooling/internal/gradle/DefaultGradlePublication.java \
-		|| die "Failed to sed/fix guava class change"
-}
