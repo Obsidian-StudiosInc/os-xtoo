@@ -17,9 +17,12 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-platform-base-${PV}:${SLOT}
+	~dev-java/gradle-platform-native-${PV}:${SLOT}
 	~dev-java/gradle-plugins-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-wrapper-${PV}:${SLOT}
