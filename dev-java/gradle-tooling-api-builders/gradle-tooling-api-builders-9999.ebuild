@@ -6,10 +6,12 @@ EAPI="7"
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/commons-io:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-dependency-management-${PV}:${SLOT}
 	~dev-java/gradle-launcher-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
@@ -19,6 +21,7 @@ CP_DEPEND="
 	~dev-java/gradle-testing-base-${PV}:${SLOT}
 	~dev-java/gradle-testing-jvm-${PV}:${SLOT}
 	~dev-java/gradle-tooling-api-${PV}:${SLOT}
+	~dev-java/gradle-workers-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:27
 	dev-java/jsr305:0
