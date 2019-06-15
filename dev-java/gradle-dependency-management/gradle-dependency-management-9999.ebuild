@@ -19,6 +19,8 @@ CP_DEPEND="
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-execution-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
@@ -26,8 +28,11 @@ CP_DEPEND="
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-resources-http-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:27
+	dev-java/httpcomponents-core:4.4
+	dev-java/httpcomponents-client:4.5
 	dev-java/javax-inject:0
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
