@@ -42,10 +42,13 @@ LIB_DEPEND="
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
+	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-execution-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-installation-beacon-${PV}:${SLOT}
 	~dev-java/gradle-jvm-services-${PV}:${SLOT}
 	~dev-java/gradle-launcher-${PV}:${SLOT}
@@ -57,6 +60,7 @@ LIB_DEPEND="
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	~dev-java/gradle-tooling-api-${PV}:${SLOT}
 	~dev-java/gradle-wrapper-${PV}:${SLOT}
 	dev-java/groovy:${GROOVY_SLOT}
