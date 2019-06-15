@@ -13,6 +13,7 @@ CP_DEPEND="
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-diagnostics-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
