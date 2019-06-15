@@ -11,7 +11,9 @@ CP_DEPEND="
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
+	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
+	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	dev-java/guava:27
 	dev-java/javax-inject:0
@@ -21,9 +23,3 @@ CP_DEPEND="
 "
 
 inherit gradle
-
-java_prepare() {
-	sed -i -e "s|Objects|MoreObjects|g" \
-		src/main/java/org/gradle/workers/internal/DaemonForkOptions.java \
-		|| die "Failed to sed/fix guava class change"
-}
