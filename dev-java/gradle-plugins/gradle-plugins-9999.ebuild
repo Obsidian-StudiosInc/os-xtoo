@@ -16,6 +16,7 @@ CP_DEPEND="
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-dependency-management-${PV}:${SLOT}
 	~dev-java/gradle-diagnostics-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-language-groovy-${PV}:${SLOT}
 	~dev-java/gradle-language-java-${PV}:${SLOT}
 	~dev-java/gradle-language-jvm-${PV}:${SLOT}
@@ -27,6 +28,7 @@ CP_DEPEND="
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-reporting-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	~dev-java/gradle-testing-base-${PV}:${SLOT}
 	~dev-java/gradle-testing-jvm-${PV}:${SLOT}
 	dev-java/groovy:${GROOVY_SLOT}
