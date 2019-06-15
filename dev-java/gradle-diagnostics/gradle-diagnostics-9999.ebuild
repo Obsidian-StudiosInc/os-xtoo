@@ -14,10 +14,12 @@ CP_DEPEND="
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-dependency-management-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-platform-base-${PV}:${SLOT}
 	~dev-java/gradle-reporting-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:${GROOVY_SLOT}
 	dev-java/groovy-json:${GROOVY_SLOT}
 	dev-java/guava:27
