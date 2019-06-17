@@ -9,7 +9,7 @@ CP_DEPEND="
 	dev-java/commons-io:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
-	dev-java/guava:27
+	dev-java/guava:28
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
 "
