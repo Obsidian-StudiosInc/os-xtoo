@@ -18,7 +18,7 @@ CP_DEPEND="
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/groovy-ant:0
-	dev-java/guava:27
+	dev-java/guava:28
 	dev-java/slf4j-api:0
 "
 
