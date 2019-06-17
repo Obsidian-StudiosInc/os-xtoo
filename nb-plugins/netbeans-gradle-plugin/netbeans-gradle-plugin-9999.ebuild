@@ -55,6 +55,7 @@ CP_DEPEND="
 	nb-ide/netbeans-gsf-testrunner-ui:${NB_SLOT}
 	nb-ide/netbeans-java-api-common:${NB_SLOT}
 	nb-ide/netbeans-java-platform:${NB_SLOT}
+	nb-ide/netbeans-java-preprocessorbridge:${NB_SLOT}
 	nb-ide/netbeans-java-project:${NB_SLOT}
 	nb-ide/netbeans-java-project-ui:${NB_SLOT}
 	nb-ide/netbeans-java-source-base:${NB_SLOT}
