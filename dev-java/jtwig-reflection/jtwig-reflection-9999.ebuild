@@ -18,7 +18,6 @@ fi
 SLOT="0"
 PARBOILED_SLOT="0"
 
-
 CP_DEPEND="
 	dev-java/commons-lang:3
 	dev-java/guava:28
