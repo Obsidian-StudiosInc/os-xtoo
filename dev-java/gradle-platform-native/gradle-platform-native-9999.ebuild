@@ -22,7 +22,7 @@ CP_DEPEND="
 	~dev-java/gradle-workers-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/gson:0
-	dev-java/guava:27
+	dev-java/guava:28
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	dev-java/native-platform:0
