@@ -15,7 +15,7 @@
 # This eclass is intended to build pure Java packages from Java sources
 # without the use of any build instructions or system shipped with the sources.
 
-inherit java-utils-2
+inherit estack java-utils-2
 
 EXPORT_FUNCTIONS src_compile src_install
 
@@ -151,7 +151,7 @@ java-pkg-simple_res_in_src() {
 				|| die "Failed to copy ${f} to resources"
 		done
 	done
-
+	eshopts_pop
 }
 
 # @FUNCTION: java-pkg-simple_create-jar
