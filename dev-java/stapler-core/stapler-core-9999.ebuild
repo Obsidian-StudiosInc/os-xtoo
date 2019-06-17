@@ -36,7 +36,7 @@ CP_DEPEND="
 	dev-java/metainf-services:0
 	dev-java/tiger-types:0
 	dev-java/txw2:0
-	java-virtuals/servlet-api:3.0
+	java-virtuals/servlet-api:4.0
 "
 
 inherit java-pkg
