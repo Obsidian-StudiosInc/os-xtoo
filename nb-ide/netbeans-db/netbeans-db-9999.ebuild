@@ -46,6 +46,6 @@ src_compile() {
 }
 
 src_install() {
-        java-pkg-simple_src_install
-        java-pkg_dojar "${S}/"*.jar
+	java-pkg-simple_src_install
+	java-pkg_dojar "${S}/"*.jar
 }
