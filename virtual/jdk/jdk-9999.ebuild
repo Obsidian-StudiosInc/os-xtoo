@@ -12,7 +12,7 @@ fi
 SLOT="${PV%%.*}"
 
 RDEPEND="dev-java/openjdk-bin:${SLOT}"
-if [[ ${SLOT} == 11 ]]; then
+if [[ ${SLOT} == 11 ]] || [[ ${SLOT} == 12 ]]; then
 	RDEPEND="|| (
 		dev-java/oracle-jdk-bin:${SLOT}
 		${RDEPEND}
