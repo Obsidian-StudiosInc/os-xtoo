@@ -58,6 +58,7 @@ CP_DEPEND="
 	~dev-java/eclipse-help-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-jface-databinding-${PV}:${SLOT}
+	~dev-java/eclipse-jface-text-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
 	dev-java/javax-annotation:0
