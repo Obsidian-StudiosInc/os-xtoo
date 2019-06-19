@@ -26,6 +26,7 @@ CP_DEPEND="
 	~dev-java/eclipse-compare-core-${PV}:${SLOT}
 	~dev-java/eclipse-core-commands-${PV}:${SLOT}
 	~dev-java/eclipse-core-contenttype-${PV}:${SLOT}
+	~dev-java/eclipse-core-expressions-${PV}:${SLOT}
 	~dev-java/eclipse-core-jobs-${PV}:${SLOT}
 	~dev-java/eclipse-core-resources-${PV}:${SLOT}
 	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
