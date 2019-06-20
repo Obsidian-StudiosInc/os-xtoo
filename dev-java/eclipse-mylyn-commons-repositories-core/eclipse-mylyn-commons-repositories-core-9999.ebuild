@@ -19,7 +19,7 @@ fi
 
 SLOT="${PV%%.*}"
 
-ECLIPSE_SLOT="4.11"
+ECLIPSE_SLOT="4.12"
 
 CP_DEPEND="
 	dev-java/eclipse-core-runtime:${ECLIPSE_SLOT}
