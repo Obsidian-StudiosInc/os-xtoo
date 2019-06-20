@@ -18,7 +18,7 @@ fi
 
 SLOT="${PV%%.*}"
 
-ECLIPSE_SLOT="4.11"
+ECLIPSE_SLOT="4.12"
 
 CP_DEPEND="
 	dev-java/eclipse-core-runtime:${ECLIPSE_SLOT}
@@ -34,4 +34,11 @@ LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/plugins/org.${PN//-/.}/"
 
-JAVA_SRC_DIR="src"
+java_prepare() {
+	# requires eclipse < 4.12
+	if [[ ${PV} == 2.17.0 ]]; then
+		sed -i -e '235,245d' \
+			src/org/eclipse/emf/common/EMFPlugin.java \
+			|| die "Failed to remove deprecated method"
+	fi
+}
