@@ -14,8 +14,12 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
+	dev-java/asm:7
+	dev-java/auto-common:0
+	dev-java/auto-value:0
 	dev-java/checker-compatqual:0
 	dev-java/error-prone-annotations:0
+	dev-java/escapevelocity:0
 	dev-java/guava:28
 	dev-java/hamcrest:0
 	dev-java/java-diff-utils:0
