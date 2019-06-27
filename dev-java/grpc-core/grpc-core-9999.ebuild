@@ -22,6 +22,7 @@ CP_DEPEND="
 	dev-java/animal-sniffer-annotations:0
 	dev-java/error-prone-annotations:0
 	dev-java/failureaccess:${GUAVA_SLOT}
+	~dev-java/grpc-api-${PV}:${SLOT}
 	~dev-java/grpc-context-${PV}:${SLOT}
 	dev-java/gson:0
 	dev-java/guava:${GUAVA_SLOT}
