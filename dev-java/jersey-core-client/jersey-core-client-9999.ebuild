@@ -47,7 +47,7 @@ java_prepare() {
 		src/main/java/org/glassfish/jersey/client/JerseyInvocation.java \
 		|| die "Could not remove @Override"
 
-	sed -i -e '125d;131d;137d;147d' \
+	sed -i -e '123d;129d;135d;145d' \
 		src/main/java/org/glassfish/jersey/client/JerseyClientBuilder.java \
 		|| die "Could not remove @Override"
 }
