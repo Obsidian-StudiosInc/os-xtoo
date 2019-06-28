@@ -30,7 +30,7 @@ inherit java-pkg
 
 DESCRIPTION="Jersey RESTful Web Services in Java Core Servlet"
 HOMEPAGE="https://${MY_PN}.java.net/"
-LICENSE="CDDL GPL-2-with-linking-exception"
+LICENSE="EPL-2.0"
 
 DEPEND+=" dev-java/istack-commons-buildtools:0"
 
