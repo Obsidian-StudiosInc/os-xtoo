@@ -33,7 +33,7 @@ inherit java-pkg
 
 DESCRIPTION="Jersey RESTful Web Services in Java Connector Jetty"
 HOMEPAGE="https://jersey.github.io/"
-LICENSE="CDDL GPL-2-with-linking-exception"
+LICENSE="EPL-2.0"
 
 DEPEND+=" dev-java/istack-commons-buildtools:0"
 
