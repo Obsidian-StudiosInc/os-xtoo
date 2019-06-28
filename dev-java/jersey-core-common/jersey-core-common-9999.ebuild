@@ -32,13 +32,13 @@ inherit java-pkg
 
 DESCRIPTION="Jersey RESTful Web Services in Java Core Common"
 HOMEPAGE="https://jersey.github.io/"
-LICENSE="CDDL GPL-2-with-linking-exception"
+LICENSE="EPL-2.0"
 
 DEPEND+=" dev-java/istack-commons-buildtools:0"
 
 S="${WORKDIR}/${MY_S}/${PN#*-*}"
 
-JAVAC_ARGS+="--add-exports java.base/jdk.internal.vm.annotation=ALL-UNNAMED "
+JAVA_SRC_DIR="src/main/java src/main/java11 src/main/jsr166"
 JAVAC_ARGS+="--add-exports jdk.unsupported/sun.misc=ALL-UNNAMED "
 
 java_prepare() {
@@ -56,9 +56,4 @@ java_prepare() {
 	sed -i -e '385d' \
 		"src/main/java/org/glassfish/jersey/message/internal/OutboundJaxrsResponse.java" \
 		|| die "Could not remove @Override"
-
-	#java 9
-	sed -i -e "s|sun.misc.C|jdk.internal.vm.annotation.C|g" \
-		src/main/java/org/glassfish/jersey/internal/jsr166/SubmissionPublisher.java \
-		|| die "Failed to sed @Contended for Java 9"
 }
