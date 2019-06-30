@@ -18,6 +18,7 @@ CP_DEPEND="
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	dev-java/guava:28
 	dev-java/javax-inject:0
+	dev-java/jsch:0
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
 "
