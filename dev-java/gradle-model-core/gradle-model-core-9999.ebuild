@@ -15,6 +15,7 @@ CP_DEPEND="
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:28
+	dev-java/intellij-platform-annotations:0
 	dev-java/javax-inject:0
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
