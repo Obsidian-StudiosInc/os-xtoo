@@ -29,6 +29,7 @@ CP_DEPEND="
 	dev-java/jsr305:0
 	dev-java/opencensus-api:${OPENCENSUS_SLOT}
 	dev-java/opencensus-contrib-grpc-metrics:${OPENCENSUS_SLOT}
+	dev-java/perfmark-api:0
 "
 
 inherit java-pkg
