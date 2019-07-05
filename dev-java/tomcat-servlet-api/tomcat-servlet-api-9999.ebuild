@@ -8,12 +8,12 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="${PN%%-*}"
 BASE_URI="https://github.com/apache/${MY_PN}"
 
-if [[ ${PV} == 9.* ]]; then
+if [[ ${PV%%.*} -gt 6 ]] && [[ ${PV} != 9999 ]]; then
 	MY_PV="${PV}"
 	MY_P="${MY_PN}-${MY_PV}"
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
 	MY_S="${MY_P}"
-elif [[ ${PV} != *9999* ]]; then
+elif [[ ${PV} == 6.* ]]; then
 	MY_PV="${PV//./_}"
 	MY_PV="${PV/_beta/}"
 	MY_P="apache-${MY_PN}-${MY_PV}-src"
