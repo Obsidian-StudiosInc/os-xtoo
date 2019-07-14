@@ -7,6 +7,9 @@ JAVA_PKG_IUSE="doc source"
 JAVA_NO_COMMONS=1
 
 MY_PN="${PN#*-}"
+if [[ ${PV} == 4.4* ]]; then
+	MY_PN="${PN%-*}-${PN}"
+fi
 MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV^^}"
 
