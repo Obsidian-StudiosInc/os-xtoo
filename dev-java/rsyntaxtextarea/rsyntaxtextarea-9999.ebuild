@@ -22,12 +22,4 @@ HOMEPAGE="https://bobbylight.github.io/RSyntaxTextArea/"
 LICENSE="robert-futrell"
 SLOT="0"
 
-S="${WORKDIR}/${MY_S}"
-
-java_prepare() {
-	# Remove deprecated and removed
-	# System.getSecurityManager.checkSystemClipboardAccess()
-	sed -i -e "641,649d" \
-		src/main/java/org/fife/ui/rsyntaxtextarea/RSyntaxTextArea.java \
-		|| die "Failed to sex/fix changes in Java 11"
-}
+S="${WORKDIR}/${MY_S}/${MY_PN}"
