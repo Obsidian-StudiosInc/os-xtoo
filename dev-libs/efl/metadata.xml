@@ -7,8 +7,9 @@
 	</maintainer>
 	<longdescription>It includes Evas, Eina, Edje, Eet, Ecore, Efreet, Eldbus, Embryo, Eeze, Emotion, Ethumb, Ephysics, EIO, Evas, Emotion, Elementary. See http://www.enlightenment.org/about-efl</longdescription>
 	<use>
-		<flag name="cxx-bindings">Build support for C++ bindings</flag>
+		<flag name="avahi">Enable avahi support</flag>
 		<flag name="bmp">Enable WBMP image loader</flag>
+		<flag name="cxx-bindings">Build support for C++ bindings</flag>
 		<flag name="drm">Enable DRM engine</flag>
 		<flag name="egl">Enable EGL rendering</flag>
 		<flag name="elogind">Use sys-auth/elogind for session tracking</flag>
