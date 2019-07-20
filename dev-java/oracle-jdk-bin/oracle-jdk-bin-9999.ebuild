@@ -11,14 +11,15 @@ SLOT="${PV%%.*}"
 RESTRICT="preserve-libs strip fetch"
 
 JDK_URI="https://www.oracle.com/technetwork/java/javase/downloads/jdk${SLOT}-downloads-"
-BASE_URI="http://download.oracle.com/otn-pub/java/jdk/${PV}+12/"
+BASE_URI="http://download.oracle.com/otn-pub/java/jdk/${PV}+10/"
 
-if [[ ${PV} == 12.0.1 ]]; then
+if [[ ${PV} == 12* ]]; then
 	JDK_URI+="5295953.html"
-	BASE_URI+="69cfe15208a647278a19ef0990eea691"
+	BASE_URI+="e482c34c86bd4bf8b56c0b35558996b9"
 else
 	JDK_URI+="5066655.html"
-	BASE_URI+="37f5e150db5247ab9333b11c1dddcd30"
+	BASE_URI="${BASE_URI/otn-/}"
+	BASE_URI+="cf1bbcbf431a474eb9fc550051f4ee78"
 fi
 
 if [[ ${PV} != *9999* ]]; then
