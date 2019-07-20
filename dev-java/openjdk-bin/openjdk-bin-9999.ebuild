@@ -20,7 +20,7 @@ elif [[ ${PV} == *_rc* ]]; then
 	MY_PV="${PV%%_*}"
 elif [[ ${PV} == 11* ]]; then
 	MY_PV="${PV/p/}"
-	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+/}"
+	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+}"
 	MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
 elif [[ ${PV} == 12.0.2 ]]; then
 	BASE_URI+="GA/jdk${PV}/e482c34c86bd4bf8b56c0b35558996b9/10/GPL"
