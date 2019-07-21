@@ -69,6 +69,7 @@ LIB_DEPEND="
 	dev-java/groovy-templates:${GROOVY_SLOT}
 	dev-java/groovy-xml:${GROOVY_SLOT}
 	dev-java/guava:28
+	dev-java/intellij-platform-annotations:0
 	dev-java/jansi:0
 	dev-java/jansi-native:0
 	dev-java/javax-inject:0
