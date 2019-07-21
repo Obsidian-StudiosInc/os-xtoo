@@ -99,6 +99,7 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-diagnostics-${PV}:${SLOT}
 	~dev-java/gradle-ear-${PV}:${SLOT}
 	~dev-java/gradle-ivy-${PV}:${SLOT}
+	~dev-java/gradle-jacoco-${PV}:${SLOT}
 	~dev-java/gradle-javascript-${PV}:${SLOT}
 	~dev-java/gradle-language-groovy-${PV}:${SLOT}
 	~dev-java/gradle-language-java-${PV}:${SLOT}
