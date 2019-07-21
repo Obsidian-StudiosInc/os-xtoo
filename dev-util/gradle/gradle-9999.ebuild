@@ -112,6 +112,7 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-publish-${PV}:${SLOT}
 	~dev-java/gradle-reporting-${PV}:${SLOT}
 	~dev-java/gradle-resources-http-${PV}:${SLOT}
+	~dev-java/gradle-resources-sftp-${PV}:${SLOT}
 	~dev-java/gradle-testing-base-${PV}:${SLOT}
 	~dev-java/gradle-testing-jvm-${PV}:${SLOT}
 	~dev-java/gradle-test-kit-${PV}:${SLOT}
