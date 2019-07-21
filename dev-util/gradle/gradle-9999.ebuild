@@ -99,6 +99,7 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-diagnostics-${PV}:${SLOT}
 	~dev-java/gradle-ear-${PV}:${SLOT}
 	~dev-java/gradle-ivy-${PV}:${SLOT}
+	~dev-java/gradle-javascript-${PV}:${SLOT}
 	~dev-java/gradle-language-groovy-${PV}:${SLOT}
 	~dev-java/gradle-language-java-${PV}:${SLOT}
 	~dev-java/gradle-language-jvm-${PV}:${SLOT}
@@ -140,6 +141,7 @@ PLUGINS_DEPEND="
 	dev-java/plexus-interpolation:0
 	dev-java/plexus-sec-dispatcher:0
 	dev-java/plexus-utils:0
+	dev-java/simple:0
 	dev-java/testng:0
 "
 
