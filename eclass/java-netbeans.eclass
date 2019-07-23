@@ -20,7 +20,7 @@
 if [[ -z ${_JAVA_NETBEANS_ECLASS} ]]; then
 _JAVA_NETBEANS_ECLASS=1
 
-: "${MY_PN:=incubator-${PN%%-*}}"
+: "${MY_PN:=${PN%%-*}}"
 : "${MY_PV:=${PV//_/-}}"
 : "${MY_P:=${MY_PN}-${MY_PV}}"
 
