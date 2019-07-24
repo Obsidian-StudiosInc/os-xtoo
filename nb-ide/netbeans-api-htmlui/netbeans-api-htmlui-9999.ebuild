@@ -7,6 +7,8 @@ NB_CLUSTER="platform"
 
 inherit java-netbeans
 
+COMMON_DEPEND="dev-java/openjfx-bin:11"
+
 CP_DEPEND="
 	dev-java/javax-annotation:0
 	nb-plugins/net-java-html:0
@@ -24,10 +26,23 @@ CP_DEPEND="
 	~nb-ide/netbeans-openide-windows-${PV}:${SLOT}
 "
 
-DEPEND="${CP_DEPEND}
+DEPEND="${COMMON_DEPEND}
+	${CP_DEPEND}
 	>=virtual/jdk-9"
 
-RDEPEND="${CP_DEPEND}
+RDEPEND="${COMMON_DEPEND}
+	${CP_DEPEND}
 	>=virtual/jre-9"
 
-JAVA_RELEASE="10"
+src_compile() {
+	local openjfx
+
+	# not ideal but works, makes version moot
+	openjfx=$( echo /opt/openjfx-bin-11*/lib/ )
+	JAVAC_ARGS+=" --module-path=${openjfx}"
+	JAVAC_ARGS+=" --add-modules=javafx.graphics "
+	JAVAC_ARGS+=" --add-modules=javafx.swing "
+	JAVAC_ARGS+=" --add-modules=javafx.web "
+
+	java-pkg-simple_src_compile
+}
