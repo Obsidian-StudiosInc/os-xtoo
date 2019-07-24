@@ -42,6 +42,7 @@ CP_DEPEND="
 	~nb-ide/netbeans-options-editor-${PV}:${SLOT}
 	~nb-ide/netbeans-parsing-api-${PV}:${SLOT}
 	~nb-ide/netbeans-parsing-indexing-${PV}:${SLOT}
+	~nb-ide/netbeans-projectapi-${PV}:${SLOT}
 	~nb-ide/netbeans-queries-${PV}:${SLOT}
 	~nb-ide/netbeans-refactoring-api-${PV}:${SLOT}
 	~nb-ide/netbeans-settings-${PV}:${SLOT}
