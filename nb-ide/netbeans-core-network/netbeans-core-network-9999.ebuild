@@ -10,6 +10,7 @@ inherit java-netbeans
 CP_DEPEND="
 	dev-java/jna:5
 	~nb-ide/netbeans-api-annotations-common-${PV}:${SLOT}
+	~nb-ide/netbeans-api-scripting-${PV}:${SLOT}
 	~nb-ide/netbeans-o-n-core-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-util-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-util-ui-${PV}:${SLOT}
