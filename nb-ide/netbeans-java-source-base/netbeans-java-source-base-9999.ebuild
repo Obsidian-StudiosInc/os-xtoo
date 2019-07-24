@@ -74,4 +74,40 @@ java_prepare() {
 	sed -i -e "/\.\*;/d" \
 		src/org/netbeans/modules/java/source/JavadocHelper.java \
 		|| die "Failed to sed/remove import not needed"
+
+	if [[ $(java-pkg_get-vm-version) -ge 14 ]]; then
+		sed -i -e "s|bound.bound|bound.getUpperBound()|" \
+			src/org/netbeans/api/java/source/SourceUtils.java \
+			|| die "Failed to sed/fix for java 14"
+
+		sed -i -e "s|bound = |setUpperBound(|" \
+			-e "s|bound).delegate;|bound).delegate);|" \
+			-e "s|\.bound|\.getUpperBound()|g" \
+			src/org/netbeans/api/java/source/TypeMirrorHandle.java \
+			|| die "Failed to sed/change import for java 14"
+
+		sed -i -e "s|Pool|PoolWriter|g" \
+			src/org/netbeans/modules/java/source/PostFlowAnalysis.java \
+			|| die "Failed to sed/change import for java 14"
+
+		sed -i -e "s|\.pat|\.body|g" \
+			src/org/netbeans/modules/java/source/save/CasualDiff.java \
+			|| die "Failed to sed/change import for java 14"
+
+		# nasty hack, doubt it works just builds
+		sed -i -e "s|Case((JCExpression|Case(CaseTree.CaseKind.STATEMENT,(com.sun.tools.javac.util.List<JCExpression>|" \
+			-e "s|n, lb.toList());|n, lb.toList(),null);|" \
+			src/org/netbeans/modules/java/source/builder/TreeFactory.java \
+			|| die "Failed to sed/update params for java 14+"
+
+		sed -i -e "1404i\\\t@Override\n\tpublic Tree visitYield(YieldTree yt,Object o) { return null; }" \
+			-e "1404i\\\t@Override\n\tpublic Tree visitSwitchExpression(SwitchExpressionTree node, Object o){ return null; }" \
+			src/org/netbeans/modules/java/source/transform/ImmutableTreeTranslator.java \
+			|| die "Failed to sed/implement method for java 14"
+
+		sed -i -e "651i\\\t@Override\n\tpublic Tree visitYield(com.sun.source.tree.YieldTree yt,Void v) { return null; }" \
+			-e "651i\\\t@Override\n\tpublic Tree visitSwitchExpression(com.sun.source.tree.SwitchExpressionTree node, Void v){ return null; }" \
+			src/org/netbeans/modules/java/source/transform/TreeDuplicator.java \
+			|| die "Failed to sed/implement method for java 14"
+	fi
 }
