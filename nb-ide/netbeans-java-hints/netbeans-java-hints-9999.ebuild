@@ -71,3 +71,12 @@ JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED "
+
+java_prepare() {
+	if [[ $(java-pkg_get-vm-version) -ge 14 ]]; then
+		sed -i -e "1391i\\\t@Override\n\tpublic List<? extends TypeMirror> visitYield(com.sun.source.tree.YieldTree yt,Object o) { return null; }" \
+			-e "1391i\\\t@Override\n\tpublic List<? extends TypeMirror> visitSwitchExpression(com.sun.source.tree.SwitchExpressionTree node, Object o){ return null; }" \
+			src/org/netbeans/modules/java/hints/suggestions/ExpectedTypeResolver.java \
+			|| die "Failed to sed/implement method for java 14"
+	fi
+}
