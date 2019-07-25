@@ -15,6 +15,7 @@ JUNIT_SLOT="4"
 LUCENE_SLOT="3"
 MYLYN_SLOT="3"
 OSGI_SLOT="6"
+OPENJFX_SLOT="11"
 WIKI_SLOT="3"
 XERCES_SLOT="2"
 
@@ -162,6 +163,7 @@ NB_LAUNCHER="nb/ide.launcher/unix/${PN}"
 src_prepare() {
 	default
 	sed -i -e 's/,\?java.\(activation\|xml.bind\),\?//g' \
+		-e 's|options="|options="-J-Dawt.useSystemAAFontSettings=on -J--module-path=/opt/openjfx-bin-'${OPENJFX_SLOT}'/lib/ |' \
 		nb/ide.launcher/${PN}.conf \
 		|| die "Failed to sed/fix ${PN}.conf for java 11, drop mods"
 
