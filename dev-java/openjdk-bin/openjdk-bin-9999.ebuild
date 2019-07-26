@@ -94,7 +94,7 @@ src_prepare() {
 src_install() {
 	local dest ddest
 
-	dest="/opt/${P}"
+	dest="/opt/${PN}-${SLOT}"
 	ddest="${ED}${dest#/}"
 
 	dodoc -r legal
