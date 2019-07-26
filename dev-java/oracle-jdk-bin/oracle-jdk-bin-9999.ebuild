@@ -173,7 +173,7 @@ src_prepare() {
 src_install() {
 	local dest ddest nsplugin nsplugin_link
 
-	dest="/opt/${P}"
+	dest="/opt/${PN}-${SLOT}"
 	ddest="${ED}${dest#/}"
 	# Create files used as storage for system preferences.
 	mkdir .systemPrefs || die
