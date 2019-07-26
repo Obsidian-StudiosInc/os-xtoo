@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -69,7 +69,7 @@ src_prepare() {
 src_install() {
 	local dest ddest
 
-	dest="/opt/${P}"
+	dest="/opt/${PN}-${SLOT}"
 	ddest="${ED}${dest#/}"
 
 	dodoc -r legal
