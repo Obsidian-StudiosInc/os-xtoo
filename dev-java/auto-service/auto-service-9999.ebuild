@@ -27,3 +27,6 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 S="${WORKDIR}/${MY_S}/${PN##*-}/"
+
+JAVA_SRC_DIR="annotations/src/main/java processor/src/main/java"
+JAVA_RES_DIR="processor/src/main/resources"
