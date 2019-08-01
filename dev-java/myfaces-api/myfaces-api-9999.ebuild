@@ -5,7 +5,7 @@ EAPI="7"
 
 JAVA_PKG_IUSE="doc source"
 
-MY_PN="${PN%%*-}-core-module"
+MY_PN="${PN%%-*}-core-module"
 MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV}"
 MY_MOD="${PN##*-}"
@@ -17,7 +17,7 @@ else
 	# github missing tags? upstream source tarball is rebundled, thus maven
 	SRC_URI="http://repo1.maven.org/maven2/org/apache/${PN%%-*}/core/${PN}/${PV/_/-}/${PN}-${PV/_/-}-sources.jar"
 #	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-#	MY_S="${PN}-${MY_P}/${MY_MOD}"
+#	MY_S="${PN%%-*}-${MY_P}/${MY_MOD}"
 fi
 
 SLOT="0"
@@ -29,6 +29,7 @@ CP_DEPEND="
 	dev-java/myfaces-builder-annotations:0
 	dev-java/taglibs-standard-spec:0
 	dev-java/tomcat-servlet-api:4.0
+	dev-java/tomcat-websocket-api:9
 "
 
 inherit java-pkg
