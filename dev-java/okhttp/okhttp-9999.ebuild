@@ -19,6 +19,7 @@ CP_DEPEND="dev-java/okio:0"
 if [[ ${PV} == 3* ]]; then
 	SLOT="3"
 	CP_DEPEND+="
+		dev-java/animal-sniffer-annotations:0
 		dev-java/jsr305:0
 		dev-java/conscrypt:0
 	"
@@ -46,7 +47,7 @@ java_prepare() {
 	if [[ ${PV} == 3* ]]; then
 		rm src/main/java/okhttp3/internal/platform/AndroidPlatform.java \
 			|| die "Failed to remove Android support"
-		sed -i -e "201,205d" \
+		sed -i -e "202,206d" \
 			src/main/java/okhttp3/internal/platform/Platform.java \
 			|| die "Failed to sed remove Android support"
 	fi
