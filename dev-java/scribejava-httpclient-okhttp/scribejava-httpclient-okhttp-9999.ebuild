@@ -30,3 +30,11 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="MIT"
 
 S="${WORKDIR}/${MY_S}"
+
+java_prepare() {
+	sed -i -e "s|(byte\[\]) bodyContents, mediaType|mediaType, (byte\[\]) bodyContents|" \
+		-e "s|(String) bodyContents, mediaType|mediaType, (String) bodyContents|" \
+		-e "s|(File) bodyContents, mediaType|mediaType, (File) bodyContents|" \
+		src/main/java/com/github/scribejava/httpclient/okhttp/OkHttpHttpClient.java \
+		|| die "Failed to sed/fix okhttp usage"
+}
