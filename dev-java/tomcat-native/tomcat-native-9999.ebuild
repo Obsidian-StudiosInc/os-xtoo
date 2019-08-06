@@ -3,16 +3,16 @@
 
 EAPI="7"
 
-MY_PN="${PN^^}"
-MY_PN="${MY_PN/-/_}"
-MY_PV="${PV//./_}"
-MY_P="${MY_PN}_${MY_PV}"
-
 BASE_URI="https://github.com/apache/${PN}"
 
+APR_PV="1.7.0"
+
 if [[ ${PV} != 9999 ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-	MY_S="${PN}-${MY_P}"
+	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz
+		https://raw.githubusercontent.com/apache/apr/${APR_PV}/build/apr_common.m4 -> ${P}-apr_common.m4
+		https://raw.githubusercontent.com/apache/apr/${APR_PV}/build/find_apr.m4 -> ${P}-find_apr.m4
+	"
+	MY_S="${P}"
 fi
 
 inherit autotools java-pkg
@@ -34,13 +34,15 @@ src_prepare() {
 
 	eapply_user
 
-	p="$(apr-1-config --installbuilddir)"
-	cp "${p}"/{apr_common,find_apr}.m4 build \
+	cp "${DISTDIR}"/${P}-apr_common.m4 build/apr_common.m4 \
+		|| die "Failed to copy apr m4 files"
+	cp "${DISTDIR}"/${P}-find_apr.m4 build/find_apr.m4 \
 		|| die "Failed to copy apr m4 files"
 
 	sed -i -e "s|configure.in|[${PN}],[${PV}]|" \
 		-e "24iAC_CONFIG_FILES(Makefile src/Makefile)" \
 		-e "28iAM_INIT_AUTOMAKE" \
+		-e "/nice/d" \
 		configure.in \
 		|| die "Failed to sed configure.ac -> configure.in"
 	mv configure.{in,ac} || die "Failed to rename configure.in -> .ac"
@@ -60,7 +62,7 @@ ${p}_la_SOURCES = address.c file.c misc.c os.c shm.c sslinfo.c thread.c bb.c inf
 }
 
 src_configure() {
-	econf --with-apr=/usr/bin/apr-1-config --with-ssl=/usr
+	econf --with-ssl=/usr
 }
 
 src_compile() {
