@@ -11,7 +11,7 @@ MY_P="${MY_PN}-${MY_PV}"
 BASE_URI="https://github.com/${MY_PN:0:6}/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	MY_S="${MY_P}"
 fi
 
