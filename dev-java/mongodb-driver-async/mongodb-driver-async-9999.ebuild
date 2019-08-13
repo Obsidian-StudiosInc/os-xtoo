@@ -23,6 +23,7 @@ CP_DEPEND="
 	~dev-java/bson-${PV}:${SLOT}
 	dev-java/netty-common:${NETTY_SLOT}
 	dev-java/netty-transport:${NETTY_SLOT}
+	dev-java/mongodb-crypt:0
 	~dev-java/mongodb-driver-core-${PV}:${SLOT}
 "
 
