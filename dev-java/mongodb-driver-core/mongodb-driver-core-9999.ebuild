@@ -24,6 +24,7 @@ CP_DEPEND="
 	dev-java/jnr-enxio:0
 	dev-java/jnr-unixsocket:0
 	dev-java/jsr305:0
+	dev-java/mongodb-crypt:0
 	dev-java/netty-buffer:${NETTY_SLOT}
 	dev-java/netty-common:${NETTY_SLOT}
 	dev-java/netty-codec:${NETTY_SLOT}
@@ -31,6 +32,7 @@ CP_DEPEND="
 	dev-java/netty-transport:${NETTY_SLOT}
 	dev-java/slf4j-api:0
 	dev-java/snappy-java:0
+	dev-java/zstd-jni:0
 "
 
 inherit java-pkg
