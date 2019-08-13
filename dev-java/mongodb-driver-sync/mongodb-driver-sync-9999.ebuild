@@ -19,6 +19,7 @@ SLOT="${PV%%.*}"
 
 CP_DEPEND="
 	~dev-java/bson-${PV}:${SLOT}
+	dev-java/mongodb-crypt:0
 	~dev-java/mongodb-driver-core-${PV}:${SLOT}
 "
 
