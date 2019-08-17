@@ -6,6 +6,7 @@ dev-java/jackson-dataformat-xml
 dev-java/jackson-dataformat-yaml
 dev-java/jackson-module-jaxb-annotations
 dev-java/jgroups
+dev-java/kryo
 dev-java/nailgun
 dev-java/oracle-jdk-bin:11
 dev-util/netbeans:11
