@@ -9,6 +9,7 @@ CP_DEPEND="
 	dev-java/commons-lang:2
 	dev-java/fastutil:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
 	dev-java/guava:28
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
