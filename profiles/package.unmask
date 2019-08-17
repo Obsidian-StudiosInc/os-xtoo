@@ -7,7 +7,7 @@ dev-java/jackson-module-jaxb-annotations
 dev-java/jgroups
 dev-java/nailgun
 dev-java/oracle-jdk-bin:11
+dev-util/netbeans:11
 virtual/jdk:11
 virtual/jre:11
 www-servers/tomcat
-
