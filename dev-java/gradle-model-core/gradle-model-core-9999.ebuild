@@ -11,8 +11,11 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
+	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:28
 	dev-java/intellij-platform-annotations:0
@@ -27,8 +30,8 @@ inherit gradle
 java_prepare() {
 	sed -i -e 's|return value !=.*| return false;|' \
 		-e 's|return kotlinFunction0CanBeLoaded|return false|' \
-		-e '79,86d' \
 		-e 's|((kotlin.jvm.functions.Function0) value).invoke()|null|' \
+		-e 's|value instanceof kotlin.jvm.functions.Function0|false|' \
 		src/main/java/org/gradle/util/DeferredUtil.java \
 		|| die "Failed to disable kotlin support"
 }
