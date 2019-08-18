@@ -12,6 +12,9 @@ CP_DEPEND="
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
+	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
