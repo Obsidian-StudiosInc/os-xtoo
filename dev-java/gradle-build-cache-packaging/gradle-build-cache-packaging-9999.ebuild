@@ -11,6 +11,8 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/guava:28
