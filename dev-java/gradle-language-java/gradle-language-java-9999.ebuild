@@ -15,7 +15,10 @@ CP_DEPEND="
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-dependency-management-${PV}:${SLOT}
+	~dev-java/gradle-execution-${PV}:${SLOT}
+	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-jvm-services-${PV}:${SLOT}
 	~dev-java/gradle-language-jvm-${PV}:${SLOT}
 	~dev-java/gradle-launcher-${PV}:${SLOT}
@@ -28,6 +31,7 @@ CP_DEPEND="
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	~dev-java/gradle-tooling-api-${PV}:${SLOT}
+	~dev-java/gradle-worker-processes-${PV}:${SLOT}
 	~dev-java/gradle-workers-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:28
