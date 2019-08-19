@@ -20,7 +20,9 @@ CP_DEPEND="
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-execution-${PV}:${SLOT}
+	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
