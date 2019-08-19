@@ -11,10 +11,12 @@ CP_DEPEND="
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
 	~dev-java/gradle-base-services-${PV}:${SLOT}
+	~dev-java/gradle-bootstrap-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-jvm-services-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
@@ -33,6 +35,9 @@ CP_DEPEND="
 inherit gradle
 
 java_prepare() {
+	mkdir -p src/main/resources/META-INF \
+		|| die "Failed to make resource directory"
+
 	echo "Manifest-Version: 1.0
 Implementation-Title: Gradle
 Implementation-Version: ${PV}
