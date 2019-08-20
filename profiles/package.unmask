@@ -9,6 +9,7 @@ dev-java/jgroups
 dev-java/kryo
 dev-java/nailgun
 dev-java/oracle-jdk-bin:11
+dev-java/xstream
 dev-util/netbeans:11
 virtual/jdk:11
 virtual/jre:11
