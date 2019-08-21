@@ -7,6 +7,7 @@ JAVA_PKG_IUSE="doc source"
 
 MY_PN="${PN^^}"
 MY_PV="${PV//./_}"
+MY_PV="${MY_PV^^}"
 MY_P="${MY_PN}_${MY_PV}"
 
 BASE_URI="https://gitlab.ow2.org/asm/asm"
