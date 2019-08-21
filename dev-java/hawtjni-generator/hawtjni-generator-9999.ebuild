@@ -31,3 +31,9 @@ HOMEPAGE="https://fusesource.github.io/hawtjni/"
 LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/${PN}"
+
+src_install() {
+	java-pkg-simple_src_install
+	java-pkg_dolauncher ${PN} \
+		--main org.fusesource.hawtjni.generator.HawtJNI
+}
