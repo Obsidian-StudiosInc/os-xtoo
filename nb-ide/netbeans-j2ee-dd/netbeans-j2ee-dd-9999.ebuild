@@ -43,7 +43,6 @@ java_prepare() {
 		-e '/name="javadoc"/d' \
 		build.xml || die "Failed to sed build.xml for source generation"
 
-
 	sed -i -e "s|http://www.w3.org/2001/||" \
 		src/org/netbeans/modules/j2ee/dd/impl/resources/javaee_8.xsd \
 		|| die "Failed to sed/fix UnknownHostException: www.w3.org"
