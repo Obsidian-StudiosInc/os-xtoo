@@ -111,11 +111,10 @@ generate_exceptionutils() {
 java_prepare() {
 	# from groovy 2.5
 	mkdir -p src/main/java/groovy/transform || die "Failed to create dir"
-	cp ${FILESDIR}/Generated.java src/main/java/groovy/transform \
+	cp "${FILESDIR}/Generated.java" src/main/java/groovy/transform \
 		|| die "Failed to copy java file"
 
 }
-
 
 src_compile() {
 	JAVA_NO_JAR=1
