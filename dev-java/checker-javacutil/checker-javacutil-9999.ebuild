@@ -41,14 +41,7 @@ JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNA
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED "
 
-PATCHES=( "${FILESDIR}/TypeAnnotationUtils-9+.patch" )
-
 java_prepare() {
-	sed -i -e "s|Kinds\.|Kind\.|g" \
-		-e "s|code\.Kinds|code.Kinds.Kind|" \
-		src/main/java/org/checkerframework/javacutil/Resolver.java \
-		|| die "Failed to sed/change java 9+ imports"
-
 	sed -i -e "s|w.bound.bound|w.bound|" \
 		src/main/java/org/checkerframework/javacutil/TypesUtils.java \
 		|| die "Failed to sed/fix missing symbol"
