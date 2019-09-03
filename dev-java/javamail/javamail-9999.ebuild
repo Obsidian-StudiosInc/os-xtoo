@@ -18,8 +18,8 @@ CP_DEPEND="dev-java/javax-activation:0"
 
 inherit java-pkg
 
-DESCRIPTION="JavaMail API Reference Implementation"
-HOMEPAGE="https://javaee.github.io/javamail/"
+DESCRIPTION="JakartaMail (formerly JavaMail) API Reference Implementation"
+HOMEPAGE="https://eclipse-ee4j.github.io/mail/"
 LICENSE="EPL-2.0"
 SLOT="0"
 
