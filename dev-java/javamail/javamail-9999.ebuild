@@ -5,11 +5,13 @@ EAPI="7"
 
 JAVA_PKG_IUSE="doc source"
 
-BASE_URI="https://github.com/eclipse-ee4j/${PN}"
+MY_PN="mail"
+MY_P="${MY_PN}-${PV}"
+BASE_URI="https://github.com/eclipse-ee4j/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	MY_S="${P}"
+	MY_S="${MY_P}"
 fi
 
 CP_DEPEND="dev-java/javax-activation:0"
