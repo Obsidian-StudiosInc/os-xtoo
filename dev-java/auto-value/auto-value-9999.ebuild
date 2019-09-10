@@ -17,7 +17,10 @@ fi
 CP_DEPEND="
 	dev-java/auto-common:0
 	dev-java/auto-service:0
+	dev-java/error-prone-annotations:0
 	dev-java/escapevelocity:0
+	dev-java/incap:0
+	dev-java/incap-processor:0
 	dev-java/guava:28
 	dev-java/javapoet:0
 "
