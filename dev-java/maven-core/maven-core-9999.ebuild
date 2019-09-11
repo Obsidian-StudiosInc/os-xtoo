@@ -18,14 +18,11 @@ fi
 
 SLOT="0"
 
-AETHER_SLOT="0"
 PC_SLOT="0"
+MR_SLOT="0"
+
 
 CP_DEPEND="
-	dev-java/aether-api:${AETHER_SLOT}
-	dev-java/aether-impl:${AETHER_SLOT}
-	dev-java/aether-spi:${AETHER_SLOT}
-	dev-java/aether-util:${AETHER_SLOT}
 	dev-java/commons-lang:3
 	dev-java/javax-inject:0
 	dev-java/guice:4
@@ -35,12 +32,17 @@ CP_DEPEND="
 	~dev-java/maven-model-builder-${PV}:${SLOT}
 	~dev-java/maven-plugin-api-${PV}:${SLOT}
 	~dev-java/maven-repository-metadata-${PV}:${SLOT}
+	dev-java/maven-resolver-api:${MR_SLOT}
+	dev-java/maven-resolver-impl:${MR_SLOT}
 	~dev-java/maven-resolver-provider-${PV}:${SLOT}
+	dev-java/maven-resolver-spi:${MR_SLOT}
+	dev-java/maven-resolver-util:${MR_SLOT}
 	~dev-java/maven-settings-${PV}:${SLOT}
 	~dev-java/maven-settings-builder-${PV}:${SLOT}
 	dev-java/maven-shared-utils:0
 	dev-java/plexus-classworlds:0
 	dev-java/plexus-component-annotations:${PC_SLOT}
+	dev-java/plexus-interpolation:0
 	dev-java/plexus-sec-dispatcher:0
 	dev-java/plexus-utils:0
 	dev-java/sisu-inject:0
