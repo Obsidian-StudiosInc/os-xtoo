@@ -17,10 +17,8 @@ if [[ ${PV} != 9999 ]]; then
 fi
 
 SLOT="0"
-
 PC_SLOT="0"
 MR_SLOT="0"
-
 
 CP_DEPEND="
 	dev-java/commons-lang:3
