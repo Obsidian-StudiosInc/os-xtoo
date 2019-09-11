@@ -20,12 +20,14 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/commons-lang:3
+	dev-java/javax-inject:0
 	~dev-java/maven-artifact-${PV}:${SLOT}
 	~dev-java/maven-builder-support-${PV}:${SLOT}
 	~dev-java/maven-model-${PV}:${SLOT}
 	dev-java/plexus-component-annotations:0
 	dev-java/plexus-interpolation:0
 	dev-java/plexus-utils:0
+	dev-java/sisu-inject:0
 "
 
 inherit java-pkg
