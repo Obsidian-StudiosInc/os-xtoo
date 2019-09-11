@@ -4,13 +4,11 @@
 EAPI="7"
 
 SLOT="0"
-AETHER_SLOT="0"
 GROOVY_SLOT="0"
 MAVEN_SLOT="0"
+MR_SLOT="0"
 
 CP_DEPEND="
-	dev-java/aether-api:${AETHER_SLOT}
-	dev-java/aether-util:${AETHER_SLOT}
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
 	~dev-java/gradle-base-services-${PV}:${SLOT}
@@ -36,6 +34,8 @@ CP_DEPEND="
 	dev-java/maven-core:${MAVEN_SLOT}
 	dev-java/maven-model:${MAVEN_SLOT}
 	dev-java/maven-model-builder:${MAVEN_SLOT}
+	dev-java/maven-resolver-api:${MR_SLOT}
+	dev-java/maven-resolver-util:${MR_SLOT}
 	dev-java/maven-settings:${MAVEN_SLOT}
 	dev-java/plexus-classworlds:0
 	dev-java/plexus-container-default:0
