@@ -16,14 +16,9 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
-
-AETHER_SLOT="0"
+MR_SLOT="0"
 
 CP_DEPEND="
-	dev-java/aether-api:${AETHER_SLOT}
-	dev-java/aether-impl:${AETHER_SLOT}
-	dev-java/aether-spi:${AETHER_SLOT}
-	dev-java/aether-util:${AETHER_SLOT}
 	dev-java/commons-lang:3
 	dev-java/javax-inject:0
 	dev-java/guice:4
@@ -31,6 +26,10 @@ CP_DEPEND="
 	~dev-java/maven-model-${PV}:${SLOT}
 	~dev-java/maven-model-builder-${PV}:${SLOT}
 	~dev-java/maven-repository-metadata-${PV}:${SLOT}
+	dev-java/maven-resolver-api:${MR_SLOT}
+	dev-java/maven-resolver-impl:${MR_SLOT}
+	dev-java/maven-resolver-spi:${MR_SLOT}
+	dev-java/maven-resolver-util:${MR_SLOT}
 	dev-java/plexus-utils:0
 "
 
