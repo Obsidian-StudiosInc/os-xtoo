@@ -60,7 +60,7 @@ DEPEND+=" dev-java/modello-plugin-java:0"
 #S="${WORKDIR}/${MY_S}/${PN}"
 
 JAVA_SRC_DIR="src"
-JAVA_RES_RM_DIR=0
+#JAVA_RES_RM_DIR=0
 
 java_prepare() {
 #	local f
