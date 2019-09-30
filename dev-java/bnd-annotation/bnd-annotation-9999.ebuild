@@ -21,6 +21,14 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_P}"
 fi
 
+OSGI_SLOT="7"
+
+CP_DEPEND="
+	dev-java/osgi-annotation:0
+	dev-java/osgi-compendium:${OSGI_SLOT}
+	dev-java/osgi-core-api:${OSGI_SLOT}
+"
+
 inherit java-pkg
 
 DESCRIPTION="Bnd Annotations"
