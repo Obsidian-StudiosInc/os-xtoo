@@ -25,6 +25,7 @@ fi
 SLOT="${PV%%.*}"
 
 CP_DEPEND="
+	~dev-java/bnd-annotation-${PV}:${SLOT}
 	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/felix-framework:0
 	dev-java/felix-gogo-runtime:0
