@@ -21,10 +21,12 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="${PV%%.*}"
+OSGI_SLOT="7"
 
 CP_DEPEND="
 	dev-java/osgi-annotation:0
-	dev-java/osgi-compendium:7
+	dev-java/osgi-compendium:${OSGI_SLOT}
+	dev-java/osgi-core-api:${OSGI_SLOT}
 	dev-java/osgi-util:0
 	dev-java/slf4j-api:0
 "
