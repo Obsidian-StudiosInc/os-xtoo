@@ -28,6 +28,7 @@ SLOT="${PV%%.*}"
 OSGI_SLOT="6"
 
 CP_DEPEND="~dev-java/aqute-repository-${PV}:${SLOT}
+	~dev-java/bnd-annotation-${PV}:${SLOT}
 	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/felix-resolver:0
 	~dev-java/libg-${PV}:${SLOT}
