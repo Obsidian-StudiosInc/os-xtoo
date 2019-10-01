@@ -129,7 +129,7 @@ DEPEND="${COMMON_DEP}
 	test? ( dev-libs/check )"
 RDEPEND="${COMMON_DEP}"
 
-S="${WORKDIR}/${E_P%-*}"
+S="${WORKDIR}/${E_P%-[a-z]*}"
 
 src_configure() {
 	local choices=() opt opts E_ECONF=()
