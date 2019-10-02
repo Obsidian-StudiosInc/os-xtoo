@@ -14,7 +14,7 @@ fi
 
 CP_DEPEND="
 	dev-java/iconloader:0
-	dev-java/intellij-platform-annotations:0
+	dev-java/java-annotations:0
 "
 
 inherit java-pkg
