@@ -1,1 +1,0 @@
-intellij-platform-annotations-9999.ebuild
