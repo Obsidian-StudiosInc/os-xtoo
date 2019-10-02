@@ -11,7 +11,7 @@ CP_DEPEND="
 	dev-java/axiom-api:0
 	dev-java/dom4j:2
 	dev-java/icu4j:0
-	dev-java/intellij-platform-annotations:0
+	dev-java/java-annotations:0
 	dev-java/jdom:0
 	dev-java/jdom:2
 	dev-java/xom:0
