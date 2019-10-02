@@ -16,7 +16,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/intellij-platform-annotations:0
+	dev-java/java-annotations:0
 	dev-java/jna:5
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
