@@ -11,7 +11,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${PN}-${MY_SNAP}"
 fi
 
-CP_DEPEND="dev-java/intellij-platform-annotations:0"
+CP_DEPEND="dev-java/java-annotations:0"
 
 inherit java-pkg
 
