@@ -266,7 +266,7 @@ src_install() {
 
 	jars+=(
 		byte-buddy-dep darcula eclipse-jgit flow-netbeans-markdown
-		freemarker htmlparser iconloader intellij-platform-annotations
+		freemarker htmlparser iconloader java-annotations
 		javaewah javax-activation javax-annotation jaxb-api jsch
 		json-simple junit-${JUNIT_SLOT} lucene-core-${LUCENE_SLOT}
 		nb-cmake-completion nb-darcula osgi-core-api-${OSGI_SLOT}
