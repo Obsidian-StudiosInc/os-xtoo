@@ -83,13 +83,13 @@ this repository. You will experience a varity of issues that will not be
 addressed! This repository replaces entirely Java on Gentoo!!!
 
 ### Java 11+
-This repository requires Java 11 as your system vm now! We are no longer 
-supporting any JDK < 11. Most things have been fixed for Java 11. There 
-are few packages remaining that need to be fixed or dialed in for Java 
-11. We recommend Java 11 for production and Java 12 for development.
+This repository requires Java >= 11 as your system vm now! We are no longer
+supporting any JDK < 11. Most things have been fixed for Java 11-14. There
+are few packages remaining that need to be tweaked or dialed in for Java
+11+. We recommend Java 11 or 13 for production and Java 14 for development.
 
 Please report issues for any package that does not build or has 
-runtime issues with Java 11 or 12.
+runtime issues with any Java versions in this overlay.
 
 ### Java Versioning
 This overlay implements a brand new feature of no longer requiring Java 
@@ -108,17 +108,18 @@ global usage is a backup for issues encountered with the new system.
 Or to enforce a specific Java release/version across all jars.
 
 This does make building a forward operation. Keep your system/build vm 
-set to an older version like 10, if running newer like 11+. If you build 
-under 11, and try to run under 10 without the above you will have issues.
-Otherwise moving forward should not require rebuild unless package has 
-runtime issues. Once you do, you will need to rebuild again if you 
-revert back to 10 from 11. Unless you set ```RELEASE="10"``` when 
+set to an older version like 11, if running newer like 14+. If you build
+under greater than 11, and try to run under 11 without the above you will
+have issues. Otherwise moving forward should not require rebuild unless
+package has runtime issues. Once you do, you will need to rebuild again if
+you revert back to 11 from 11+. Unless you set ```RELEASE="11"``` when
 building under 11+.
 
+### Rebuilding Java packages
 Rebuild all installed from dev-java/*
 ```emerge -qv1O $(qlist -IC 'dev-java/*')```
 
-Show packages built with a given vm, add ```| wc-l``` for count
+Show packages built with a given vm, versions 4-9, add ```| wc-l``` for count
 ```grep -l "MERGE_VM\=.*[4-9]" /usr/share/*/package.env```
 
 ### Setting system/user VM
