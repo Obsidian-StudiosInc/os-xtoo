@@ -33,7 +33,7 @@ S="${WORKDIR}/${MY_S}/core"
 JAVA_RM_FILES=( src/main/java/org/easymock/internal/AndroidClassProxyFactory.java )
 
 java_prepare(){
-	sed -i -e '150,154d' \
+	sed -i -e '134,136d' \
 		src/main/java/org/easymock/internal/MocksControl.java \
 		|| die "Failed to sed remove AndroidClassProxyFactory usage"
 }
