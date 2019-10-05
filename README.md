@@ -38,10 +38,10 @@ preserved. It can be relocated, and/or credit mentioned to original
 source, such as
 
 ```shell
-# Copyright 1999-2018 Some Other Entity
+# Copyright 1999-2019 Some Other Entity
 # Distributed under the terms of the GNU General Public License v2
 #
-# Original work Copyright 2018 Obsidian-Studios, Inc.
+# Original work Copyright 2019 Obsidian-Studios, Inc.
 # Ebuild written by "William L. Thomson Jr." <wlt@o-sinc.com>
 # <link to ebuild in this repo>
 ```
