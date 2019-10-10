@@ -18,7 +18,10 @@ fi
 
 SLOT="${PV%%.*}"
 
-CP_DEPEND="dev-java/jackson-core:${SLOT}"
+CP_DEPEND="
+	dev-java/jackson-core:${SLOT}
+	dev-java/jackson-databind:${SLOT}
+"
 
 inherit java-pkg
 
