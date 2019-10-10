@@ -44,8 +44,6 @@ java_prepare() {
 	sed -i -e '/.FlowStyle;/iimport org.yaml.snakeyaml.DumperOptions.ScalarStyle;' \
 		-e "s|Boolean style|FlowStyle style|g" \
 		-e "s|.getStyleBoolean()||g" \
-		-e "s|, STYLE_BASE64)|, ScalarStyle.createStyle(STYLE_BASE64))|" \
-		-e "s|null, style);|null, ScalarStyle.createStyle(style));|" \
 		src/main/java/com/fasterxml/${PN//-//}/YAMLGenerator.java \
 		|| die "Failed to sed/fix snakeyaml api changes"
 }
