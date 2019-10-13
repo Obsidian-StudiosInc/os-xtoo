@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 BASE_URI="https://github.com/apache/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/rel/v${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 CP_DEPEND="
