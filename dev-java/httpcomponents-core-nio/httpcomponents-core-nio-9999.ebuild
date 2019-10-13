@@ -11,7 +11,7 @@ MY_MOD="${PN/components-/}"
 BASE_URI="https://github.com/apache/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/rel/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 fi
 
 SLOT="${PV/.${PV#*.*.*}/}"
