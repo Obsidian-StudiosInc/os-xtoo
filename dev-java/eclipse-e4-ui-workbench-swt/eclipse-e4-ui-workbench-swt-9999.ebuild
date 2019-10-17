@@ -39,6 +39,7 @@ CP_DEPEND="
 	~dev-java/eclipse-e4-ui-css-swt-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-css-swt-theme-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-di-${PV}:${SLOT}
+	~dev-java/eclipse-e4-ui-dialogs-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-model-workbench-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-services-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-widgets-${PV}:${SLOT}
