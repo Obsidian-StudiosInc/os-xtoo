@@ -20,6 +20,7 @@ fi
 SLOT="${PV/.${PV#*.*.*}/}"
 
 CP_DEPEND="
+	~dev-java/eclipse-core-contenttype-${PV}:${SLOT}
 	~dev-java/eclipse-core-expressions-${PV}:${SLOT}
 	~dev-java/eclipse-core-filebuffers-${PV}:${SLOT}
 	~dev-java/eclipse-core-filesystem-${PV}:${SLOT}
