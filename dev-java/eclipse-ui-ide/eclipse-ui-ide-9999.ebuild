@@ -37,6 +37,7 @@ CP_DEPEND="
 	~dev-java/eclipse-e4-core-services-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-services-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-workbench-${PV}:${SLOT}
+	~dev-java/eclipse-equinox-app-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-bidi-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-p2-engine-${PV}:${SLOT}
