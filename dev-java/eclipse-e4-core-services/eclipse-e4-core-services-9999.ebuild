@@ -24,6 +24,7 @@ CP_DEPEND="
 	~dev-java/eclipse-e4-core-di-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-di-annotations-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
+	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-services-${PV}:${SLOT}
 	dev-java/javax-annotation:0
