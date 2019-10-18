@@ -18,9 +18,6 @@ if [[ ${PV} == *_pre* ]]; then
 elif [[ ${PV} == 13.*_p* ]]; then
 	MY_PV="${PV%%_*}"
 	BASE_URI+="GA/jdk${MY_PV}/cec27d702aa74d5a8630c65ae61e4305/${PV##*_p}/GPL"
-elif [[ ${PV} == 13_p33 ]]; then
-	MY_PV="${PV%%_*}"
-	BASE_URI+="GA/jdk${MY_PV}/5b8a42f3905b406298b72d750b6919f6/${PV##*_p}/GPL"
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
 	MY_PV="${PV%%_*}"
@@ -28,9 +25,6 @@ elif [[ ${PV} == 11* ]]; then
 	MY_PV="${PV/p/}"
 	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+}"
 	MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
-elif [[ ${PV} == 12.0.2 ]]; then
-	BASE_URI+="GA/jdk${PV}/e482c34c86bd4bf8b56c0b35558996b9/10/GPL"
-	MY_PV="${PV}"
 else
 	BASE_URI+="GA/jdk${SLOT}/GPL"
 	MY_PV="${PV}"
