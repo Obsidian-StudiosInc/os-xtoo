@@ -7,7 +7,7 @@ NB_CLUSTER="ide"
 
 inherit java-netbeans
 
-ECLIPSE_SLOT="4.12"
+ECLIPSE_SLOT="4.13"
 MYLYN_SLOT="3"
 
 CP_DEPEND="
