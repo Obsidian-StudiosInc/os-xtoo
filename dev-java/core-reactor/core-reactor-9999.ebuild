@@ -13,7 +13,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_PN}-${P}"
 fi
 
-ECLIPSE_SLOT="4.12"
+ECLIPSE_SLOT="4.13"
 
 CP_DEPEND="
 	dev-java/ant-core:0
