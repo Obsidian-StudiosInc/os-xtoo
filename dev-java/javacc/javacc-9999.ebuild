@@ -32,9 +32,6 @@ JAVA_SRC_DIR="src/main/java"
 java_prepare() {
 	local JDK_VERSION="1.8"
 
-	mv version.properties src/main/resources \
-		|| die "Failed to move version.properties"
-
 	java -cp bootstrap/javacc.jar javacc -JDK_VERSION="${JDK_VERSION}" \
 		-OUTPUT_DIRECTORY="${JAVA_SRC_DIR}/org/javacc/parser" \
 		"src/main/javacc/JavaCC.jj" \
