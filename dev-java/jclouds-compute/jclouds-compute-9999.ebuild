@@ -43,22 +43,20 @@ LICENSE="Apache-2.0"
 S="${WORKDIR}/${MY_S}/${PN##*-}"
 
 java_prepare() {
+	local f
+
+	for f in $( grep -l -m1 org.jclouds.json -r * ); do
+		sed -i -e "s|org.jclouds.json|com.google|g" ${f} \
+			|| die "Failed to sed/swap json imports ${f}"
+	done
+
 	sed -i -e "s|getHostText|getHost|g" \
 		src/main/java/org/jclouds/compute/stub/config/StubComputeServiceDependenciesModule.java \
 		|| die "Failed to sed/fix guava method renamed"
-
-	sed -i -e "s|import static com.google.common.base.Predicates.and|import com.google.common.base.Predicates|" \
-		-e "s|and(osPredicates|Predicates.and(osPredicates|g" \
-		src/main/java/org/jclouds/compute/domain/internal/TemplateBuilderImpl.java \
-		|| die "Failed to sed/fix java 8+ guava static import"
-
-	sed -i -e "s|import static com.google.common.base.Predicates.or|import com.google.common.base.Predicates|" \
-		-e "s|or(predi|Predicates.or(predi|" \
-		src/main/java/org/jclouds/compute/domain/internal/NullEqualToIsParentOrIsGrandparentOfCurrentLocation.java \
-		|| die "Failed to sed/fix java 8+ guava static import"
 
 	sed -i -e '/util.Map/aimport java.util.concurrent.Executors;' \
 		-e "s|});|}, Executors.newSingleThreadExecutor());|g" \
 		src/main/java/org/jclouds/compute/extensions/internal/DelegatingImageExtension.java \
 		|| die "Failed to sed/fix guava changes"
+
 }
