@@ -22,6 +22,7 @@ CP_DEPEND="
 	dev-java/guava:28
 	dev-java/javax-inject:0
 	~dev-java/jclouds-core-${PV}:${SLOT}
+	dev-java/modernizer-maven-annotations:0
 	dev-java/osgi-core-api:6
 "
 
