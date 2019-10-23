@@ -32,6 +32,7 @@ CP_DEPEND="
 	dev-java/javax-inject:0
 	dev-java/jax-rs:2
 	dev-java/jaxb-api:0
+	dev-java/modernizer-maven-annotations:0
 	dev-java/osgi-core-api:6
 "
 
@@ -56,9 +57,10 @@ java_prepare() {
 			|| die "Failed to sed/fix guava method renamed ${f}"
 	done
 
-	sed -i -e 's|"excluder")|"excluder"), null|' \
-		src/main/java/org/jclouds/json/internal/DeserializationConstructorAndReflectiveTypeAdapterFactory.java \
-		|| die "Failed to sed/fix gson constructor change"
+	for f in $( grep -l -m1 org.jclouds.json -r * ); do
+		sed -i -e "s|org.jclouds.json|com.google|g" ${f} \
+			|| die "Failed to sed/swap json imports ${f}"
+	done
 
 	sed -i -e "s|NANOSECONDS, true|NANOSECONDS|" \
 		src/main/java/org/jclouds/rest/internal/InvokeHttpMethod.java \
