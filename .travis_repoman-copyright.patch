@@ -1,44 +1,49 @@
-diff --git a/pym/repoman/copyrights.py b/pym/repoman/copyrights.py
---- a/pym/repoman/copyrights.py	2018-04-17 20:34:25.910613600 -0400
-+++ b/pym/repoman/copyrights.py	2018-04-17 20:37:03.994433254 -0400
-@@ -15,10 +15,9 @@
+diff --git a/lib/repoman/copyrights.py b/lib/repoman/copyrights.py
+index 275dcbc3f..1fe4309f2 100644
+--- a/lib/repoman/copyrights.py
++++ b/lib/repoman/copyrights.py
+@@ -15,9 +15,9 @@ from portage import util
  
  
  _copyright_re1 = \
--	re.compile(br'^(# Copyright \d\d\d\d)-\d\d\d\d( Gentoo Foundation)\b')
-+	re.compile(br'^(# Copyright \d\d\d\d)-\d\d\d\d( (Gentoo Foundation|Obsidian-Studios))\b')
+-	re.compile(br'^(# Copyright \d\d\d\d)-\d\d\d\d( Gentoo (Foundation|Authors))\b')
++	re.compile(br'^(# Copyright \d\d\d\d)-\d\d\d\d( ((Gentoo (Foundation|Authors))|Obsidian-Studios))\b')
  _copyright_re2 = \
--	re.compile(br'^(# Copyright )(\d\d\d\d)( Gentoo Foundation)\b')
--
-+	re.compile(br'^(# Copyright )(\d\d\d\d)( (Gentoo Foundation|Obsidian-Studios))\b')
+-	re.compile(br'^(# Copyright )(\d\d\d\d)( Gentoo (Foundation|Authors))\b')
++	re.compile(br'^(# Copyright )(\d\d\d\d)( ((Gentoo (Foundation|Authors))|Obsidian-Studios))\b')
+ 
  
  class _copyright_repl(object):
- 	__slots__ = ('year',)
-diff --git a/pym/repoman/modules/linechecks/gentoo_header/header.py b/pym/repoman/modules/linechecks/gentoo_header/header.py
---- a/pym/repoman/modules/linechecks/gentoo_header/header.py	2018-04-17 20:34:25.920613209 -0400
-+++ b/pym/repoman/modules/linechecks/gentoo_header/header.py	2018-04-17 20:39:28.098799434 -0400
-@@ -18,6 +18,7 @@
- 	repoman_check_name = 'ebuild.badheader'
+@@ -31,7 +31,7 @@ class _copyright_repl(object):
+ 			return matchobj.group(0)
+ 		else:
+ 			return matchobj.group(1) + matchobj.group(2) + \
+-				b'-' + self.year + b' Gentoo Authors'
++				b'-' + self.year + matchobj.group(3)
  
- 	gentoo_copyright = r'^# Copyright ((1999|2\d\d\d)-)?%s Gentoo Foundation$'
-+	os_copyright = r'^# Copyright (2\d\d\d-)?%s Obsidian-Studios, Inc\.$'
- 	gentoo_license = (
- 		'# Distributed under the terms'
- 		' of the GNU General Public License v2')
-@@ -32,12 +33,15 @@
- 			self.modification_year = str(time.gmtime(pkg.mtime)[0])
- 		self.gentoo_copyright_re = re.compile(
- 			self.gentoo_copyright % self.modification_year)
-+		self.os_copyright_re = re.compile(
-+			self.os_copyright % self.modification_year)
  
- 	def check(self, num, line):
- 		if num > 2:
- 			return
- 		elif num == 0:
--			if not self.gentoo_copyright_re.match(line):
-+			if not ( self.gentoo_copyright_re.match(line) or
-+				 self.os_copyright_re.match(line) ):
+ def update_copyright_year(year, line):
+@@ -51,7 +51,10 @@ def update_copyright_year(year, line):
+ 	year = _unicode_encode(year)
+ 	line = _unicode_encode(line)
+ 
+-	line = _copyright_re1.sub(br'\1-' + year + b' Gentoo Authors', line)
++	if b'Obsidian' in line:
++		line = _copyright_re1.sub(br'\1-' + year + b' Obsidian-Studios', line)
++	else:
++		line = _copyright_re1.sub(br'\1-' + year + b' Gentoo Authors', line)
+ 	line = _copyright_re2.sub(_copyright_repl(year), line)
+ 	if not is_bytes:
+ 		line = _unicode_decode(line)
+diff --git a/lib/repoman/modules/linechecks/gentoo_header/header.py b/lib/repoman/modules/linechecks/gentoo_header/header.py
+index 1f035a97e..2d01bf868 100644
+--- a/lib/repoman/modules/linechecks/gentoo_header/header.py
++++ b/lib/repoman/modules/linechecks/gentoo_header/header.py
+@@ -42,6 +42,7 @@ class EbuildHeader(LineCheck):
+ 			if match is None:
  				return self.errors['COPYRIGHT_ERROR']
- 		elif num == 1 and line.rstrip('\n') != self.gentoo_license:
- 			return self.errors['LICENSE_ERROR']
+ 			if not (match.group('author') == 'Gentoo Authors' or
++			        match.group('author') == 'Obsidian-Studios, Inc.' or
+ 					(int(match.group('year2')) < 2019 and
+ 						match.group('author') == 'Gentoo Foundation')):
+ 				return self.errors['COPYRIGHT_ERROR']
