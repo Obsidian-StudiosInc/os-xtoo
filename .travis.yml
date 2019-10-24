@@ -14,13 +14,13 @@ before_script:
     - mv .git .travis_repoman-copyright.patch travis-overlay/
     - wget "https://gitweb.gentoo.org/proj/portage.git/snapshot/portage-2.3.78.tar.gz" -O portage.tar.gz
     - wget "https://github.com/gentoo-mirror/gentoo/archive/master.tar.gz" -O portage-tree.tar.gz
-    - sudo chmod a+rwX /etc/passwd /etc/group /etc /usr
+    - sudo chmod a+rwX /etc/passwd /etc/group /etc /var /var/cache
     - echo "portage:x:250:250:portage:/var/tmp/portage:/bin/false" >> /etc/passwd
     - echo "portage::250:portage,travis" >> /etc/group
-    - mkdir -p /etc/portage /usr/portage/distfiles
-    - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /usr/portage/distfiles/metadata.dtd
+    - mkdir -p /etc/portage /var/cache/distfiles /var/db/repos/gentoo
+    - wget "https://www.gentoo.org/dtd/metadata.dtd" -O /var/cache/distfiles/metadata.dtd
     - tar xzf portage.tar.gz -C /tmp
-    - tar xzf portage-tree.tar.gz -C /usr/portage --strip-components=1
+    - tar xzf portage-tree.tar.gz -C /var/db/repos/gentoo --strip-components=1
     - cp /tmp/portage*/cnf/repos.conf /etc/portage/
     - ln -s /tmp/travis-overlay/profiles/linux/amd64/workstation/ /etc/portage/make.profile
     - mv travis-overlay /tmp
