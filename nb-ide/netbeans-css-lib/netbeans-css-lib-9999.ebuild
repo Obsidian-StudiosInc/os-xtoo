@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -34,4 +34,7 @@ java_prepare() {
 	sed -i -e '80d' \
 		src/org/netbeans/modules/css/lib/NbParseTreeBuilder.java \
 		|| die "Failed to sed/delete non override @Override"
+	sed -i -e "63,66d" \
+		src/org/netbeans/modules/css/lib/nbparser/ProgressingTokenStream.java \
+		|| die "Failed to sed/delete antlr 3.5 only method"
 }
