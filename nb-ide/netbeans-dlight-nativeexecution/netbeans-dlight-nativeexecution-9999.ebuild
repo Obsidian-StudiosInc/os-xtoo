@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -30,7 +30,15 @@ RDEPEND="${CP_DEPEND}
 	>=virtual/jre-9"
 
 java_prepare() {
+	local f
+
 	sed -i -e "s|, DEFAULT_OPTIONS||" \
 		src/org/netbeans/modules/nativeexecution/support/Win32APISupport.java \
 		|| die "Failed to sed/remove extra argument for java 9"
+
+	for f in $(grep -l -m1 NotOwnerException -r src ); do
+		sed -i -e "s|security.acl.NotOwner|lang.Security|g" \
+			-e "s|NotOwnerException|SecurityException|g" ${f} \
+			|| die "Failed to replace java.security.acl.NotOwnerException;"
+	done
 }
