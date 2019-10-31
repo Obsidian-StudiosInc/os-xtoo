@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,8 +11,9 @@ MY_P="${MY_PN}_${MY_PV}"
 BASE_URI="https://github.com/validator/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
-	MY_S="${PN}-${MY_P}"
+#	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
+#	MY_S="${PN}-${MY_P}"
+	SRC_URI="https://repo1.maven.org/maven2/nu/validator/${PN}/${PV}/${P}-sources.jar"
 fi
 
 CP_DEPEND="
@@ -29,10 +30,3 @@ LICENSE="W3C"
 SLOT="0"
 
 S="${WORKDIR}/${MY_S}"
-
-java_prepare() {
-	sed -i -e "s|final void startTag|void startTag|" \
-		-e "s|final void endTag|void endTag|" \
-		src/nu/validator/htmlparser/impl/TreeBuilder.java \
-		|| die "Failed to remove final from methods"
-}
