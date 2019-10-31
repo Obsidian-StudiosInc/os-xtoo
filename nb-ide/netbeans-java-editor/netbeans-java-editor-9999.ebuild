@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -42,6 +42,7 @@ CP_DEPEND="
 	~nb-ide/netbeans-openide-explorer-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-filesystems-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-loaders-${PV}:${SLOT}
+	~nb-ide/netbeans-openide-modules-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-nodes-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-text-${PV}:${SLOT}
 	~nb-ide/netbeans-openide-util-${PV}:${SLOT}
