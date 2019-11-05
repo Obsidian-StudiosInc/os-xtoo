@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -29,7 +29,6 @@ S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="java/org/apache/tomcat/util/"
 JAVA_RES_FIND=" -not -name LocalStrings_*.properties "
-JAVA_RES_RM_DIR=0
 JAVA_RM_FILES=( bcel descriptor digester http log modeler net scan )
 JAVA_RM_FILES=( ${JAVA_RM_FILES[@]/#/java/org/apache/tomcat/util/} )
 
