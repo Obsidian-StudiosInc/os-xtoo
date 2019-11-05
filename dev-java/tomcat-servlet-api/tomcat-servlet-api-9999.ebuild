@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -38,7 +38,6 @@ esac
 S="${WORKDIR}/${MY_S}"
 
 JAVA_RES_FIND=" -not -name LocalStrings_*.properties "
-JAVA_RES_RM_DIR=0
 
 java_prepare() {
 	mv java/javax/servlet/jsp java/javax/jsp \
