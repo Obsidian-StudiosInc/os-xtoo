@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -16,6 +16,7 @@ fi
 CP_DEPEND="
 	dev-java/cglib:3
 	dev-java/junit:4
+	dev-java/junit-jupiter-api:0
 	dev-java/objenesis:2
 	dev-java/testng:0
 "
