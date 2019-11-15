@@ -94,10 +94,8 @@ PLUGINS_DEPEND="
 	dev-java/commons-cli:1
 	dev-java/commons-codec:0
 	dev-java/eclipse-jgit:0
-	~dev-java/gradle-announce-${PV}:${SLOT}
 	~dev-java/gradle-antlr-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-http-${PV}:${SLOT}
-	~dev-java/gradle-build-comparison-${PV}:${SLOT}
 	~dev-java/gradle-build-init-${PV}:${SLOT}
 	~dev-java/gradle-composite-builds-${PV}:${SLOT}
 	~dev-java/gradle-dependency-management-${PV}:${SLOT}
@@ -109,7 +107,6 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-language-groovy-${PV}:${SLOT}
 	~dev-java/gradle-language-java-${PV}:${SLOT}
 	~dev-java/gradle-language-jvm-${PV}:${SLOT}
-	~dev-java/gradle-osgi-${PV}:${SLOT}
 	~dev-java/gradle-platform-base-${PV}:${SLOT}
 	~dev-java/gradle-platform-jvm-${PV}:${SLOT}
 	~dev-java/gradle-platform-native-${PV}:${SLOT}
@@ -192,5 +189,5 @@ src_install() {
 		"${PLUGINS_DEPEND[@]}" "../../../../.."
 
 	insinto "${dest}"
-	doins -r subprojects/distributions/src/toplevel/{init.d,media}
+	doins -r subprojects/distributions/src/toplevel/init.d
 }
