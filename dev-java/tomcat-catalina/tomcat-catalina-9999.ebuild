@@ -50,6 +50,7 @@ JAVA_RM_FILES=(
 	${JAVA_RM_FILES[@]/#/java/org/apache/catalina/}
 	java/org/apache/naming/factory/webservices
 )
+JAVAC_ARGS+=" --add-exports java.rmi/sun.rmi.registry=ALL-UNNAMED "
 
 java_prepare() {
 	sed -i -e "s|@VERSION@|${PV}-os-xtoo|" \
