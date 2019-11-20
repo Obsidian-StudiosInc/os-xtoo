@@ -1,1 +1,0 @@
-gradle-resources-sftp-9999.ebuild
