@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -28,11 +28,11 @@ S="${WORKDIR}/${MY_S}/${PN}"
 
 JAVA_RM_FILES=( ServerSocket.java Socket.java Library.java )
 JAVA_RM_FILES=(
-	${JAVA_RM_FILES[@]/#/src/main/java/com/martiansoftware/nailgun/NGWin32NamedPipe}
+	${JAVA_RM_FILES[@]/#/src/main/java/com/facebook/nailgun/NGWin32NamedPipe}
 )
 
 java_prepare() {
-	sed -i -e "417,420d;422d" \
-		src/main/java/com/martiansoftware/nailgun/NGServer.java \
+	sed -i -e "340,345d;347d" \
+		src/main/java/com/facebook/nailgun/NGServer.java \
 		|| die "Failed to remove windows conditional"
 }
