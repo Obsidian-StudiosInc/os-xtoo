@@ -1,1 +1,0 @@
-jboss-logging-annotations-9999.ebuild
