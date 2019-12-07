@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -23,7 +23,3 @@ LICENSE="CDDL GPL-2-with-classpath-exception"
 SLOT="0"
 
 S="${WORKDIR}/${MY_S}"
-
-java_prepare() {
-	rm -r src/main/resources || die "Failed to remove empty res dir"
-}
