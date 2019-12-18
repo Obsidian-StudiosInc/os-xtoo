@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -29,4 +29,4 @@ HOMEPAGE="https://hc.apache.org/${PN}-${SLOT}.x/"
 LICENSE="Apache-2.0"
 SLOT="${PV/.${PV#*.*.*}/}"
 
-S="${WORKDIR}/${P}/http${PN:15}"
+S="${WORKDIR}/${PN}-rel-v${PV}/http${PN:15}"
