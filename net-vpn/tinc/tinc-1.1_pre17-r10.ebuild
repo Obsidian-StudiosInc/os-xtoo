@@ -10,7 +10,8 @@ inherit autotools systemd
 
 DESCRIPTION="tinc is an easy to configure VPN implementation"
 HOMEPAGE="http://www.tinc-vpn.org/"
-SRC_URI="http://www.tinc-vpn.org/packages/${MY_P}.tar.gz"
+SRC_URI="http://www.tinc-vpn.org/packages/${MY_P}.tar.gz
+	https://dev.gentoo.org/~dlan/distfiles/${PN}-1.1-upstream-patches-2.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -39,6 +40,7 @@ RDEPEND="${DEPEND}"
 S="${WORKDIR}/${MY_P}"
 
 PATCHES=(
+	"${WORKDIR}"/patches-upstream
 	"${FILESDIR}"/tinc-1.1-fix-paths.patch
 	"${FILESDIR}"/tinc-1.1-tinfo.patch
 )
