@@ -33,7 +33,7 @@ DESCRIPTION="Oracle's Java SE Development Kit"
 HOMEPAGE="https://www.oracle.com/technetwork/java/javase/"
 LICENSE="Oracle-BCLA-JavaSE"
 
-IUSE="alsa cups elibc_glibc +fontconfig gtk2 gtk3 headless-awt javafx nsplugin prefix selinux source"
+IUSE="alsa cups elibc_glibc +fontconfig gtk2 gtk3 headless-awt javafx prefix selinux source"
 REQUIRED_USE="javafx? ( alsa fontconfig || ( gtk2 gtk3 ) )"
 QA_PREBUILT="*"
 
@@ -161,17 +161,13 @@ src_prepare() {
 		fi
 	fi
 
-	if ! use nsplugin && [[ ${SLOT} == 10 ]]; then
-		rm lib/libnpjp2.so || die "Failed to remove unwanted nsplugin"
-	fi
-
 	if ! use source ; then
 		rm lib/src.zip || die "Failed to remove unwanted src.zip"
 	fi
 }
 
 src_install() {
-	local dest ddest nsplugin nsplugin_link
+	local dest ddest
 
 	dest="/opt/${PN}-${SLOT}"
 	ddest="${ED}${dest#/}"
@@ -184,13 +180,6 @@ src_install() {
 	dodir "${dest}"
 
 	cp -pPR bin conf include jmods lib "${ddest}" || die
-
-	if use nsplugin ; then
-		nsplugin=$(echo lib/libnpjp2.so)
-		nsplugin_link=${nsplugin##*/}
-		nsplugin_link=${nsplugin_link/./-${PN}-${SLOT}.}
-		dosym "${dest}/${nsplugin}" "/usr/$(get_libdir)/nsbrowser/plugins/${nsplugin_link}"
-	fi
 
 	if [[ -d lib/desktop ]] ; then
 		# Install desktop file for the Java Control Panel.
