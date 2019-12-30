@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2019 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -26,4 +26,4 @@ SLOT="0"
 
 S="${WORKDIR}/${MY_S}/${PN%-*}/${PN##*-}"
 
-JAVA_RM_FILES=( src/main/java/module-info.java src/main/resources )
+JAVA_RM_FILES=( src/main/java/module-info.java )
