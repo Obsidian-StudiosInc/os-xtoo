@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -82,4 +82,8 @@ java_prepare() {
 	mv "Eclipse UI Editor Support" Eclipse_UI_Editor_Support \
 		|| die "Failed to rename dir"
 	mv "Eclipse UI" Eclipse_UI || die "Failed to rename dir"
+
+	sed -i -e "s|yield()|Thread.yield()|" \
+		Eclipse_UI/org/eclipse/ui/application/WorkbenchAdvisor.java \
+		|| die "Failed to sed/fix call to yield()"
 }
