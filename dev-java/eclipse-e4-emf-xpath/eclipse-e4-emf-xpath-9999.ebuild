@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -26,6 +26,7 @@ CP_DEPEND="
 	dev-java/commons-jxpath:0
 	dev-java/eclipse-emf-common:${EEMF_SLOT}
 	dev-java/eclipse-emf-ecore:${EEMF_SLOT}
+	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 "
 
 inherit java-pkg
