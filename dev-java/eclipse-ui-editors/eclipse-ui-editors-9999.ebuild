@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -31,6 +31,7 @@ CP_DEPEND="
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
+	~dev-java/eclipse-jdt-annotation-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-jface-text-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
