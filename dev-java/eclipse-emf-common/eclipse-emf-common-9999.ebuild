@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -35,10 +35,12 @@ LICENSE="EPL-1.0"
 S="${WORKDIR}/${MY_S}/plugins/org.${PN//-/.}/"
 
 java_prepare() {
-	# requires eclipse < 4.12
-	if [[ ${PV} == 2.17.0 ]]; then
-		sed -i -e '235,245d' \
-			src/org/eclipse/emf/common/EMFPlugin.java \
-			|| die "Failed to remove deprecated method"
-	fi
+	local f
+
+	for f in "util/BasicEMap" "archive/ArchiveURLConnection"; do
+		sed -i -e "s|return yield|return this.yield|" \
+			-e "s|: yield|: this.yield|" \
+			src/org/eclipse/emf/common/${f}.java \
+			|| die "Failed to sed/fix call to yield()"
+	done
 }
