@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -19,7 +19,7 @@ fi
 
 SLOT="${PV%%.*}"
 
-ECLIPSE_SLOT="4.13"
+ECLIPSE_SLOT="4.14"
 
 CP_DEPEND="
 	dev-java/eclipse-core-jobs:${ECLIPSE_SLOT}
