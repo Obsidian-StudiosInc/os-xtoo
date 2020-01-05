@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -19,7 +19,7 @@ SLOT="${PV%%.*}"
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/eclipse-ecj:4.13
+	dev-java/eclipse-ecj:4.14
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-jasper-el-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
