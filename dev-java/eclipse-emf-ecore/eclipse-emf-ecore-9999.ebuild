@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -40,4 +40,8 @@ LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/plugins/org.${PN//-/.}/"
 
-JAVA_SRC_DIR="src"
+java_prepare() {
+	sed -i -e "s|= yield|= this.yield|" \
+		src/org/eclipse/emf/ecore/util/EcoreUtil.java \
+		|| die "Failed to sed/fix call to yield()"
+}
