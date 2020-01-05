@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -21,7 +21,7 @@ SLOT="${PV%%.*}"
 
 IUSE="systemd extra-webapps"
 
-ECLIPSE_SLOT="4.13"
+ECLIPSE_SLOT="4.14"
 SAPI_SLOT="4.0"
 
 DEPEND="app-admin/pwgen
