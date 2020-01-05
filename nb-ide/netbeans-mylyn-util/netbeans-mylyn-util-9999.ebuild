@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -7,7 +7,7 @@ NB_CLUSTER="ide"
 
 inherit java-netbeans
 
-ECLIPSE_SLOT="4.13"
+ECLIPSE_SLOT="4.14"
 MYLYN_SLOT="3"
 
 CP_DEPEND="
