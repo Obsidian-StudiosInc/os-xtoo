@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -48,4 +48,8 @@ java_prepare() {
 		-r "**/localization.properties" \
 		-p "org.glassfish.jersey.internal.l10n" \
 		|| die "Failed to generate java files from resources"
+
+	sed -i -e "s|closeOutput|completeOutput|" \
+		src/main/java/org/glassfish/jersey/jetty/JettyHttpContainer.java \
+		|| die "Failed to sed/fix jetty api change"
 }
