@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -22,6 +22,7 @@ CP_DEPEND="
 	dev-java/escapevelocity:0
 	dev-java/guava:28
 	dev-java/hamcrest:0
+	dev-java/incap:0
 	dev-java/java-diff-utils:0
 	dev-java/junit:4
 "
