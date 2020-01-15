@@ -1,4 +1,4 @@
-# Copyright 2016-2019 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Copyright 1999-2014 Gentoo Foundation
@@ -15,7 +15,7 @@ fi
 
 SLOT="0"
 
-RUBY_VERSION=2.4
+RUBY_VERSION=2.6
 RUBY_REVISION=0
 
 CP_DEPEND="
@@ -95,6 +95,8 @@ pkg_setup() {
 }
 
 java_prepare() {
+	local f
+
 	mv core/src ./ || die "Failed to move sources"
 	einfo "Setting constants"
 
@@ -110,6 +112,22 @@ java_prepare() {
 		-e "s|@tzdata.version@|$(qlist -Iv timezone-data | cut -d '-' -f 4)|" \
 		"src/main/resources/org/jruby/runtime/Constants.java" \
 		|| die "Failed to sed Constants.java"
+
+	sed -i -e "s|return yield(|return ThreadFiber.yield(|g" \
+		src/main/java/org/jruby/ext/fiber/ThreadFiber.java \
+		|| die "Failed to sed/fix call to yield()"
+
+	for f in $( grep -l -m1 yield\( -r * ); do
+		sed -i -e "s|return yield(context|return this.yield(context|" \
+			-e "s|yield(context, args|this.yield(context, args|" \
+			-e "s| yield()| Thread.yield()|" "${f}" \
+			|| die "Failed to sed/fix call to yield()"
+	done
+
+	for f in $( grep -l -m1 martiansoftware -r * ); do
+		sed -i -e "s|martiansoftware|facebook|" "${f}" \
+			|| die "Failed to sed/fix nailgun package name"
+	done
 
 	# Remove all the references to RubyGems as we're just going to
 	# install it through dev-ruby/rubygems.
