@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Based on ebuild from gentoo main tree
@@ -26,7 +26,7 @@ else
 	MY_S="${MY_P/v/}"
 fi
 
-PYTHON_COMPAT=( python{3_5,3_6} )
+PYTHON_COMPAT=( python3_{6,7} )
 
 inherit distutils-r1 eutils ${ECLASS}
 
