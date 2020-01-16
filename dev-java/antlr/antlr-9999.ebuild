@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -14,7 +14,7 @@ BASE_URI="https://github.com/${PN}/${MY_PN}"
 # live will fail without generating UnicodeData.java
 if [[ ${PV} != 9999 ]]; then
 	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz
-		http://repo1.maven.org/maven2/org/${PN}/${MY_PN}/${PV}/${MY_P}-sources.jar"
+		https://repo1.maven.org/maven2/org/${PN}/${MY_PN}/${PV}/${MY_P}-sources.jar"
 	MY_S="${MY_P}"
 fi
 
