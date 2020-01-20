@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -21,10 +21,13 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/ant-core:0
+	dev-java/antlr:0
 	dev-java/asm:7
 	dev-java/commons-cli:1
-	~dev-java/groovy-${PV}:0
-	~dev-java/groovy-groovydoc-${PV}:0
+	~dev-java/groovy-${PV}:${SLOT}
+	~dev-java/groovy-cli-picocli-${PV}:${SLOT}
+	~dev-java/groovy-groovydoc-${PV}:${SLOT}
+	dev-java/picocli:0
 "
 
 inherit java-pkg
