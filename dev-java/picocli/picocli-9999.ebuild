@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -12,7 +12,7 @@ fi
 
 CP_DEPEND="
 	dev-java/asm:7
-	dev-java/groovy:0
+	dev-java/groovy:2
 "
 
 inherit java-pkg
