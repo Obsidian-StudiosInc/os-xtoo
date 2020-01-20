@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -21,8 +21,9 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/antlr:0
-	~dev-java/groovy-${PV}:0
-	~dev-java/groovy-templates-${PV}:0
+	~dev-java/groovy-${PV}:${SLOT}
+	~dev-java/groovy-cli-picocli-${PV}:${SLOT}
+	~dev-java/groovy-templates-${PV}:${SLOT}
 "
 
 inherit java-pkg
@@ -41,7 +42,9 @@ src_compile() {
 	sources=groovy_sources.lst
 	classes=target/groovy_classes
 	find "${S}/src/main/groovy" -name \*.groovy > ${sources}
-	groovyc -d ${classes} -cp ${PN}.jar @${sources} \
+	groovyc -d ${classes} \
+		-cp "${PN}.jar:$(java-pkg_getjars groovy-cli-picocli)" \
+		@${sources} \
 		|| die "Failed to compile groovy files"
 	# ugly should be included with existing
 	jar uf ${PN}.jar -C ${classes} . || die "update jar failed"
