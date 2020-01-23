@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -39,6 +39,7 @@ if [[ "${SLOT}" != "4.0" ]] ; then
 		dev-java/commons-cli:${CLI_SLOT}
 		dev-java/groovy:0
 		dev-java/groovy-ant:0
+		dev-java/picocli:0
 	"
 fi
 inherit java-pkg
@@ -62,7 +63,7 @@ if [[ "${SLOT}" != "4.0" ]] ; then
 		# Unable to use groovy due to classpath issues
 		# the following does not work, but should
 		# groovy -cp "$(java-pkg_getjars --build-only groovy-ant)"
-		java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant)" \
+		java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant,picocli)" \
 			groovy.ui.GroovyMain src/main/script/codegen.groovy \
 			|| die "groovy codegen failed"
 	}
