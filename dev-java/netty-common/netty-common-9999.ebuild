@@ -31,17 +31,16 @@ CP_DEPEND="
 	dev-java/slf4j-api:0
 "
 
-if [[ "${SLOT}" != "4.0" ]] ; then
-	GROOVY_DEPS="
-		dev-java/ant-core:0
-		dev-java/antlr:0
-		dev-java/asm:${ASM_SLOT}
-		dev-java/commons-cli:${CLI_SLOT}
-		dev-java/groovy:0
-		dev-java/groovy-ant:0
-		dev-java/picocli:0
-	"
-fi
+GROOVY_DEPS="
+	dev-java/ant-core:0
+	dev-java/antlr:0
+	dev-java/asm:${ASM_SLOT}
+	dev-java/commons-cli:${CLI_SLOT}
+	dev-java/groovy:0
+	dev-java/groovy-ant:0
+	dev-java/picocli:0
+"
+
 inherit java-pkg
 
 DESCRIPTION="Netty ${MY_MOD}"
@@ -55,16 +54,13 @@ S="${WORKDIR}/${MY_S}/${MY_MOD}"
 JAVAC_ARGS="--add-exports jdk.unsupported/sun.misc=ALL-UNNAMED"
 JAVA_RM_FILES=( src/main/java/io/netty/util/internal/svm/ )
 
-if [[ "${SLOT}" != "4.0" ]] ; then
+PATCHES=( "${FILESDIR}/codegen_groovy.patch" )
 
-	PATCHES=( "${FILESDIR}/codegen_groovy.patch" )
-
-	java_prepare() {
-		# Unable to use groovy due to classpath issues
-		# the following does not work, but should
-		# groovy -cp "$(java-pkg_getjars --build-only groovy-ant)"
-		java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant,picocli)" \
-			groovy.ui.GroovyMain src/main/script/codegen.groovy \
-			|| die "groovy codegen failed"
-	}
-fi
+java_prepare() {
+	# Unable to use groovy due to classpath issues
+	# the following does not work, but should
+	# groovy -cp "$(java-pkg_getjars --build-only groovy-ant)"
+	java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant,picocli)" \
+		groovy.ui.GroovyMain src/main/script/codegen.groovy \
+		|| die "groovy codegen failed"
+}
