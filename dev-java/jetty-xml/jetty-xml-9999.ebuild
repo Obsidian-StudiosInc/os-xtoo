@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 DESCRIPTION="Jetty's XML"
 
 MY_PN="jetty"
-MY_PV="${PV/.201/.v201}"
+MY_PV="${PV%*.*}.v${PV##*.}"
 MY_PV="${MY_PV/_rc/.RC}"
 MY_P="${MY_PN}-${MY_PV}"
 
