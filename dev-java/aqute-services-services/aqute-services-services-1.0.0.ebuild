@@ -1,11 +1,11 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
 
 JAVA_PKG_IUSE="doc source"
 
-BND_SLOT="4"
+BND_SLOT="5"
 
 CP_DEPEND="dev-java/aqute-services-struct:0
 	dev-java/bnd-annotation:${BND_SLOT}
