@@ -90,7 +90,7 @@ LIB_DEPEND="
 PLUGINS_DEPEND="
 	dev-java/ant-ivy:0
 	dev-java/aqute-jpm-clnt:0
-	dev-java/bndlib:4
+	dev-java/bndlib:5
 	dev-java/bsh:0
 	dev-java/commons-cli:1
 	dev-java/commons-codec:0
