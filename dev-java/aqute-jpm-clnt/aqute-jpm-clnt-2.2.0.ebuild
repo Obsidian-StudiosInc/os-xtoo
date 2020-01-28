@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 MY_PN=${PN/aqute/aQute}
 MY_PN=${MY_PN//-/.}
 
-CP_DEPEND="dev-java/bndlib:4"
+CP_DEPEND="dev-java/bndlib:5"
 
 inherit java-pkg
 
