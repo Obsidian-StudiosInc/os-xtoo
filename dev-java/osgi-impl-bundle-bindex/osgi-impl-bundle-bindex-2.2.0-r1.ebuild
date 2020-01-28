@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,7 +11,7 @@ BASE_URI="https://github.com/bndtools/bundle-hub/"
 
 SLOT="0"
 
-BND_SLOT="4"
+BND_SLOT="5"
 
 CP_DEPEND="
 	dev-java/ant-core:0
