@@ -18,7 +18,7 @@ fi
 
 CP_DEPEND="
 	dev-java/aqute-jpm-clnt:0
-	dev-java/bndlib:4
+	dev-java/bndlib:5
 "
 
 inherit java-pkg
