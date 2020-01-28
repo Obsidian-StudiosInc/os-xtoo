@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -26,6 +26,6 @@ HOMEPAGE="https://github.com/google/guice/"
 LICENSE="Apache-2.0"
 SLOT="${PV%%.*}"
 
-DEPEND+=" dev-java/bnd:4"
+DEPEND+=" dev-java/bnd:5"
 
 S="${WORKDIR}/${P}/core"
