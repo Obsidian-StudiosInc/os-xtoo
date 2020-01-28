@@ -30,7 +30,7 @@ HOMEPAGE="https://www.jgroups.org/"
 LICENSE="LGPL-2.1"
 SLOT="${PV%%.*}"
 
-DEPEND+=" dev-java/bnd:4"
+DEPEND+=" dev-java/bnd:5"
 
 S="${WORKDIR}/${MY_S}"
 
