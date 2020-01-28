@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -17,7 +17,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/bnd-annotation:4
+	dev-java/bnd-annotation:5
 	dev-java/jaxb-api:0
 	dev-java/osgi-core-api:6
 "
