@@ -27,6 +27,7 @@ CP_DEPEND="
 	dev-java/commons-imaging:0
 	dev-java/commons-io:0
 	dev-java/commons-text:0
+	dev-java/fop-core:0
 	dev-java/jsr305:0
 	dev-java/juniversalchardet:0
 "
