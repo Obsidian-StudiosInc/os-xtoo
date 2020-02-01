@@ -1,4 +1,4 @@
-# Copyright 2019 Obsidian-Studios, Inc.
+# Copyright 2019-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -43,5 +43,29 @@ S="${WORKDIR}/${MY_S}/foundation/org.${PN//-/.}/"
 JAVA_RES_DIR="resource"
 
 java_prepare() {
+	local f files
+
 	mv META-INF resource || die "Failed to move META-INF to resource dir"
+
+	files=(
+		descriptors/ClassExtractor
+		descriptors/copying/CloneCopyPolicy
+		descriptors/copying/CopyPolicy
+		queries/MethodBaseQueryRedirector
+		queries/QueryRedirector
+	)
+	for f in "${files[@]}"; do
+		sed -i -e "s|Record |org.eclipse.persistence.sessions.Record |g" \
+			"src/org/eclipse/persistence/${f}.java" \
+			|| die "Failed to sed/fix ambiguous reference"
+	done
+
+	for f in $(grep -l -m1 resource.cci -r *); do
+		sed -i -e "s|(Record |(javax.resource.cci.Record |g" \
+			-e "s|(Record)|(javax.resource.cci.Record)|g" \
+			-e "s| Record | javax.resource.cci.Record |g" \
+			-e "s|of Record)|of javax.resource.cci.Record)|g" \
+			"${f}" \
+			|| die "Failed to sed/fix ambiguous reference"
+	done
 }
