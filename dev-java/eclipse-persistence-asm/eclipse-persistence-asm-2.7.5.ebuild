@@ -1,1 +1,0 @@
-eclipse-persistence-asm-9999.ebuild
