@@ -37,9 +37,3 @@ JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED "
-
-java_prepare() {
-	sed -i -e "s|typeProcessor));|typeProcessor),null);|" \
-		src/main/java/org/checkerframework/dataflow/cfg/JavaSource2CFGDOT.java \
-		|| die "Failed to sed/fix java 9+ arg count"
-}
