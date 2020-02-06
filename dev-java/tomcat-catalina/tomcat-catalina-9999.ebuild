@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -26,6 +26,7 @@ CP_DEPEND="
 	dev-java/jaxws-api:0
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
 	~dev-java/tomcat-api-${PV}:${SLOT}
+	~dev-java/tomcat-catalina-tribes-${PV}:${SLOT}
 	~dev-java/tomcat-coyote-${PV}:${SLOT}
 	~dev-java/tomcat-jaspic-api-${PV}:${SLOT}
 	~dev-java/tomcat-jni-${PV}:${SLOT}
