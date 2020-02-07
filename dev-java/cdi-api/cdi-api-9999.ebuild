@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -6,11 +6,10 @@ EAPI="7"
 JAVA_PKG_IUSE="doc source"
 
 MY_PN="${PN%-*}"
-MY_PV="${PV/_/.}"
-MY_PV="${MY_PV^}"
+MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV}"
-MY_MOD="${PN:4}"
-BASE_URI="https://github.com/${MY_PN}-spec/${MY_PN}"
+MY_MOD="${PN#*-}"
+BASE_URI="https://github.com/eclipse-ee4j/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
