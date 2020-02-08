@@ -12,12 +12,15 @@ BASE_URI="https://download.java.net/java/"
 JDK_URI="https://jdk.java.net/${SLOT}/"
 RESTRICT="preserve-libs strip"
 
-if [[ ${PV} == *_pre* ]]; then
-	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
-	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
-elif [[ ${PV} == 13.0.2_p* ]]; then
+if [[ ${PV} == 13.0.2_p* ]]; then
 	MY_PV="${PV%%_*}"
 	BASE_URI+="GA/jdk${MY_PV}/d4173c853231432d94f001e99d882ca7/${PV##*_p}/GPL"
+elif [[ ${PV} == 14_pre36 ]]; then
+	MY_PV="${PV%%_*}"
+	BASE_URI+="GA/jdk${MY_PV}/076bab302c7b4508975440c56f6cc26a/${PV##*_pre}/GPL"
+elif [[ ${PV} == *_pre* ]]; then
+	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
+	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
 	MY_PV="${PV%%_*}"
