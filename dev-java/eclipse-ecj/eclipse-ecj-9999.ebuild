@@ -58,3 +58,9 @@ java_prepare() {
 			|| die "Failed to copy ${f}/*"
 	done
 }
+
+src_install() {
+	java-pkg-simple_src_install
+	java-pkg_dolauncher ${PN#*-}-${SLOT} --main \
+		org.eclipse.jdt.internal.compiler.batch.Main
+}
