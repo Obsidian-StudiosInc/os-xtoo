@@ -6,7 +6,7 @@ EAPI="7"
 SLOT="0"
 
 CP_DEPEND="
-	~dev-java/gradle-pineapple-${PV}:${SLOT}
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	dev-java/guava:28
 	dev-java/jsr305:0
 "
