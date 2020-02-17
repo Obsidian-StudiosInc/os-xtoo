@@ -8,7 +8,7 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
-	~dev-java/gradle-pineapple-${PV}:${SLOT}
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:28
 	dev-java/jsr305:0
