@@ -10,6 +10,7 @@ CP_DEPEND="
 	dev-java/asm:7
 	dev-java/commons-lang:2
 	dev-java/fastutil:0
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-build-events-${PV}:${SLOT}
