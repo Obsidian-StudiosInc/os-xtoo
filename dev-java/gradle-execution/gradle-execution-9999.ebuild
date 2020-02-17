@@ -8,8 +8,10 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
+	~dev-java/gradle-build-cache-base-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
