@@ -9,6 +9,7 @@ CP_DEPEND="
 	dev-java/commons-collections:0
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
