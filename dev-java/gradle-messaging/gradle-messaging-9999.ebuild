@@ -8,6 +8,7 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-lang:2
 	dev-java/fastutil:0
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	dev-java/guava:28
