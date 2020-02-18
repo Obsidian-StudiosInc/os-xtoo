@@ -10,6 +10,7 @@ CP_DEPEND="
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	dev-java/gson:0
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
