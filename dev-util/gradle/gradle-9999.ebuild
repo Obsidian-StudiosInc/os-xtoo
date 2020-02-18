@@ -39,6 +39,7 @@ LIB_DEPEND="
 	dev-java/commons-lang:2
 	dev-java/commons-lang:3
 	dev-java/fastutil:0
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-bootstrap-${PV}:${SLOT}
@@ -62,7 +63,6 @@ LIB_DEPEND="
 	~dev-java/gradle-model-groovy-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
-	~dev-java/gradle-pineapple-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
@@ -117,6 +117,7 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-reporting-${PV}:${SLOT}
 	~dev-java/gradle-resources-http-${PV}:${SLOT}
 	~dev-java/gradle-resources-sftp-${PV}:${SLOT}
+	~dev-java/gradle-security-${PV}:${SLOT}
 	~dev-java/gradle-testing-base-${PV}:${SLOT}
 	~dev-java/gradle-testing-jvm-${PV}:${SLOT}
 	~dev-java/gradle-test-kit-${PV}:${SLOT}
