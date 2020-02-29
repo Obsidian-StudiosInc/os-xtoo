@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -35,10 +35,13 @@ java_prepare() {
 
 	# https://github.com/eclipse/jgit/commit/50436cc
 	sed -i -e "/io.SafeBufferedOutputStream;/d" -e "s|Safe||" \
-		-e '/while (treeWalk.next())/i\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boolean hasAttributeNodeProvider = treeWalk.getAttributesNodeProvider() != null;' \
 		-e 's|ignoreConflicts))|ignoreConflicts, hasAttributeNodeProvider ? treeWalk.getAttributes(): new org.eclipse.jgit.attributes.Attributes()))|' \
 		src/org/netbeans/libs/git/jgit/commands/CherryPickCommand.java \
 		|| die "Failed to sed/fix removed class and method changes"
+
+	sed -i -e "288i\ \ \ \ \ \ \ \ @Override\n\ \ \ \ \ \ \ \ public FileBasedConfig openJGitConfig (Config config, FS fs) {\n\ \ \ \ \ \ \ \ \ \ \ \ return instance.openJGitConfig(config, fs);\n\ \ \ \ \ \ \ \ }" \
+		src/org/netbeans/libs/git/jgit/commands/TransportCommand.java \
+		|| die "Failed to sed/add abstract method implementation"
 
 	# https://github.com/eclipse/jgit/commit/e1cfe09
 	for f in $(grep -l -m1 getRef\( -r *); do
