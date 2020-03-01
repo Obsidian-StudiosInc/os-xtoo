@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -102,12 +102,22 @@ java_prepare() {
 
 		sed -i -e "1404i\\\t@Override\n\tpublic Tree visitYield(YieldTree yt,Object o) { return null; }" \
 			-e "1404i\\\t@Override\n\tpublic Tree visitSwitchExpression(SwitchExpressionTree node, Object o){ return null; }" \
+			-e "1404i\\\t@Override\n\tpublic Tree visitBindingPattern(com.sun.source.tree.BindingPatternTree node, Object o){ return null; }" \
 			src/org/netbeans/modules/java/source/transform/ImmutableTreeTranslator.java \
 			|| die "Failed to sed/implement method for java 14"
 
 		sed -i -e "651i\\\t@Override\n\tpublic Tree visitYield(com.sun.source.tree.YieldTree yt,Void v) { return null; }" \
 			-e "651i\\\t@Override\n\tpublic Tree visitSwitchExpression(com.sun.source.tree.SwitchExpressionTree node, Void v){ return null; }" \
+			-e "651i\\\t@Override\n\tpublic Tree visitBindingPattern(com.sun.source.tree.BindingPatternTree node, Void v){ return null; }" \
 			src/org/netbeans/modules/java/source/transform/TreeDuplicator.java \
 			|| die "Failed to sed/implement method for java 14"
+
+		sed -i -e "5838s/t1.clazz, t2.clazz/t1.pattern, t2.pattern/" \
+			src/org/netbeans/modules/java/source/save/CasualDiff.java \
+			|| die "Failed to sed/change member for java 14+"
+
+		sed -i -e "213s/tree.clazz/tree.pattern/" \
+			src/org/netbeans/modules/java/source/pretty/WidthEstimator.java \
+			|| die "Failed to sed/change member for java 14+"
 	fi
 }
