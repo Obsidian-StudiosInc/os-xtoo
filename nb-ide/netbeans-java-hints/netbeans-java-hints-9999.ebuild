@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -76,6 +76,7 @@ java_prepare() {
 	if [[ $(java-pkg_get-vm-version) -ge 14 ]]; then
 		sed -i -e "1391i\\\t@Override\n\tpublic List<? extends TypeMirror> visitYield(com.sun.source.tree.YieldTree yt,Object o) { return null; }" \
 			-e "1391i\\\t@Override\n\tpublic List<? extends TypeMirror> visitSwitchExpression(com.sun.source.tree.SwitchExpressionTree node, Object o){ return null; }" \
+			 -e "1391i\\\t@Override\n\tpublic  List<? extends TypeMirror> visitBindingPattern(com.sun.source.tree.BindingPatternTree node, Object o){ return null; }" \
 			src/org/netbeans/modules/java/hints/suggestions/ExpectedTypeResolver.java \
 			|| die "Failed to sed/implement method for java 14"
 	fi
