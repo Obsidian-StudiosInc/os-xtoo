@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -57,3 +57,13 @@ JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED 
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports=jdk.javadoc/com.sun.tools.javadoc.main=ALL-UNNAMED "
+
+java_prepare() {
+	sed -i -e "s|boolean lambdaParam|boolean lambdaParam, boolean b|" \
+		-e "s|(lambdaParam)|(lambdaParam,b)|" \
+		-e "s|classOrInterfaceBodyDeclaration|classOrInterfaceOrRecordBodyDeclaration|g" \
+		-e "s|boolean isInterface|boolean isInterface, boolean isRecord|" \
+		-e "s|, isInterface)|, isInterface, isRecord)|" \
+		src/org/netbeans/modules/java/hints/spiimpl/Utilities.java \
+		|| die "Failed to sed/fix api changes"
+}
