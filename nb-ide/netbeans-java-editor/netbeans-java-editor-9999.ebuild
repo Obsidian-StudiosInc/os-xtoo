@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -66,3 +66,9 @@ DEPEND="${CP_DEPEND}
 
 RDEPEND="${CP_DEPEND}
 	>=virtual/jre-9"
+
+java_prepare() {
+	sed -i -e "99iimport org.netbeans.modules.java.source.TreeShims;" \
+		src/org/netbeans/modules/editor/java/GoToSupport.java \
+		|| die "Failed to sed/add missing import"
+}
