@@ -29,6 +29,7 @@ CP_DEPEND="
 	~dev-java/netty-buffer-${PV}:${SLOT}
 	~dev-java/netty-common-${PV}:${SLOT}
 	~dev-java/netty-codec-${PV}:${SLOT}
+	~dev-java/netty-resolver-${PV}:${SLOT}
 	dev-java/netty-tcnative:2
 	~dev-java/netty-transport-${PV}:${SLOT}
 "
