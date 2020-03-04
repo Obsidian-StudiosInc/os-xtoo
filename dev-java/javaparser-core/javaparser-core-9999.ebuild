@@ -34,4 +34,8 @@ JAVAC_ARGS+=" --add-exports java.base/sun.reflect.generics.reflectiveObjects=ALL
 java_prepare() {
 	javacc -OUTPUT_DIRECTORY=src/main/java src/main/javacc/java.jj \
 		|| die "Failed to generate sources via javacc"
+
+	javacc -OUTPUT_DIRECTORY=src/main/javacc-support \
+		src/main/javacc/javadoc.jj \
+		|| die "Failed to generate sources via javacc"
 }
