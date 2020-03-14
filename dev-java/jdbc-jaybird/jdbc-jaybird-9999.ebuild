@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -19,8 +19,10 @@ fi
 
 CP_DEPEND="
 	dev-java/antlr:4
+	dev-java/decimal-java:0
 	dev-java/jna:5
 	dev-java/javax-resource:0
+	dev-java/tomcat-servlet-api:4.0
 "
 
 inherit java-pkg
@@ -39,6 +41,15 @@ JAVA_SRC_DIR="
 	src/openoffice
 "
 JAVA_RES_DIR="src/resources"
+
+java_prepare() {
+	local f
+
+	for f in $(grep -l -m1 extern\.decimal -r src ); do
+		sed -i -e "s|extern.decimal|decimal|g" "${f}" \
+			|| die "Failed to sed/fix decimal-java imports"
+	done
+}
 
 src_install() {
 	java-pkg-simple_src_install
