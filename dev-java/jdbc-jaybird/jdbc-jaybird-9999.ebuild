@@ -49,6 +49,14 @@ java_prepare() {
 		sed -i -e "s|extern.decimal|decimal|g" "${f}" \
 			|| die "Failed to sed/fix decimal-java imports"
 	done
+
+	sed -i -e "s|@VERSION@|${PV}|" \
+		-e "s|@NAME@|${PN##*-}|" \
+		-e "s|@MAVEN_NAME@-@VERSION_FULL@|${P}|" \
+		-e "s|@VERSION_MAJOR@|${PV%%.*}|" \
+		-e "s|@VERSION_MINOR@|$(cut -d '.' -f 2 <<< ${PV})|" \
+		src/resources/org/firebirdsql/jaybird/version.properties \
+		|| die "Failed to sed/set version, name, major/minor"
 }
 
 src_install() {
