@@ -18,9 +18,6 @@ if [[ ${PV} == 13.0.2_p* ]]; then
 elif [[ ${PV} == 14_p* ]]; then
 	MY_PV="${PV%%_*}"
 	BASE_URI+="GA/jdk${MY_PV}/076bab302c7b4508975440c56f6cc26a/${PV##*_p}/GPL"
-elif [[ ${PV} == 14_pre36 ]]; then
-	MY_PV="${PV%%_*}"
-	BASE_URI+="GA/jdk${MY_PV}/076bab302c7b4508975440c56f6cc26a/${PV##*_pre}/GPL"
 elif [[ ${PV} == *_pre* ]]; then
 	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
 	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
