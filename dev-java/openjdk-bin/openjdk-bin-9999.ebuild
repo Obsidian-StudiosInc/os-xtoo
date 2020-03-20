@@ -15,6 +15,9 @@ RESTRICT="preserve-libs strip"
 if [[ ${PV} == 13.0.2_p* ]]; then
 	MY_PV="${PV%%_*}"
 	BASE_URI+="GA/jdk${MY_PV}/d4173c853231432d94f001e99d882ca7/${PV##*_p}/GPL"
+elif [[ ${PV} == 14_p* ]]; then
+	MY_PV="${PV%%_*}"
+	BASE_URI+="GA/jdk${MY_PV}/076bab302c7b4508975440c56f6cc26a/${PV##*_p}/GPL"
 elif [[ ${PV} == 14_pre36 ]]; then
 	MY_PV="${PV%%_*}"
 	BASE_URI+="GA/jdk${MY_PV}/076bab302c7b4508975440c56f6cc26a/${PV##*_pre}/GPL"
