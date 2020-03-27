@@ -35,6 +35,7 @@ CP_DEPEND="
 	~dev-java/eclipse-e4-core-di-annotations-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-di-extensions-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-services-${PV}:${SLOT}
+	~dev-java/eclipse-e4-ui-ide-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-services-${PV}:${SLOT}
 	~dev-java/eclipse-e4-ui-workbench-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-app-${PV}:${SLOT}
