@@ -16,7 +16,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/eclipse-osgi:4.14
+	dev-java/eclipse-osgi:4.15
 	dev-java/osgi-core-api:5
 	dev-java/slf4j-api:0
 "
