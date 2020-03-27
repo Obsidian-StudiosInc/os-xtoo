@@ -22,6 +22,7 @@ SLOT="${PV/.${PV#*.*.*}/}"
 CP_DEPEND="
 	~dev-java/eclipse-core-commands-${PV}:${SLOT}
 	~dev-java/eclipse-core-jobs-${PV}:${SLOT}
+	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
