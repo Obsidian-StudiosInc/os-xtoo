@@ -25,6 +25,7 @@ OSGI_SLOT="6"
 CP_DEPEND="
 	~dev-java/eclipse-core-commands-${PV}:${SLOT}
 	~dev-java/eclipse-core-expressions-${PV}:${SLOT}
+	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-commands-${PV}:${SLOT}
