@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Some USE and depends from enlightenment-live overlay
@@ -26,7 +26,7 @@ IUSE="+X audio avahi +bmp connman cxx dds debug doc drm egl elogind
 	harfbuzz hyphen +ico ibus jpeg2k libressl mono neon lua luajit nls
 	opengl ssl pdf physics pixman +png +ppm postscript psd pulseaudio
 	rawphoto scim sdl sound static-libs +svg systemd system-lz4 test tga
-	tiff tslib v4l2 vlc vnc wayland webp xcf xim xine xpm xpresent"
+	tiff tslib v4l2 vnc wayland webp xcf xim xpm xpresent"
 
 REQUIRED_USE="
 	X		( || ( gles2 opengl ) )
@@ -87,7 +87,6 @@ COMMON_DEP="
 		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-base:1.0
 	)
-	vlc? ( media-video/vlc )
 	harfbuzz? ( media-libs/harfbuzz )
 	ibus? ( app-i18n/ibus )
 	jpeg2k? ( media-libs/openjpeg:0 )
@@ -120,7 +119,6 @@ COMMON_DEP="
 		egl? ( media-libs/mesa[egl,gles2] )
 	)
 	webp? ( media-libs/libwebp )
-	xine? ( >=media-libs/xine-lib-1.1.1 )
 	xpm? ( x11-libs/libXpm )
 	xpresent? ( x11-libs/libXpresent )
 "
@@ -171,13 +169,6 @@ src_configure() {
 	use mono && opts+="mono,"
 	E_ECONF+=( -Dbindings="${opts%*,}" )
 
-	# default disable
-	opts="gstreamer,"
-	! use gstreamer && opts+="gstreamer1,"
-	! use vlc && opts+="libvlc,"
-	! use xine && opts+="xine,"
-	E_ECONF+=( -Demotion-loaders-disabler="${opts%*,}" )
-
 	# Always enabled - gst eet generic jpeg"
 	# rsvg wbmp tgv
 	choices=(
@@ -202,10 +193,6 @@ src_configure() {
 	! use xim && opts+="xim,"
 	E_ECONF+=( -Decore-imf-loaders-disabler="${opts%*,}" )
 
-	if ! use vlc; then
-		E_ECONF+=( -Demotion-generic-loaders-disabler=vlc )
-	fi
-
 	E_ECONF+=(
 		-Daudio=$(usex audio true false)
 		-Davahi=$(usex avahi true false)
@@ -225,6 +212,7 @@ src_configure() {
 		-Dbuild-tests=$(usex test true false)
 		-Dglib=$(usex glib true false)
 		-Dg-mainloop=false # may add USE flag
+		-Dgstreamer=$(usex gstreamer true false)
 		-Dsystemd=$(usex systemd true false)
 		-Dpulseaudio=$(usex pulseaudio true false)
 		-Dnetwork-backend=$(usex connman connman none)
