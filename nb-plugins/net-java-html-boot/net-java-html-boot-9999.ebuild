@@ -21,7 +21,7 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	~nb-plugins/net-java-html-${PV}:${SLOT}
 	nb-ide/netbeans-openide-util-lookup:11
 "
