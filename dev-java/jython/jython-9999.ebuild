@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -23,7 +23,7 @@ ANTLR_SLOT="3"
 CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/antlr:${ANTLR_SLOT}
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/commons-compress:0
 	dev-java/guava:28
 	dev-java/jffi:0
