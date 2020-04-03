@@ -20,7 +20,7 @@ RUBY_REVISION=0
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/commons-bsf:0
 	dev-java/backport9:0
 	dev-java/bytelist:0
