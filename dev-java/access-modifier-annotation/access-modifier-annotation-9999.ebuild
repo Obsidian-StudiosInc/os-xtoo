@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -17,7 +17,7 @@ fi
 
 CP_DEPEND="
 	dev-java/annotation-indexer:0
-	dev-java/asm:7
+	dev-java/asm:8
 "
 
 inherit java-pkg
