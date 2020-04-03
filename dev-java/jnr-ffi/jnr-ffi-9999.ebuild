@@ -15,7 +15,7 @@ fi
 SLOT="${PV%%.*}"
 
 CP_DEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/jffi:0
 	dev-java/jnr-a64asm:0
 	dev-java/jnr-x86asm:0
