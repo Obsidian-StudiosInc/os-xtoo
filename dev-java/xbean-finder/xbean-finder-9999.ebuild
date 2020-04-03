@@ -1,4 +1,4 @@
-# Copyright 2019 Obsidian-Studios, Inc.
+# Copyright 2019-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -18,7 +18,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	~dev-java/xbean-asm-util-${PV}:${SLOT}
 	~dev-java/xbean-bundleutils-${PV}:${SLOT}
 	dev-java/osgi-core-api:4
