@@ -22,7 +22,7 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/antlr:0
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/commons-cli:1
 	~dev-java/groovy-${PV}:${SLOT}
 	~dev-java/groovy-cli-picocli-${PV}:${SLOT}
