@@ -18,7 +18,7 @@ fi
 BB_SLOT="0"
 
 CP_DEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/auto-common:0
 	dev-java/auto-service:0
 	dev-java/guava:28
