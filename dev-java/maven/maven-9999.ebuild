@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -26,7 +26,7 @@ SLF4J_SLOT="0"
 WAGON_SLOT="0"
 
 RDEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/aopalliance:1
 	dev-java/cdi-api:0
 	dev-java/cglib:3
