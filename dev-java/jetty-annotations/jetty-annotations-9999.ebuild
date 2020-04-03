@@ -20,7 +20,7 @@ fi
 SLOT="${PV/.${PV#*.*.*}/}"
 
 CP_DEPEND="
-	dev-java/asm:7
+	dev-java/asm:8
 	~dev-java/jetty-http-${PV}:${SLOT}
 	~dev-java/jetty-plus-${PV}:${SLOT}
 	~dev-java/jetty-security-${PV}:${SLOT}
