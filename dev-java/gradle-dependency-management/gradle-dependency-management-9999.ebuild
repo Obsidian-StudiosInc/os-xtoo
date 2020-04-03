@@ -9,7 +9,7 @@ MAVEN_SLOT="0"
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/asm:7
+	dev-java/asm:8
 	dev-java/ant-ivy:0
 	dev-java/bcpg:${BC_SLOT}
 	dev-java/bcprov:${BC_SLOT}
