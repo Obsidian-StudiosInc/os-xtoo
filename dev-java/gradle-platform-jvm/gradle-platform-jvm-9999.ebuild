@@ -21,6 +21,7 @@ CP_DEPEND="
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
+	~dev-java/gradle-normalization-java-${PV}:${SLOT}
 	~dev-java/gradle-platform-base-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	dev-java/groovy:0
