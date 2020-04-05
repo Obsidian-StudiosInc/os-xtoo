@@ -62,6 +62,7 @@ LIB_DEPEND="
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-model-groovy-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
+	~dev-java/gradle-normalization-java-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
