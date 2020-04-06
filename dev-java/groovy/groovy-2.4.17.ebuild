@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Original work Copyright 1999-2016 Gentoo Foundation
@@ -24,7 +24,7 @@ fi
 
 SLOT="0"
 
-ASM_SLOT="7"
+ASM_SLOT="8"
 CLI_SLOT="1"
 
 CP_DEPEND="
