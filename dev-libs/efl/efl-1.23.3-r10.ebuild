@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Some USE and depends from enlightenment-live overlay
@@ -106,7 +106,7 @@ COMMON_DEP="
 	rawphoto? ( media-libs/libraw )
 	scim?	( app-i18n/scim )
 	sdl? (
-		>=media-libs/libsdl2-2.0.0:0[opengl?,gles]
+		>=media-libs/libsdl2-2.0.0:0[opengl?,gles2]
 	)
 
 	svg? ( gnome-base/librsvg )

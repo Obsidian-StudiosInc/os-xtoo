@@ -105,7 +105,7 @@ COMMON_DEP="
 	rawphoto? ( media-libs/libraw )
 	scim?	( app-i18n/scim )
 	sdl? (
-		>=media-libs/libsdl2-2.0.0:0[opengl?,gles]
+		>=media-libs/libsdl2-2.0.0:0[opengl?,gles2]
 	)
 
 	svg? ( gnome-base/librsvg )
