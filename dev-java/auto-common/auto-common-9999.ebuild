@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -14,7 +14,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/javapoet:0
 "
 
