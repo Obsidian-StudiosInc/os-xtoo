@@ -8,7 +8,7 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/asm:8
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 "
 
 inherit gradle
