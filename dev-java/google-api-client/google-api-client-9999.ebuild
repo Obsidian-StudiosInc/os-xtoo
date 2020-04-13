@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -17,7 +17,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/guava:28
+	dev-java/guava:29
 	~dev-java/google-http-client-${PV}:${SLOT}
 	~dev-java/google-http-client-jackson2-${PV}:${SLOT}
 	~dev-java/google-oauth-client-${PV}:${SLOT}
