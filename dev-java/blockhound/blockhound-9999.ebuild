@@ -21,7 +21,7 @@ CP_DEPEND="
 	dev-java/asm:8
 	dev-java/auto-common:0
 	dev-java/auto-service:0
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/byte-buddy-agent:${BB_SLOT}
 	dev-java/byte-buddy-dep:${BB_SLOT}
 	dev-java/reactor-core:0
