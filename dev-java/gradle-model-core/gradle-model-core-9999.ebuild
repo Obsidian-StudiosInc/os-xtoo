@@ -18,7 +18,7 @@ CP_DEPEND="
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/java-annotations:0
 	dev-java/javax-inject:0
 	dev-java/jcip-annotations:0
