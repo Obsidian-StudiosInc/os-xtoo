@@ -27,7 +27,7 @@ OSGI_SLOT="7"
 CP_DEPEND="
 	~dev-java/bnd-annotation-${PV}:${SLOT}
 	~dev-java/bndlib-${PV}:${SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/javaparser-core:0
 	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-annotation:0
