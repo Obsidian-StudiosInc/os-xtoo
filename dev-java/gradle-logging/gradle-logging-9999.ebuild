@@ -15,7 +15,7 @@ CP_DEPEND="
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/jansi:0
 	dev-java/jansi-native:0
 	dev-java/jcip-annotations:0
