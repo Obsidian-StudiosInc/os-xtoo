@@ -17,7 +17,7 @@ CP_DEPEND="
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/javax-inject:0
 	dev-java/jsch:0
 	dev-java/jsr305:0
