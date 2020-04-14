@@ -20,7 +20,7 @@ CP_DEPEND="
 	dev-java/checker-compatqual:0
 	dev-java/error-prone-annotations:0
 	dev-java/escapevelocity:0
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/hamcrest:0
 	dev-java/incap:0
 	dev-java/java-diff-utils:0
