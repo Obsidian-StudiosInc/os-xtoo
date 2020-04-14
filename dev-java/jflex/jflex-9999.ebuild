@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -45,7 +45,7 @@ LICENSE="BSD-3-clause"
 
 [[ ${PV} != 1.4* ]] && DEPEND+=" dev-java/jflex:0"
 
-DEPEND+=" !=dev-java/jflex-1.6.1:0"
+DEPEND+=" !~dev-java/jflex-1.6.1:0"
 
 S="${WORKDIR}/${MY_S}"
 
