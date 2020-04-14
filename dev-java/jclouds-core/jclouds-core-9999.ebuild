@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -25,7 +25,7 @@ CP_DEPEND="
 	dev-java/auto-common:0
 	dev-java/error-prone-annotations:0
 	dev-java/gson:0
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/guice:${GUICE_SLOT}
 	dev-java/guice-extensions-assistedinject:${GUICE_SLOT}
 	dev-java/javax-annotation:0
