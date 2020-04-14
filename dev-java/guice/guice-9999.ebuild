@@ -15,7 +15,7 @@ CP_DEPEND="
 	dev-java/asm:8
 	dev-java/aopalliance:1
 	dev-java/cglib:3
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/javax-inject:0
 "
 
