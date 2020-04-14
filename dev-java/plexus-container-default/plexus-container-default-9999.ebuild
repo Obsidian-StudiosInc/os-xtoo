@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -21,7 +21,7 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/plexus-classworlds:0
 	dev-java/plexus-utils:0
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/xbean-reflect:0
 "
 
