@@ -1,4 +1,4 @@
-# Copyright 2019 Obsidian-Studios, Inc.
+# Copyright 2019-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -20,7 +20,7 @@ PARBOILED_SLOT="0"
 
 CP_DEPEND="
 	dev-java/commons-lang:3
-	dev-java/guava:28
+	dev-java/guava:29
 "
 
 inherit java-pkg
