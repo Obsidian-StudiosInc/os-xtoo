@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -28,7 +28,7 @@ CP_DEPEND="
 	dev-java/jsr305:0
 	dev-java/gradle-base-services:${GRADLE_SLOT}
 	dev-java/gradle-tooling-api:${GRADLE_SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/javax-annotation:0
 	dev-java/jtrim-collections:${JTRIM_SLOT}
 	dev-java/jtrim-concurrent:${JTRIM_SLOT}
