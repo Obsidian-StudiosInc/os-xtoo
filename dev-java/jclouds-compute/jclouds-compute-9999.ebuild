@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -18,7 +18,7 @@ fi
 
 SLOT="0"
 
-GUAVA_SLOT="28"
+GUAVA_SLOT="29"
 GUICE_SLOT="4"
 
 CP_DEPEND="
