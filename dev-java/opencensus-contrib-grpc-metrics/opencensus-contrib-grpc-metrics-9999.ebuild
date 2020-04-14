@@ -20,7 +20,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/guava:28
+	dev-java/guava:29
 	~dev-java/opencensus-api-${PV}:${SLOT}
 "
 
