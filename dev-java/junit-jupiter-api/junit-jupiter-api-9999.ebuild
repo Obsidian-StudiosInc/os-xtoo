@@ -17,7 +17,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-        dev-java/apiguardian:0
+	dev-java/apiguardian:0
 	~dev-java/junit-platform-commons-${PV}:${SLOT}
 	dev-java/opentest4j:0
 "
