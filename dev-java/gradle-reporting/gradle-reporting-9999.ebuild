@@ -15,7 +15,7 @@ CP_DEPEND="
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-model-core-${PV}:${SLOT}
-	dev-java/guava:28
+	dev-java/guava:29
 	dev-java/groovy:0
 	dev-java/jatl:0
 	dev-java/javax-inject:0
