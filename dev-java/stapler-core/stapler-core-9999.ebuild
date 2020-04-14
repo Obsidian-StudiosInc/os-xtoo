@@ -15,7 +15,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_PN}-${MY_PN}-parent-${PV}"
 fi
 
-GUAVA_SLOT="28"
+GUAVA_SLOT="29"
 
 CP_DEPEND="
 	dev-java/annotation-indexer:0
