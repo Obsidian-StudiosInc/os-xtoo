@@ -20,7 +20,7 @@ DESCRIPTION="Project Management and Comprehension Tool for Java"
 HOMEPAGE="https://maven.apache.org"
 LICENSE="Apache-2.0"
 
-GUAVA_SLOT="28"
+GUAVA_SLOT="29"
 MR_SLOT="0"
 SLF4J_SLOT="0"
 WAGON_SLOT="0"
