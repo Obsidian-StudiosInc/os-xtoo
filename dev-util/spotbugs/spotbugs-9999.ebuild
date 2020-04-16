@@ -28,6 +28,8 @@ CP_DEPEND="
 	dev-java/asm:8
 	dev-java/commons-bcel:0
 	dev-java/commons-lang:2
+	dev-java/commons-lang:3
+	dev-java/commons-text:0
 	dev-java/dom4j:2
 	dev-java/jcip-annotations:0
 	<dev-java/jformatstring-2.0:0
