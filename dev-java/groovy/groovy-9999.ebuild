@@ -40,7 +40,7 @@ LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}"
 
-PATCHES=( "${FILESDIR}/java7.patch" )
+#PATCHES=( "${FILESDIR}/java7.patch" )
 
 JAVA_SRC_DIR="src/main"
 JAVA_CLASSPATH_EXTRA="${JAVA_RES_DIR}"
@@ -50,6 +50,7 @@ JAVA_RELEASE="7"
 JAVA_RES_DIR="resources"
 
 # Fails to build due to release 7
+# reference to plus is ambiguous in v8
 JAVA_RM_FILES=(
 	src/main/java/org/codehaus/groovy/vmplugin/v8
 	src/main/java/org/codehaus/groovy/vmplugin/v9
@@ -73,6 +74,10 @@ generate_antlr_grammar() {
 
 		cd "${S}" || die
 	done
+
+	sed -i -e "s|(T\[\]) plus|(T\[\]) DefaultGroovyMethods.plus|g" \
+		src/main/java/org/codehaus/groovy/runtime/DefaultGroovyMethods.java \
+		|| die "Failed to sed/fix reference to plus is ambiguous"
 }
 
 src_compile() {
