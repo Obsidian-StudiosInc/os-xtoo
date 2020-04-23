@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -82,7 +82,7 @@ src_install() {
 	done
 
 	if use source ; then
-		mkdir "${ED}"/usr/share/${PN}/sources \
+		mkdir -p "${ED}"/usr/share/${PN}/sources \
 			|| die "Failed to mkdir for sources"
 		cp -R "${S}"/{include,src} "${ED}"/usr/share/${PN}/sources \
 			|| die "Failed to copy sources"
