@@ -21,6 +21,10 @@ LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/http${PN:15}"
 
+if [[ ${SLOT} == 5.0 ]]; then
+	S="${S}5"
+fi
+
 if [[ ${SLOT} == 4.4 ]]; then
 	JAVA_SRC_DIR="src/main/java src/main/java-deprecated"
 fi
