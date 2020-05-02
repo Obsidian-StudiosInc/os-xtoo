@@ -37,6 +37,7 @@ CP_DEPEND="
 	dev-java/jetty-websocket-api:${JETTY_SLOT}
 	dev-java/jetty-websocket-client:${JETTY_SLOT}
 	dev-java/jetty-websocket-common:${JETTY_SLOT}
+	dev-java/salvation:0
 	dev-java/xalan:0
 	dev-java/xerces:2
 	dev-java/xml-commons-external:0
