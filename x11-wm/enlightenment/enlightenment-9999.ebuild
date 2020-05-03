@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Based on ebuild from gentoo main tree
@@ -19,7 +19,7 @@ HOMEPAGE="https://docs.enlightenment.org"
 DESCRIPTION="Enlightenment Window manager"
 LICENSE="BSD-2"
 SLOT="${PV/.//}"
-S="${WORKDIR}/${P%_*}"
+S="${WORKDIR}/${E_P}"
 
 __CONF_MODS=(
 	applications bindings dialogs display
