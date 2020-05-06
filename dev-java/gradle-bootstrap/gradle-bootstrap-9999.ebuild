@@ -11,6 +11,7 @@ CP_DEPEND="
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
+	dev-java/jsr305:0
 "
 
 inherit gradle
