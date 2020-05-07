@@ -54,12 +54,6 @@ java_prepare() {
 		queries/MethodBaseQueryRedirector
 		queries/QueryRedirector
 	)
-	for f in "${files[@]}"; do
-		sed -i -e "s|Record |org.eclipse.persistence.sessions.Record |g" \
-			"src/org/eclipse/persistence/${f}.java" \
-			|| die "Failed to sed/fix ambiguous reference"
-	done
-
 	for f in $(grep -l -m1 resource.cci -r *); do
 		sed -i -e "s|(Record |(javax.resource.cci.Record |g" \
 			-e "s|(Record)|(javax.resource.cci.Record)|g" \
