@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,8 +11,8 @@ SLOT="${PV%%.*}"
 BASE_URI="https://github.com/apache/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${P}.tar.gz"
-	MY_S="${PN}-${P}"
+	SRC_URI="${BASE_URI}/archive/rel/${P}.tar.gz"
+	MY_S="${PN}-rel-${P}"
 fi
 
 CP_DEPEND="
@@ -23,7 +23,9 @@ CP_DEPEND="
 	dev-java/commons-logging:0
 	dev-java/commons-net:0
 	dev-java/httpcomponents-client:4.5
+	dev-java/httpcomponents-client:5.0
 	dev-java/httpcomponents-core:4.4
+	dev-java/httpcomponents-core:5.0
 	dev-java/jackrabbit-webdav:0
 	dev-java/jsch:0
 "
@@ -35,8 +37,6 @@ HOMEPAGE="https://commons.apache.org/proper/${PN}/"
 LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/${PN}${SLOT}"
-
-PATCHES=( "${FILESDIR}/jackrabbit.patch" )
 
 # Need to package
 #	org.apache.hadoop.conf.Configuration
