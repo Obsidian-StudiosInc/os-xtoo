@@ -22,8 +22,9 @@ CP_DEPEND="
 	dev-java/jsoup:0
 	dev-java/httpcomponents-client:4.5
 	dev-java/httpcomponents-core:4.4
-	~dev-java/wagon-provider-api-${PV}:${SLOT}
 	dev-java/plexus-utils:0
+	dev-java/slf4j-api:0
+	~dev-java/wagon-provider-api-${PV}:${SLOT}
 "
 
 inherit java-pkg
