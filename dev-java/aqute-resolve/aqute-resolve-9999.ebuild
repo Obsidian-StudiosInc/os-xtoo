@@ -32,6 +32,7 @@ CP_DEPEND="~dev-java/aqute-repository-${PV}:${SLOT}
 	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/felix-resolver:0
 	~dev-java/libg-${PV}:${SLOT}
+	dev-java/osgi-annotation:0
 	dev-java/osgi-compendium:${OSGI_SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}
 	dev-java/slf4j-api:0
