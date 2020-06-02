@@ -29,6 +29,7 @@ CP_DEPEND="
 	~dev-java/bndlib-${PV}:${SLOT}
 	dev-java/guava:29
 	dev-java/javaparser-core:0
+	dev-java/jtwig-core:0
 	~dev-java/libg-${PV}:${SLOT}
 	dev-java/osgi-annotation:0
 	dev-java/osgi-compendium:7
