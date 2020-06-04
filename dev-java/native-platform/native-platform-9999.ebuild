@@ -16,6 +16,8 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_P}"
 fi
 
+CP_DEPEND="dev-java/jsr305:0"
+
 inherit java-pkg
 
 DESCRIPTION="Java bindings for various native APIs"
