@@ -9,6 +9,7 @@ CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
