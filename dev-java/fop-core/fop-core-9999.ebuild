@@ -58,3 +58,4 @@ LICENSE="Apache-2.0"
 DEPEND+=" app-arch/unzip"
 
 #S="${WORKDIR}/${MY_S}/${PN}"
+S="${WORKDIR}"
