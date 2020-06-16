@@ -34,6 +34,7 @@ CP_DEPEND="
 	dev-java/jsr305:0
 	dev-java/localizer:0
 	dev-java/metainf-services:0
+	dev-java/spotbugs-annotations:0
 	dev-java/tiger-types:0
 	dev-java/txw2:0
 	java-virtuals/servlet-api:4.0
