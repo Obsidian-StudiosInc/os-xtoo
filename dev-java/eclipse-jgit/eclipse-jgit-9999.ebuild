@@ -18,11 +18,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_P}"
 fi
 
-BC_SLOT="0"
-
 CP_DEPEND="
-	dev-java/bcpg:${BC_SLOT}
-	dev-java/bcprov:${BC_SLOT}
 	dev-java/javaewah:0
 	dev-java/jaxb-api:0
 	dev-java/jsch:0
@@ -39,11 +35,3 @@ SLOT="0"
 S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
 
 JAVA_RES_DIR="resources"
-
-java_prepare() {
-	# fix for bc 1.61
-	sed -i -e "/Calculator;/a import org.bouncycastle.gpg.keybox.bc.BcBlobVerifier;" \
-		-e "s|in, new JcaKeyFingerprintCalculator());|in, new JcaKeyFingerprintCalculator(), new BcBlobVerifier());|" \
-		src/org/eclipse/jgit/lib/internal/BouncyCastleGpgKeyLocator.java \
-		|| die "Failed to sed/fix api changes from bc 1.60 -> 1.61"
-}
