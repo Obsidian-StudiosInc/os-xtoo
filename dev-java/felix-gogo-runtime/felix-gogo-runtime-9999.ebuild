@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -13,9 +13,10 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="felix-${MY_P}"
 fi
 
-OSGI_SLOT="6"
+OSGI_SLOT="7"
 
 CP_DEPEND="
+	dev-java/osgi-annotation:0
 	dev-java/osgi-compendium:${OSGI_SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}
 "
