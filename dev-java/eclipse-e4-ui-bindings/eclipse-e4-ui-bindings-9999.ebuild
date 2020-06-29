@@ -26,6 +26,7 @@ CP_DEPEND="
 	~dev-java/eclipse-e4-core-commands-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-contexts-${PV}:${SLOT}
 	~dev-java/eclipse-e4-core-services-${PV}:${SLOT}
+	~dev-java/eclipse-e4-ui-services-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
 	dev-java/javax-annotation:0
