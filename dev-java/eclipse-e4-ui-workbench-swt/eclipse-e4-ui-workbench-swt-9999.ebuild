@@ -55,6 +55,7 @@ CP_DEPEND="
 	~dev-java/eclipse-jface-databinding-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
+	~dev-java/eclipse-urischeme-${PV}:${SLOT}
 	dev-java/javax-annotation:0
 	dev-java/javax-inject:0
 	dev-java/icu4j:0
