@@ -19,7 +19,7 @@ fi
 
 SLOT="${PV%%.*}"
 
-ECLIPSE_SLOT="4.15"
+ECLIPSE_SLOT="4.16"
 
 CP_DEPEND="
 	dev-java/commons-httpclient:0
