@@ -4,9 +4,11 @@
 EAPI="7"
 
 SLOT="0"
+EJGIT_SLOT="0"
 
 CP_DEPEND="
-	dev-java/eclipse-jgit:0
+	dev-java/eclipse-jgit:${EJGIT_SLOT}
+	dev-java/eclipse-jgit-ssh-jsch:${EJGIT_SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
