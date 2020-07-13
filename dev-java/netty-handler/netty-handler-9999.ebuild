@@ -43,3 +43,11 @@ LICENSE="Apache-2.0"
 S="${WORKDIR}/${MY_S}/${MY_MOD}"
 
 JAVAC_ARGS="--add-exports=java.base/sun.security.x509=ALL-UNNAMED"
+JAVAC_ARGS+=" --add-exports=java.base/sun.security.util=ALL-UNNAMED "
+
+java_prepare() {
+	sed -i -e "28iimport sun.security.util.KnownOIDs;\nimport sun.security.util.ObjectIdentifier;" \
+		-e "s|AlgorithmId.sha256WithRSAEncryption_oid|ObjectIdentifier.of(KnownOIDs.SHA256withRSA)|" \
+		src/main/java/io/netty/handler/ssl/util/OpenJdkSelfSignedCertGenerator.java \
+		|| die "Failed to sed/fix api change"
+}
