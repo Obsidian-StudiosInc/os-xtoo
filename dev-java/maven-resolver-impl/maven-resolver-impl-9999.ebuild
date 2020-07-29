@@ -18,6 +18,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
+	dev-java/commons-lang:3
 	dev-java/guice:4
 	dev-java/javax-inject:0
 	~dev-java/maven-resolver-api-${PV}:${SLOT}
