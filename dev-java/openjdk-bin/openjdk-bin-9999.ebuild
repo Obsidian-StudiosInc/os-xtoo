@@ -33,7 +33,7 @@ fi
 : "${MY_TZ:=openjdk-${MY_PV}_linux-x64_bin}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/${MY_TZ}.tar.gz"
+	SRC_URI="${BASE_URI}/${MY_TZ}.tar.gz -> ${P}.tar.gz"
 	KEYWORDS="-* ~amd64"
 else
 	KEYWORDS="-amd64"
