@@ -7,8 +7,14 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/asm:8
+	dev-java/commons-io:0
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
+	~dev-java/gradle-hashing-${PV}:${SLOT}
+	~dev-java/gradle-files-${PV}:${SLOT}
+	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/guava:29
+	dev-java/jsr305:0
+	dev-java/slf4j-api:0
 "
 
 inherit gradle
