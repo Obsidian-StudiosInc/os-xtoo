@@ -193,5 +193,5 @@ src_install() {
 		"${PLUGINS_DEPEND[@]}" "../../../../.."
 
 	insinto "${dest}"
-	doins -r subprojects/distributions/src/toplevel/init.d
+	doins -r subprojects/distributions*/src/toplevel/init.d
 }
