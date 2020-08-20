@@ -61,4 +61,8 @@ java_prepare() {
 	sed -i -e "s|ASM7_EXPERIMENTAL|ASM7|" \
 		src/main/java/edu/umd/cs/findbugs/classfile/engine/asm/FindBugsASM.java \
 		|| die "Failed to sed/fix asm changes"
+
+	sed -i -e "s|.getName()), null|.getName()), (ClassLoader)null|" \
+		src/main/java/edu/umd/cs/findbugs/ba/SourceFinder.java \
+		|| die "Failed to sed/fix reference to is ambiguous"
 }
