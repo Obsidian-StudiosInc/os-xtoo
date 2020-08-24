@@ -10,6 +10,7 @@
 		<flag name="audio">Enable audio support</flag>
 		<flag name="avahi">Enable avahi support</flag>
 		<flag name="bmp">Enable WBMP image loader</flag>
+		<flag name="dav1d">Enable support for media-libs/dav1d AV1 decoder</flag>
 		<flag name="dds">Enable DDS image loader</flag>
 		<flag name="drm">Enable DRM engine</flag>
 		<flag name="egl">Enable EGL rendering</flag>

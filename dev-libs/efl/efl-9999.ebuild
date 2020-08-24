@@ -21,7 +21,7 @@ HOMEPAGE="https://www.enlightenment.org/"
 LICENSE="BSD-2 GPL-2 LGPL-2.1 ZLIB"
 SLOT="0"
 
-IUSE="+X audio avahi +bmp connman cxx dds debug doc drm egl elogind
+IUSE="+X audio avahi +bmp connman cxx dav1d dds debug doc drm egl elogind
 	examples fbcon +fontconfig fribidi gif +gles2 glib gnutls gstreamer
 	harfbuzz hyphen +ico ibus jpeg2k libressl mono neon lua luajit nls
 	opengl ssl pdf physics pixman +png +ppm postscript psd pulseaudio
@@ -75,6 +75,7 @@ COMMON_DEP="
 		)
 	)
 	avahi? ( net-dns/avahi )
+	dav1d? ( media-libs/dav1d )
 	debug? ( dev-util/valgrind )
 	elogind? ( sys-auth/elogind )
 	fontconfig? ( media-libs/fontconfig )
@@ -181,6 +182,7 @@ src_configure() {
 			opts+="${opt},"
 		fi
 	done
+	! use dav1d && opts+="avif,"
 	! use jpeg2k && opts+="jp2k,"
 	! use ppm && opts+="pmaps,"
 	! use postscript && opts+="ps,"
