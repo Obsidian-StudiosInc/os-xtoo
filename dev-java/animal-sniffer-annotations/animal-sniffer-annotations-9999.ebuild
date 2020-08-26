@@ -10,8 +10,8 @@ MY_P="${MY_PN}-parent-${PV}"
 BASE_URI="https://github.com/mojohaus/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
-        SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
-        MY_S="${MY_PN}-${MY_P}"
+	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz -> ${P}.tar.gz"
+	MY_S="${MY_PN}-${MY_P}"
 fi
 
 inherit java-pkg
