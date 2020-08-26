@@ -4,6 +4,7 @@
 EAPI="7"
 
 SLOT="0"
+NP_SLOT="0"
 
 CP_DEPEND="
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
@@ -12,7 +13,8 @@ CP_DEPEND="
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/guava:29
 	dev-java/jsr305:0
-	dev-java/native-platform:0
+	dev-java/native-platform:${NP_SLOT}
+	dev-java/native-platform-file-events:${NP_SLOT}
 	dev-java/slf4j-api:0
 "
 
