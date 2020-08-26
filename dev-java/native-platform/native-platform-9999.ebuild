@@ -12,7 +12,7 @@ MY_P="${PN}-${MY_PV}"
 BASE_URI="https://github.com/gradle/${PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
 	MY_S="${MY_P}"
 fi
 
