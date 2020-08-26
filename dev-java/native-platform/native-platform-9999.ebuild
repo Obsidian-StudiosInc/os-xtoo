@@ -25,7 +25,7 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-S="${WORKDIR}/${MY_S}"
+S="${WORKDIR}/${MY_S}/${PN}"
 
 java_prepare() {
 	# Gradle generated file via
