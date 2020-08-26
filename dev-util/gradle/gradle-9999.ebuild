@@ -26,6 +26,7 @@ S="${WORKDIR}/${MY_S}/"
 
 GROOVY_SLOT="0"
 MAVEN_SLOT="0"
+NP_SLOT="0"
 PLEXUS_SLOT="0"
 SLF4j_SLOT="0"
 
@@ -84,7 +85,8 @@ LIB_DEPEND="
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
 	dev-java/kryo:0
-	dev-java/native-platform:0
+	dev-java/native-platform:${NP_SLOT}
+	dev-java/native-platform-file-events:${NP_SLOT}
 	dev-java/slf4j-api:${SLF4j_SLOT}
 	dev-java/slf4j-jul-to-slf4j:${SLF4j_SLOT}
 "
