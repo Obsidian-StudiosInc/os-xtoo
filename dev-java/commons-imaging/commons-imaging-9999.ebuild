@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,7 +8,8 @@ JAVA_NO_COMMONS=1
 
 MY_PN="${PN}"
 MY_PV="${PV/_/-}"
-MY_P="${MY_PN}-${MY_PV^^}"
+[[ ${PV} == *rc* ]] && MY_PV="${MY_PV^^}"
+MY_P="${MY_PN}-${MY_PV}"
 
 BASE_URI="https://github.com/apache/${PN}"
 
