@@ -4,13 +4,16 @@
 EAPI="7"
 
 JAVA_PKG_IUSE="doc source"
-JAVA_NO_COMMONS=1
 
 BASE_URI="https://github.com/apache/${PN}"
 
+MY_PN="${PN}"
+MY_PV="${PV^^}"
+MY_P="${MY_PN}-${MY_PV}"
+
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${P}.tar.gz"
-	MY_S="${PN}-${P}"
+	SRC_URI="${BASE_URI}/archive/rel/${MY_P}.tar.gz"
+	MY_S="${PN}-rel-${MY_P}"
 fi
 
 inherit java-pkg
