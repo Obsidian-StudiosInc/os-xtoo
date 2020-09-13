@@ -25,3 +25,12 @@ SLOT="${PV%%.*}"
 S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="java/javax/security/"
+
+java_prepare() {
+	# Reverting commit
+	# https://github.com/apache/tomcat/commit/f4dac6846c548144799b1c3f33aba4eb320a3413
+	sed -i -e '75,77d' -e '80d' \
+		${JAVA_SRC_DIR}auth/message/config/AuthConfigFactory.java \
+		|| die "Failed to sed/revert reflection commit"
+
+}
