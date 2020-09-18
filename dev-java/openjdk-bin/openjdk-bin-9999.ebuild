@@ -21,7 +21,7 @@ elif [[ ${PV} == 15_rc* ]]; then
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
 	MY_PV="${PV%%_*}"
-elif [[ ${PV} == 11* ]] || [[ ${PV} == 14* ]]; then
+elif [[ ${PV} == 11* ]] || [[ ${PV} == 14* ]] || [[ ${PV} == 15* ]]; then
 	MY_PV="${PV/p/}"
 	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+}"
 	MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
