@@ -11,7 +11,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/asm:8
+	dev-java/asm:9
 	dev-java/commons-cli:1
 "
 
