@@ -12,7 +12,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${PN}-${P}"
 fi
 
-CP_DEPEND="dev-java/asm:8"
+CP_DEPEND="dev-java/asm:9"
 
 inherit java-pkg
 
