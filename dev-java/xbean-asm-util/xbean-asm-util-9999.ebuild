@@ -17,7 +17,7 @@ fi
 
 SLOT="0"
 
-CP_DEPEND="dev-java/asm:8"
+CP_DEPEND="dev-java/asm:9"
 
 inherit java-pkg
 
