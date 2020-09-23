@@ -1,4 +1,4 @@
-# Copyright 2018-2019 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -15,7 +15,7 @@ if [[ ${PV} == 9999 ]]; then
 	MY_S="${P}/${MY_MOD}"
 else
 	# github missing tags? upstream source tarball is rebundled, thus maven
-	SRC_URI="http://repo1.maven.org/maven2/org/apache/${PN%%-*}/core/${PN}/${PV/_/-}/${PN}-${PV/_/-}-sources.jar"
+	SRC_URI="https://repo1.maven.org/maven2/org/apache/${PN%%-*}/core/${PN}/${PV/_/-}/${PN}-${PV/_/-}-sources.jar"
 #	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
 #	MY_S="${PN%%-*}-${MY_P}/${MY_MOD}"
 fi
