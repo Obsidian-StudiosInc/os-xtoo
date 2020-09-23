@@ -18,7 +18,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/asm:8
+	dev-java/asm:9
 	~dev-java/xbean-asm-util-${PV}:${SLOT}
 	~dev-java/xbean-bundleutils-${PV}:${SLOT}
 	dev-java/osgi-core-api:4
