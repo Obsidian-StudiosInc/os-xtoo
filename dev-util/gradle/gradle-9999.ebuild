@@ -32,7 +32,7 @@ SLF4j_SLOT="0"
 
 LIB_DEPEND="
 	dev-java/ant-core:0
-	dev-java/asm:8
+	dev-java/asm:9
 	dev-java/commons-collections:0
 	dev-java/commons-compress:0
 	dev-java/commons-httpclient:0
