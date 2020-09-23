@@ -18,7 +18,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/asm:8
+	dev-java/asm:9
 	dev-java/bsh:0
 	dev-java/hamcrest:0
 	dev-java/junit:4
