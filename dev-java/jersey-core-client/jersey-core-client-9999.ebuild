@@ -43,11 +43,12 @@ java_prepare() {
 		-p "org.glassfish.jersey.internal.l10n" \
 		|| die "Failed to generate java files from resources"
 
+
 	sed -i -e '454d;459d' \
 		src/main/java/org/glassfish/jersey/client/JerseyInvocation.java \
 		|| die "Could not remove @Override"
 
-	sed -i -e '123d;129d;135d;145d' \
+	sed -i -e '155d;161d;167d;177d' \
 		src/main/java/org/glassfish/jersey/client/JerseyClientBuilder.java \
 		|| die "Could not remove @Override"
 }
