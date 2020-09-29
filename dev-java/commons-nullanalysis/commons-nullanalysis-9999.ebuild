@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -10,7 +10,7 @@ if [[ ${PV} == 9999 ]]; then
 	ESVN_REPO_URI="https://svn.code.sf.net/p/loggifier/code/de.unkrig.commons/trunk/${PN}"
 	S="${WORKDIR}/${P}"
 else
-	SRC_URI="http://repo1.maven.org/maven2/de/unkrig/${PN%%-*}/${PN}/${PV}/${P}-sources.jar"
+	SRC_URI="https://repo1.maven.org/maven2/de/unkrig/${PN%%-*}/${PN}/${PV}/${P}-sources.jar"
 fi
 
 inherit java-pkg ${ECLASS}
