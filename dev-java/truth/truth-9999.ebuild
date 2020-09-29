@@ -37,3 +37,20 @@ SLOT="0"
 S="${WORKDIR}/${MY_S}/core"
 
 JAVA_RM_FILES=( src/main/java/com/google/common/truth/super )
+
+java_prepare() {
+	local f
+
+	for f in $(grep -l -m1 difflib. -r src ); do
+		sed -i -e "s|difflib.DiffUtils.diff|com.github.difflib.DiffUtils.diff|g" \
+			-e "s|difflib.DiffUtils.generate|com.github.difflib.UnifiedDiffUtils.generate|g" \
+			-e "s|difflib.Patch|com.github.difflib.patch.Patch|g" \
+			"${f}" || die "Failed to sed/update package"
+	done
+
+	sed -i -e "s|Patch<String> diff|diff|" \
+		-e "/diff(expectedLines/i Patch<String> diff = new Patch();\ntry {" \
+		-e "/diff(expectedLines/a } catch(Exception e) { return null; }" \
+		src/main/java/com/google/common/truth/Platform.java \
+		|| die "Failed to sed/add try catch exception"
+}
