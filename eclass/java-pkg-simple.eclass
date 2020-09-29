@@ -20,8 +20,9 @@ inherit estack java-utils-2
 EXPORT_FUNCTIONS src_compile src_install
 
 # We are only interested in finding all java source files, wherever they may be.
-: "S:=${WORKDIR}"
-
+if [[ ! ${SRC_URI} ]] || [[ "${SRC_URI}" == *maven\.org* ]]; then
+	S="${WORKDIR}"
+fi
 # @ECLASS-VARIABLE: JAVA_CLASSPATH
 # @DEFAULT_UNSET
 # @DESCRIPTION:
