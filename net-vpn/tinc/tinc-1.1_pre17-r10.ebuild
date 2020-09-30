@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -15,14 +15,9 @@ SRC_URI="http://www.tinc-vpn.org/packages/${MY_P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+lzo +ncurses gui libressl +readline +ssl systemd uml upnp vde +zlib"
-REQUIRED_USE="gui? ( ${PYTHON_REQUIRED_USE} )"
+IUSE="+lzo +ncurses libressl +readline +ssl systemd uml upnp vde +zlib"
 
 DEPEND="
-	gui? (
-		${PYTHON_DEPS}
-		dev-python/wxpython:3.0
-	)
 	ssl? (
 		!libressl? ( dev-libs/openssl:0= )
 		libressl? ( dev-libs/libressl:0= )
@@ -88,11 +83,7 @@ src_install() {
 	newconfd "${FILESDIR}"/tincd.conf tincd
 	newinitd "${FILESDIR}"/tincd-r2 tincd
 
-	if use gui; then
-		python_fix_shebang "${ED}"/usr/bin/tinc-gui
-	else
-		rm -f "${ED}"/usr/bin/tinc-gui || die
-	fi
+	rm -f "${ED}"/usr/bin/tinc-gui || die
 }
 
 pkg_postinst() {
