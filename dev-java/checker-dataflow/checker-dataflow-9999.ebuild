@@ -21,6 +21,7 @@ CP_DEPEND="
 	~dev-java/checker-javacutil-${PV}:${SLOT}
 	~dev-java/checker-qual-${PV}:${SLOT}
 	dev-java/jaxws-api:0
+	dev-java/plume-util:0
 "
 
 inherit java-pkg
