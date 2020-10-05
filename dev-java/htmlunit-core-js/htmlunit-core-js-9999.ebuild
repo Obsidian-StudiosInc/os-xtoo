@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -32,3 +32,9 @@ SLOT="0"
 #S="${WORKDIR}/${MY_S}"
 
 #JAVA_SRC_DIR="src"
+
+src_unpack() {
+	# work around
+	# error: invalid zip file with overlapped components (possible zip bomb)
+	jar -xf "${DISTDIR}/${P}-sources.jar" || die "Failed to unpack jar"
+}
