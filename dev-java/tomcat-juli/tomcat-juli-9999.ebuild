@@ -15,6 +15,8 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_P}"
 fi
 
+CP_DEPEND="dev-java/bnd-annotation:5"
+
 inherit java-pkg
 
 DESCRIPTION="Tomcat's ${PN#-*}"
