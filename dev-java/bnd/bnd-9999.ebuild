@@ -50,12 +50,6 @@ LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/${MY_MOD}"
 
-java_prepare() {
-	sed -i -e "s|table<Object|table<String|" \
-		src/aQute/bnd/ant/BndTask.java \
-		|| die "Failed to sed/fix type change"
-}
-
 src_install() {
 	java-pkg_dolauncher "bnd" --main aQute.bnd.main.bnd
 	java-pkg-simple_src_install
