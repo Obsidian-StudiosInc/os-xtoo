@@ -12,7 +12,7 @@ CP_DEPEND="
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
 "
