@@ -19,7 +19,7 @@ CP_DEPEND="
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/gson:0
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
