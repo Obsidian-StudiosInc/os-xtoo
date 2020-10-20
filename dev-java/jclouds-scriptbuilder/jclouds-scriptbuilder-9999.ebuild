@@ -19,7 +19,7 @@ fi
 SLOT="0"
 
 CP_DEPEND="
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/javax-inject:0
 	~dev-java/jclouds-core-${PV}:${SLOT}
 	dev-java/modernizer-maven-annotations:0
