@@ -18,7 +18,7 @@ fi
 
 CP_DEPEND="
 	dev-java/gson:0
-	dev-java/guava:29
+	dev-java/guava:30
 "
 
 inherit java-pkg
