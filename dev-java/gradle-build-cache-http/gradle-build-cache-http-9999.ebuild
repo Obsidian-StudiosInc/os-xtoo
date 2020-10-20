@@ -16,7 +16,7 @@ CP_DEPEND="
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-resources-http-${PV}:${SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/httpcomponents-client:4.5
 	dev-java/httpcomponents-core:4.4
 	dev-java/javax-inject:0
