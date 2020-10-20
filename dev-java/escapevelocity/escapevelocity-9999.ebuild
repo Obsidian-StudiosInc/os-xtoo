@@ -12,7 +12,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${PN}-${P}"
 fi
 
-CP_DEPEND="dev-java/guava:29"
+CP_DEPEND="dev-java/guava:30"
 
 inherit java-pkg
 
