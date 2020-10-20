@@ -11,7 +11,7 @@ CP_DEPEND="
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
 	dev-java/kryo:0
