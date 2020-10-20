@@ -6,7 +6,7 @@ EAPI="7"
 JAVA_PKG_IUSE="doc source"
 
 CP_DEPEND="
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/guice:4
 	dev-java/javax-inject:0
 "
