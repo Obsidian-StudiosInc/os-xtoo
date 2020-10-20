@@ -37,7 +37,7 @@ CP_DEPEND="
 	~dev-java/gradle-security-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/httpcomponents-core:4.4
 	dev-java/httpcomponents-client:4.5
 	dev-java/javax-inject:0
