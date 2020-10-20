@@ -22,7 +22,7 @@ CP_DEPEND="
 	dev-java/escapevelocity:0
 	dev-java/error-prone-annotations:0
 	dev-java/grpc-context:0
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/incap:0
 	dev-java/jsr305:0
 "
