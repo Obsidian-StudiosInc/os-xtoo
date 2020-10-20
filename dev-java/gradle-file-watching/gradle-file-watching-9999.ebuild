@@ -11,7 +11,7 @@ CP_DEPEND="
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/jsr305:0
 	dev-java/native-platform:${NP_SLOT}
 	dev-java/native-platform-file-events:${NP_SLOT}
