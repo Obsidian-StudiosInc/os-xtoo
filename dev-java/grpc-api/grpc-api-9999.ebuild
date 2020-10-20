@@ -18,7 +18,7 @@ SLOT="0"
 
 CP_DEPEND="
 	~dev-java/grpc-context-${PV}:${SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/jsr305:0
 "
 
