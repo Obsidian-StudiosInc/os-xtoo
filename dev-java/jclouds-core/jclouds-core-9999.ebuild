@@ -25,7 +25,7 @@ CP_DEPEND="
 	dev-java/auto-common:0
 	dev-java/error-prone-annotations:0
 	dev-java/gson:0
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/guice:${GUICE_SLOT}
 	dev-java/guice-extensions-assistedinject:${GUICE_SLOT}
 	dev-java/javax-annotation:0
