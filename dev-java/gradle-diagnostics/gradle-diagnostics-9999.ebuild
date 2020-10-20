@@ -25,7 +25,7 @@ CP_DEPEND="
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:${GROOVY_SLOT}
 	dev-java/groovy-json:${GROOVY_SLOT}
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/jatl:0
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
