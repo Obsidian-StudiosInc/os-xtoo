@@ -21,7 +21,7 @@ CP_DEPEND="
 	dev-java/escapevelocity:0
 	dev-java/incap:0
 	dev-java/incap-processor:0
-	dev-java/guava:29
+	dev-java/guava:30
 	dev-java/javapoet:0
 "
 
