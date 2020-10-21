@@ -16,7 +16,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
-GUAVA_SLOT="29"
+GUAVA_SLOT="30"
 PARBOILED_SLOT="0"
 
 CP_DEPEND="
