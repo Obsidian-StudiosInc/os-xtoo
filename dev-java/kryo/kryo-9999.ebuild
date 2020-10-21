@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -34,9 +34,3 @@ S="${WORKDIR}/${MY_S}"
 JAVAC_ARGS+=" --add-exports java.base/jdk.internal.ref=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports java.base/sun.nio.ch=ALL-UNNAMED "
 JAVAC_ARGS+=" --add-exports jdk.unsupported/sun.misc=ALL-UNNAMED "
-
-java_prepare() {
-	sed -i -e "s|sun.misc.Cleaner|jdk.internal.ref.Cleaner|" \
-		src/com/esotericsoftware/kryo/util/UnsafeUtil.java \
-		|| die "Failed to sed/swap java 9+ imports"
-}
