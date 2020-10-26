@@ -15,6 +15,7 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-dependency-management-${PV}:${SLOT}
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
@@ -37,8 +38,10 @@ CP_DEPEND="
 	dev-java/maven-resolver-api:${MR_SLOT}
 	dev-java/maven-resolver-util:${MR_SLOT}
 	dev-java/maven-settings:${MAVEN_SLOT}
+	dev-java/maven-settings-builder:${MAVEN_SLOT}
 	dev-java/plexus-classworlds:0
 	dev-java/plexus-container-default:0
+	dev-java/plexus-utils:0
 	dev-java/slf4j-api:0
 "
 
