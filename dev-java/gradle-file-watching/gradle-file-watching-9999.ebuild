@@ -8,6 +8,7 @@ NP_SLOT="0"
 
 CP_DEPEND="
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
