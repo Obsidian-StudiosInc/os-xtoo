@@ -47,6 +47,7 @@ LIB_DEPEND="
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
 	~dev-java/gradle-build-events-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
