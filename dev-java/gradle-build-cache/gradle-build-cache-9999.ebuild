@@ -10,6 +10,7 @@ CP_DEPEND="
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-base-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
