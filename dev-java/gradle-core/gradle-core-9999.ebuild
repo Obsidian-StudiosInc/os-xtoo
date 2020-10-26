@@ -18,6 +18,7 @@ CP_DEPEND="
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-base-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-packaging-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
