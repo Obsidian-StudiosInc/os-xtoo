@@ -12,6 +12,7 @@ CP_DEPEND="
 	dev-java/commons-lang:2
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
