@@ -21,6 +21,7 @@ CP_DEPEND="
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-${PV}:${SLOT}
 	~dev-java/gradle-build-cache-base-${PV}:${SLOT}
+	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-execution-${PV}:${SLOT}
