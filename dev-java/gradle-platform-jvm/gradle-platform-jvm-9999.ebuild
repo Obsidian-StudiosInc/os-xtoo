@@ -9,6 +9,7 @@ CP_DEPEND="
 	dev-java/asm:9
 	dev-java/commons-io:0
 	dev-java/commons-lang:2
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
 	~dev-java/gradle-core-${PV}:${SLOT}
@@ -22,12 +23,15 @@ CP_DEPEND="
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-normalization-java-${PV}:${SLOT}
+	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-platform-base-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
+	~dev-java/gradle-resources-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:30
 	dev-java/javax-inject:0
 	dev-java/jsr305:0
+	dev-java/native-platform:0
 	dev-java/slf4j-api:0
 "
 
