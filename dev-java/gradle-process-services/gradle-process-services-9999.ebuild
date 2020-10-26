@@ -7,6 +7,7 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/native-platform:0
+	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
