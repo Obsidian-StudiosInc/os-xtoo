@@ -19,9 +19,12 @@ CP_DEPEND="
 S="${WORKDIR}/${PN}-rel-v${PV}/http${PN:15}"
 
 if [[ ${PV} == 4.4* ]]; then
-	CP_DEPEND+=" dev-java/httpcomponents-core:4.2"
 	JAVA_SRC_DIR="src/main/java src/main/java-deprecated"
-elif [[ ${PV} == 4.5* ]]; then
+	CP_DEPEND+="
+		dev-java/httpcomponents-core:4.4
+		dev-java/httpcomponents-core:4.2
+	"
+elif [[ ${PV} == 4* ]]; then
 	CP_DEPEND+=" dev-java/httpcomponents-core:4.4"
 else
 	HC_SLOT="5.0"
