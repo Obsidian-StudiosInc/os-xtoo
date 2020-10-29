@@ -8,19 +8,22 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="google-api-java-client"
 MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV}"
-BASE_URI="https://github.com/${PN:0:6}/${MY_PN}"
+BASE_URI="https://github.com/googleapis/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 fi
 
 SLOT="0"
+GHC_SLOT="0"
 
 CP_DEPEND="
+	dev-java/httpcomponents-client:4.5
+	dev-java/httpcomponents-core:4.4
 	dev-java/guava:30
-	~dev-java/google-http-client-${PV}:${SLOT}
-	~dev-java/google-http-client-jackson2-${PV}:${SLOT}
-	~dev-java/google-oauth-client-${PV}:${SLOT}
+	dev-java/google-http-client:${GHC_SLOT}
+	dev-java/google-http-client-jackson2:${GHC_SLOT}
+	dev-java/google-oauth-client:0
 "
 
 inherit java-pkg
