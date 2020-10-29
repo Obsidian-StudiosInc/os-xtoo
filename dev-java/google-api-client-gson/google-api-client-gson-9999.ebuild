@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,18 +8,19 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="google-api-java-client"
 MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV}"
-BASE_URI="https://github.com/${PN:0:6}/${MY_PN}"
+BASE_URI="https://github.com/googleapis/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${PV}.tar.gz -> ${MY_P}.tar.gz"
+	SRC_URI="${BASE_URI}/archive/v${PV}.tar.gz -> ${MY_P}.tar.gz"
 fi
 
 SLOT="0"
+GHC_SLOT="0"
 
 CP_DEPEND="
 	~dev-java/google-api-client-${PV}:${SLOT}
-	~dev-java/google-http-client-${PV}:${SLOT}
-	~dev-java/google-http-client-gson-${PV}:${SLOT}
+	dev-java/google-http-client:${GHC_SLOT}
+	dev-java/google-http-client-gson:${GHC_SLOT}
 "
 
 inherit java-pkg
