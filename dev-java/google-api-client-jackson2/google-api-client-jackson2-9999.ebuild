@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -15,11 +15,12 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="0"
+GHC_SLOT="0"
 
 CP_DEPEND="
 	~dev-java/google-api-client-${PV}:${SLOT}
-	~dev-java/google-http-client-${PV}:${SLOT}
-	~dev-java/google-http-client-jackson2-${PV}:${SLOT}
+	dev-java/google-http-client:${GHC_SLOT}
+	dev-java/google-http-client-jackson2:${GHC_SLOT}
 "
 
 inherit java-pkg
