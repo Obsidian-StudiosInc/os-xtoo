@@ -236,7 +236,9 @@ java-pkg-simple_src_compile() {
 	debug-print "CLASSPATH=${classpath}"
 	[[ -z ${JAVA_NO_SRC} ]] && \
 		ejavac -d ${classes} -encoding ${JAVA_ENCODING} \
-			${classpath:+-classpath ${classpath}} ${JAVAC_ARGS} \
+			${classpath:+-classpath ${classpath}} \
+			${classpath:+--module-path ${classpath}} \
+			${JAVAC_ARGS} \
 			@${sources}
 
 	# javadoc
