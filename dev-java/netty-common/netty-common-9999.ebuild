@@ -52,7 +52,10 @@ DEPEND+=" ${GROOVY_DEPS}"
 S="${WORKDIR}/${MY_S}/${MY_MOD}"
 
 JAVAC_ARGS="--add-exports jdk.unsupported/sun.misc=ALL-UNNAMED"
-JAVA_RM_FILES=( src/main/java/io/netty/util/internal/svm/ )
+JAVA_RM_FILES=(
+	src/main/java/io/netty/util/internal/svm/
+	src/main/java/io/netty/util/NetUtilSubstitutions.java
+)
 
 PATCHES=( "${FILESDIR}/codegen_groovy.patch" )
 
