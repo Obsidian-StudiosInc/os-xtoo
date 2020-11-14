@@ -17,7 +17,10 @@ fi
 
 SLOT="${PV%%.*}"
 
-CP_DEPEND="~dev-java/tomcat-servlet-api-${PV}:4.0"
+CP_DEPEND="
+	dev-java/bnd-annotation:5
+	~dev-java/tomcat-servlet-api-${PV}:4.0
+"
 
 inherit java-pkg
 
