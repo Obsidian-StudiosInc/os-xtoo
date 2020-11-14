@@ -21,14 +21,16 @@ SLOT="${PV%%.*}"
 
 IUSE="systemd extra-webapps"
 
+BND_SLOT="5"
 ECLIPSE_SLOT="4.16"
 SAPI_SLOT="4.0"
 
 DEPEND="app-admin/pwgen
-	>=virtual/jdk-9:*
+	>=virtual/jdk-11:*
 "
 
 RDEPEND="
+	dev-java/bnd-annotation:${BND_SLOT}
 	dev-java/eclipse-ecj:${ECLIPSE_SLOT}
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
 	~dev-java/tomcat-api-${PV}:${SLOT}
@@ -107,6 +109,9 @@ src_install() {
 		dosym "../../${jar}-${SLOT}/lib/${jar}.jar" \
 			"${dest}/lib/${jar}.jar"
 	done
+
+	dosym "../../bnd-annotation-${BND_SLOT}/lib/bnd-annotation.jar" \
+		"${dest}/lib/bnd-annotation.jar"
 
 	dosym "../../eclipse-ecj-${ECLIPSE_SLOT}/lib/eclipse-ecj.jar" \
 		"${dest}/lib/eclipse-ecj.jar"
