@@ -21,6 +21,10 @@ elif [[ ${PV} == 6.* ]]; then
 	MY_S="${MY_P}"
 fi
 
+if [[ ${PV} == 9.* ]]; then
+	CP_DEPEND="dev-java/bnd-annotation:5"
+fi
+
 inherit java-pkg
 
 DESCRIPTION="Tomcat's Servlet API"
