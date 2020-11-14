@@ -18,6 +18,7 @@ fi
 SLOT="${PV%%.*}"
 
 CP_DEPEND="
+	dev-java/bnd-annotation:5
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-coyote-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
