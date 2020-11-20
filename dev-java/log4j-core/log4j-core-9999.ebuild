@@ -11,8 +11,8 @@ MY_P="${MY_PN}-${MY_PV}"
 BASE_URI="https://github.com/apache/logging-log4j2"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-	MY_S="logging-log4j2-${MY_P}/"
+	SRC_URI="${BASE_URI}/archive/rel/${MY_PV}.tar.gz -> ${MY_P}.tar.gz"
+	MY_S="logging-log4j2-rel-${MY_PV}/"
 fi
 
 SLOT="0"
