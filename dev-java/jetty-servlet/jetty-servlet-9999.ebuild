@@ -26,6 +26,7 @@ CP_DEPEND="
 	~dev-java/jetty-security-${PV}:${SLOT}
 	~dev-java/jetty-server-${PV}:${SLOT}
 	~dev-java/jetty-util-${PV}:${SLOT}
+	~dev-java/jetty-util-ajax-${PV}:${SLOT}
 	java-virtuals/servlet-api:4.0
 "
 
