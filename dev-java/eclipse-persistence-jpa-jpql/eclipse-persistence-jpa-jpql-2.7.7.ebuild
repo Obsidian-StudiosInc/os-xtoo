@@ -1,1 +1,0 @@
-eclipse-persistence-jpa-jpql-9999.ebuild
