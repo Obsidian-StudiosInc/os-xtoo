@@ -44,7 +44,7 @@ java_prepare() {
 		|| die "Failed to generate java files from resources"
 
 
-	sed -i -e '454d;459d' \
+	sed -i -e '465d;470d' \
 		src/main/java/org/glassfish/jersey/client/JerseyInvocation.java \
 		|| die "Could not remove @Override"
 
