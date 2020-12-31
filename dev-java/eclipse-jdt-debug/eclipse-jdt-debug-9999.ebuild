@@ -45,10 +45,4 @@ LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
 
-JAVA_RELEASE="8"
-JAVA_SRC_DIR="eval jdi_interfaces jdi model"
-
-java_prepare() {
-	mv "${S}jdi interfaces" "${S}jdi_interfaces" \
-		|| die "Failed to rename dir"
-}
+JAVA_SRC_DIR="eval jdi model"
