@@ -49,8 +49,8 @@ S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
 
 JAVA_SRC_DIR="launching support"
 
-java_prepare() {
-	sed -i -e "116d;120,123d" \
-		launching/org/eclipse/jdt/internal/launching/SocketListenConnectorProcess.java \
-		|| die "Failed to sed/remove IOException from multi-catch"
-}
+#java_prepare() {
+#	sed -i -e "116d;120,123d" \
+#		launching/org/eclipse/jdt/internal/launching/SocketListenConnectorProcess.java \
+#		|| die "Failed to sed/remove IOException from multi-catch"
+#}
