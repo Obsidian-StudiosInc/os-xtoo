@@ -22,7 +22,7 @@ SLOT="${PV%%.*}"
 IUSE="systemd extra-webapps"
 
 BND_SLOT="5"
-ECLIPSE_SLOT="4.16"
+ECLIPSE_SLOT="4.18"
 SAPI_SLOT="4.0"
 
 DEPEND="app-admin/pwgen
