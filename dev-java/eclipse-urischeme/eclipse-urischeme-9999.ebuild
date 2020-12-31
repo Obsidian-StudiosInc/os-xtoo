@@ -37,4 +37,13 @@ LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/bundles/org.${PN//-/.}/"
 
+JAVA_RM_FILES=(
+	src/org/eclipse/urischeme/internal/registration/WinRegistry.java
+)
 JAVA_SRC_DIR="src"
+
+java_prepare() {
+	sed -i -e "s|this(new WinRegistry()|//this(new WinRegistry()|" \
+		src/org/eclipse/urischeme/internal/registration/RegistryWriter.java \
+		|| die "Failed to sed/remove windows registry support"
+}
