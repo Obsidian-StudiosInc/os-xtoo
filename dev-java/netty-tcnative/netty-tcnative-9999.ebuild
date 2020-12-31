@@ -22,6 +22,7 @@ LICENSE="Apache-2.0"
 SLOT="${PV%%.*}"
 
 CDEPEND="
+	dev-java/netty-jni-util:0
 	dev-libs/apr:1=
 	dev-libs/openssl:=
 "
