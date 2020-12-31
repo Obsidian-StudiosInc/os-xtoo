@@ -31,6 +31,7 @@ CP_DEPEND="
 	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
+	~dev-java/eclipse-osgi-services-${PV}:${SLOT}
 	dev-java/osgi-core-api:${OSGI_SLOT}
 	dev-java/osgi-compendium:${OSGI_SLOT}
 "
