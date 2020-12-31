@@ -30,6 +30,8 @@ DEPEND="app-admin/pwgen
 "
 
 RDEPEND="
+        acct-group/tomcat
+        acct-user/tomcat
 	dev-java/bnd-annotation:${BND_SLOT}
 	dev-java/eclipse-ecj:${ECLIPSE_SLOT}
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
@@ -58,12 +60,6 @@ RDEPEND="
 "
 
 S="${WORKDIR}/${MY_S}"
-
-pkg_setup() {
-	java-pkg_pkg_setup
-	enewgroup tomcat 265
-	enewuser tomcat 265 -1 /dev/null tomcat
-}
 
 java_prepare() {
 	# For use of catalina.sh in netbeans
