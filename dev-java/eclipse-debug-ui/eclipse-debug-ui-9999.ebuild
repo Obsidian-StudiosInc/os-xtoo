@@ -31,6 +31,7 @@ CP_DEPEND="
 	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-core-variables-${PV}:${SLOT}
 	~dev-java/eclipse-debug-core-${PV}:${SLOT}
+	~dev-java/eclipse-e4-ui-services-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
