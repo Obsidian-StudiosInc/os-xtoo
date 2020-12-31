@@ -1,4 +1,4 @@
-# Copyright 2016-2018 Obsidian-Studios, Inc.
+# Copyright 2016-2020 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,11 +8,11 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="org.apache.${PN/-/.}"
 MY_PV="${PV}"
 MY_P="${MY_PN}-${MY_PV}"
-BASE_URI="https://github.com/apache/felix/"
+BASE_URI="https://github.com/apache/felix-dev/"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
-	MY_S="felix-${MY_P}"
+	MY_S="felix-dev-${MY_P}"
 fi
 
 OSGI_SLOT="6"
@@ -32,4 +32,4 @@ HOMEPAGE="https://felix.apache.org/documentation/subprojects/apache-felix-framew
 LICENSE="Apache-2.0"
 SLOT="0"
 
-S="${WORKDIR}/${MY_S}"
+S="${WORKDIR}/${MY_S}/${PN#*-}"
