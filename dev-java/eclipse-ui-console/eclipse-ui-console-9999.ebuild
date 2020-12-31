@@ -25,6 +25,7 @@ CP_DEPEND="
 	~dev-java/eclipse-core-jobs-${PV}:${SLOT}
 	~dev-java/eclipse-core-runtime-${PV}:${SLOT}
 	~dev-java/eclipse-core-variables-${PV}:${SLOT}
+	~dev-java/eclipse-debug-core-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-preferences-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
@@ -46,5 +47,3 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="EPL-1.0"
 
 S="${WORKDIR}/${MY_S}/org.${PN//-/.}/"
-
-JAVA_SRC_DIR="src"
