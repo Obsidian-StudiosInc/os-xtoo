@@ -12,7 +12,7 @@ if [[ ${PV} != 9999 ]]; then
 	MY_S="${P}"
 fi
 
-inherit eutils java-pkg prefix systemd user
+inherit eutils java-pkg prefix systemd
 
 DESCRIPTION="Tomcat Servlet-4.0/JSP-2.3 Container"
 HOMEPAGE="https://${PN}.apache.org/"
@@ -30,8 +30,8 @@ DEPEND="app-admin/pwgen
 "
 
 RDEPEND="
-        acct-group/tomcat
-        acct-user/tomcat
+	acct-group/tomcat
+	acct-user/tomcat
 	dev-java/bnd-annotation:${BND_SLOT}
 	dev-java/eclipse-ecj:${ECLIPSE_SLOT}
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
