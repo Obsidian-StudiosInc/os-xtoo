@@ -23,6 +23,7 @@ SLOT="${PV/.${PV#*.*.*}/}"
 OSGI_SLOT="7"
 
 CP_DEPEND="
+	dev-java/felix-framework:0
 	dev-java/felix-resolver:0
 	dev-java/osgi-core-api:${OSGI_SLOT}
 	dev-java/osgi-compendium:${OSGI_SLOT}
