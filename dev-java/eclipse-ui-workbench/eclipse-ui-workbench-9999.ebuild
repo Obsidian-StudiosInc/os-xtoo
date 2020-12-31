@@ -20,7 +20,7 @@ fi
 SLOT="${PV/.${PV#*.*.*}/}"
 
 EEMF_SLOT="2"
-OSGI_SLOT="6"
+OSGI_SLOT="7"
 
 CP_DEPEND="
 	~dev-java/eclipse-core-commands-${PV}:${SLOT}
@@ -58,6 +58,7 @@ CP_DEPEND="
 	~dev-java/eclipse-help-${PV}:${SLOT}
 	~dev-java/eclipse-jface-${PV}:${SLOT}
 	~dev-java/eclipse-jface-databinding-${PV}:${SLOT}
+	~dev-java/eclipse-jface-notifications-${PV}:${SLOT}
 	~dev-java/eclipse-jface-text-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
 	~dev-java/eclipse-swt-${PV}:${SLOT}
