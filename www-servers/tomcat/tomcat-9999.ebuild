@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -25,7 +25,7 @@ BND_SLOT="5"
 ECLIPSE_SLOT="4.18"
 SAPI_SLOT="4.0"
 if [[ ${SLOT} != 9 ]]; then
-        SAPI_SLOT="5.0"
+	SAPI_SLOT="5.0"
 fi
 
 DEPEND="app-admin/pwgen
