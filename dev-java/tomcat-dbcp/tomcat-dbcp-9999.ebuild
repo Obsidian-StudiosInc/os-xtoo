@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -18,9 +18,13 @@ fi
 SLOT="${PV%%.*}"
 
 CP_DEPEND="
-	dev-java/javax-transaction-api:0
 	~dev-java/tomcat-juli-${PV}:${SLOT}
 "
+if [[ ${SLOT} == 9 ]]; then
+	CP_DEPEND+=" dev-java/javax-transaction-api:0"
+else
+	CP_DEPEND+=" dev-java/jakarta-transaction-api:0"
+fi
 
 inherit java-pkg
 
