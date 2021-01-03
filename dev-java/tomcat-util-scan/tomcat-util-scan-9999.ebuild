@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -16,11 +16,15 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="${PV%%.*}"
+SSLOT="4"
+if [[ ${SLOT} != 9 ]]; then
+	SSLOT="5"
+fi
 
 CP_DEPEND="
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
-	~dev-java/tomcat-servlet-api-${PV}:4.0
+	~dev-java/tomcat-servlet-api-${PV}:${SSLOT}.0
 	~dev-java/tomcat-util-${PV}:${SLOT}
 "
 
