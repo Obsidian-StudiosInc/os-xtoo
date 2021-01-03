@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -16,14 +16,13 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 SLOT="${PV%%.*}"
+SSLOT="4"
+if [[ ${SLOT} != 9 ]]; then
+	SSLOT="5"
+fi
 
 # may need to switch to dummy in sources for non tomcat deps
 CP_DEPEND="
-	dev-java/eclipse-javax-persistence:2
-	dev-java/javamail:0
-	dev-java/javax-annotation:0
-	dev-java/javax-ejb-api:0
-	dev-java/jaxws-api:0
 	~dev-java/tomcat-annotations-api-${PV}:${SLOT}
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-catalina-tribes-${PV}:${SLOT}
@@ -31,10 +30,28 @@ CP_DEPEND="
 	~dev-java/tomcat-jaspic-api-${PV}:${SLOT}
 	~dev-java/tomcat-jni-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
-	~dev-java/tomcat-servlet-api-${PV}:4.0
+	~dev-java/tomcat-servlet-api-${PV}:${SSLOT}.0
 	~dev-java/tomcat-util-${PV}:${SLOT}
 	~dev-java/tomcat-util-scan-${PV}:${SLOT}
 "
+
+if [[ ${SLOT} == 9 ]]; then
+	CP_DEPEND+="
+		dev-java/eclipse-javax-persistence:2
+		dev-java/javamail:0
+		dev-java/javax-annotation:0
+		dev-java/javax-ejb-api:0
+		dev-java/jaxws-api:0
+	"
+else
+	CP_DEPEND+="
+		dev-java/jakarta-annotation:0
+		dev-java/jakarta-ejb-api:0
+		dev-java/jakarta-mail:0
+		dev-java/jakarta-persistence-api:0
+		dev-java/jakarta-xml-ws-api:0
+	"
+fi
 
 inherit java-pkg
 
