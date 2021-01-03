@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -25,3 +25,6 @@ SLOT="${PV%%.*}"
 S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="java/javax/annotation"
+if [[ ${SLOT} != 9 ]]; then
+	JAVA_SRC_DIR="java/jakarta/annotation"
+fi
