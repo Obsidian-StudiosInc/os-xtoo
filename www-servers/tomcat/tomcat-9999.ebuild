@@ -24,6 +24,9 @@ IUSE="systemd extra-webapps"
 BND_SLOT="5"
 ECLIPSE_SLOT="4.18"
 SAPI_SLOT="4.0"
+if [[ ${SLOT} != 9 ]]; then
+        SAPI_SLOT="5.0"
+fi
 
 DEPEND="app-admin/pwgen
 	>=virtual/jdk-11:*
@@ -49,7 +52,7 @@ RDEPEND="
 	~dev-java/tomcat-jaspic-api-${PV}:${SLOT}
 	~dev-java/tomcat-jni-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
-	!<dev-java/tomcat-native-1.1.24
+	dev-java/tomcat-native:0
 	~dev-java/tomcat-servlet-api-${PV}:${SAPI_SLOT}
 	~dev-java/tomcat-util-${PV}:${SLOT}
 	~dev-java/tomcat-util-scan-${PV}:${SLOT}
