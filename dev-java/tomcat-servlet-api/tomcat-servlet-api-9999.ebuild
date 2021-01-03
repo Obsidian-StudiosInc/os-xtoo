@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -21,7 +21,7 @@ elif [[ ${PV} == 6.* ]]; then
 	MY_S="${MY_P}"
 fi
 
-if [[ ${PV} == 9.* ]]; then
+if [[ ${PV} == 9.* ]] || [[ ${PV} == 10.* ]] || [[ ${PV} == *9999* ]]; then
 	CP_DEPEND="dev-java/bnd-annotation:5"
 fi
 
@@ -32,7 +32,8 @@ HOMEPAGE="https://tomcat.apache.org/"
 LICENSE="Apache-2.0"
 
 case ${PV%%.*} in
-	9 | *9999*) SLOT="4.0" ;;
+	10 | *9999*) SLOT="5.0" ;;
+	9) SLOT="4.0" ;;
 	8) SLOT="3.1" ;;
 	7) SLOT="3.0" ;;
 	6) SLOT="2.5" ;;
@@ -41,27 +42,32 @@ esac
 
 S="${WORKDIR}/${MY_S}"
 
+BASE="java/javax/"
+if [[ ${SLOT} != 10 ]]; then
+	BASE="java/jakarta/"
+fi
+
 JAVA_RES_FIND=" -not -name LocalStrings_*.properties "
 
 java_prepare() {
-	mv java/javax/servlet/jsp java/javax/jsp \
+	mv ${BASE}servlet/jsp ${BASE}jsp \
 		|| die "Failed to move jsp-api classes"
 }
 
 src_compile() {
 	JAVA_JAR_FILENAME="el-api.jar"
-	JAVA_SRC_DIR="java/javax/el/"
+	JAVA_SRC_DIR="${BASE}el/"
 	java-pkg-simple_src_compile
 	rm -r src/main/resources || die "Failed to remove auto resources"
 
 	JAVA_CLASSPATH_EXTRA="${S}/el-api.jar"
 	JAVA_JAR_FILENAME="servlet-api.jar"
-	JAVA_SRC_DIR="java/javax/servlet/"
+	JAVA_SRC_DIR="${BASE}servlet/"
 	java-pkg-simple_src_compile
 	rm -r src/main/resources || die "Failed to remove auto resources"
 
 	JAVA_CLASSPATH_EXTRA="${S}/el-api.jar:${S}/servlet-api.jar"
-	JAVA_SRC_DIR="java/javax/jsp"
+	JAVA_SRC_DIR="${BASE}jsp"
 	JAVA_JAR_FILENAME="jsp-api.jar"
 	java-pkg-simple_src_compile
 }
