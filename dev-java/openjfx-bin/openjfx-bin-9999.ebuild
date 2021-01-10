@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -13,7 +13,7 @@ BASE_URI="http://download2.gluonhq.com/openjfx/"
 RESTRICT="preserve-libs strip"
 
 if [[ ${PV} != *9999* ]]; then
-	SRC_URI="${BASE_URI}/${SLOT}/${PN%%-*}-${PV}_linux-x64_bin-sdk.zip"
+	SRC_URI="${BASE_URI}/${PV}/${PN%%-*}-${PV}_linux-x64_bin-sdk.zip"
 	KEYWORDS="-* ~amd64"
 else
 	KEYWORDS="-amd64"
@@ -30,7 +30,6 @@ QA_PREBUILT="*"
 DEPEND="app-arch/zip"
 
 RDEPEND="
-	dev-java/oracle-jdk-bin:${SLOT}
 	dev-libs/atk
 	dev-libs/glib:2
 	dev-libs/libxml2:2
@@ -41,6 +40,7 @@ RDEPEND="
 	x11-libs/libXtst
 	x11-libs/libXxf86vm
 	x11-libs/pango
+	virtual/jdk:${SLOT}
 	virtual/opengl
 	gtk2? (
 		x11-libs/cairo
@@ -52,7 +52,7 @@ RDEPEND="
 	)
 "
 
-S="${WORKDIR}/javafx-sdk-${SLOT}"
+S="${WORKDIR}/javafx-sdk-${PV}"
 
 src_prepare() {
 	default
