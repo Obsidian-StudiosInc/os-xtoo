@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -9,6 +9,7 @@ SLF4J_SLOT="0"
 
 CP_DEPEND="
 	dev-java/ant-core:0
+	dev-java/commons-io:0
 	dev-java/commons-lang:2
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
