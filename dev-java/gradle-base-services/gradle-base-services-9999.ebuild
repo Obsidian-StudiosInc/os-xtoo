@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -13,6 +13,7 @@ CP_DEPEND="
 	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	dev-java/guava:30
+	dev-java/javax-inject:0
 	dev-java/jcip-annotations:0
 	dev-java/jsr305:0
 	dev-java/slf4j-api:0
