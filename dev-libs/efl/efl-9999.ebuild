@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Some USE and depends from enlightenment-live overlay
@@ -51,7 +51,7 @@ COMMON_DEP="
 	net-misc/curl
 	sys-apps/dbus
 	sys-libs/zlib
-	virtual/jpeg:*
+	virtual/jpeg:0=
 	virtual/udev
 	X? (
 		x11-libs/libX11
@@ -80,7 +80,7 @@ COMMON_DEP="
 	elogind? ( sys-auth/elogind )
 	fontconfig? ( media-libs/fontconfig )
 	fribidi? ( dev-libs/fribidi )
-	gif? ( media-libs/giflib )
+	gif? ( media-libs/giflib:= )
 	glib? ( dev-libs/glib:* )
 	gnutls? ( net-libs/gnutls )
 	!gnutls? ( ssl? ( dev-libs/openssl:* ) )
@@ -90,7 +90,7 @@ COMMON_DEP="
 	)
 	harfbuzz? ( media-libs/harfbuzz )
 	ibus? ( app-i18n/ibus )
-	jpeg2k? ( media-libs/openjpeg:0 )
+	jpeg2k? ( media-libs/openjpeg:= )
 	nls? ( sys-devel/gettext )
 	!lua? ( dev-lang/luajit:= )
 	lua? ( dev-lang/lua:* )
