@@ -43,7 +43,7 @@ esac
 S="${WORKDIR}/${MY_S}"
 
 BASE="java/javax/"
-if [[ ${SLOT} == 10 ]]; then
+if [[ ${PV%%.*} -ge 10 ]]; then
 	BASE="java/jakarta/"
 fi
 
