@@ -24,7 +24,7 @@ SLOT="${PV%%.*}"
 
 S="${WORKDIR}/${MY_S}"
 
-JAVA_SRC_DIR="java/jakarta/security/"
+JAVA_SRC_DIR="java/javax/security/"
 if [[ ${SLOT} != 9 ]]; then
 	JAVA_SRC_DIR="java/jakarta/security/"
 fi
@@ -32,13 +32,7 @@ fi
 java_prepare() {
 	# Reverting commit
 	# https://github.com/apache/tomcat/commit/f4dac6846c548144799b1c3f33aba4eb320a3413
-	if [[ ${SLOT} == 9 ]]; then
-	sed -i -e '75,77d' -e '80d' \
-		${JAVA_SRC_DIR}auth/message/config/AuthConfigFactory.java \
-		|| die "Failed to sed/revert reflection commit"
-	else
 	sed -i -e '72,74d' -e '77d' \
 		${JAVA_SRC_DIR}auth/message/config/AuthConfigFactory.java \
 		|| die "Failed to sed/revert reflection commit"
-	fi
 }
