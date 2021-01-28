@@ -27,6 +27,6 @@ SLOT="${PV%%.*}"
 S="${WORKDIR}/${MY_S}"
 
 JAVA_SRC_DIR="java/javax/websocket"
-if [[ ${PV} != 9.* ]]; then
+if [[ ${SLOT} != 9 ]]; then
 	JAVA_SRC_DIR="java/jakarta/websocket"
 fi
