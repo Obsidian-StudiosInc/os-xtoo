@@ -21,7 +21,6 @@ if [[ ${SLOT} != 9 ]]; then
 	SSLOT="5"
 fi
 
-
 CP_DEPEND="
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-jni-${PV}:${SLOT}
