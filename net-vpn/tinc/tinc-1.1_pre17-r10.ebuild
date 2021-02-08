@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -15,20 +15,17 @@ SRC_URI="http://www.tinc-vpn.org/packages/${MY_P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+lzo +ncurses libressl +readline +ssl systemd uml upnp vde +zlib"
+IUSE="+lzo +ncurses +readline +ssl systemd uml upnp vde +zlib"
 
 DEPEND="
-	ssl? (
-		!libressl? ( dev-libs/openssl:0= )
-		libressl? ( dev-libs/libressl:0= )
-	)
-	systemd? ( sys-apps/systemd )
 	lzo? ( dev-libs/lzo:2 )
 	ncurses? ( sys-libs/ncurses:= )
 	readline? ( sys-libs/readline:= )
+	ssl? ( dev-libs/openssl:0= )
+	systemd? ( sys-apps/systemd )
 	upnp? ( net-libs/miniupnpc )
-	zlib? ( sys-libs/zlib )
 	vde? ( net-misc/vde )
+	zlib? ( sys-libs/zlib )
 "
 RDEPEND="${DEPEND}"
 
