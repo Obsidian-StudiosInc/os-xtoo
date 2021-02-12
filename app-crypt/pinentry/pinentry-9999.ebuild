@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -20,33 +20,39 @@ else
 		SRC_URI="${BASE_URI}/archive/${MY_P}.tar.gz"
 		KEYWORDS="~amd64"
 	fi
-	MY_S="${MY_P}"
+	MY_S="${PN}-${MY_P}"
 fi
 
-inherit autotools qmake-utils multilib flag-o-matic toolchain-funcs ${ECLASS}
+inherit autotools flag-o-matic qmake-utils toolchain-funcs ${ECLASS}
 
 DESCRIPTION="Simple passphrase entry dialogs which utilize the Assuan protocol"
 HOMEPAGE="http://gnupg.org/aegypten2/index.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-IUSE="emacs efl fltk gtk ncurses qt5 caps gnome3 gnome-keyring static"
+IUSE="caps emacs efl fltk gtk ncurses qt5 gnome3 gnome-keyring"
 
 CDEPEND="
 	app-eselect/eselect-lib-bin-symlink
-	>=dev-libs/libgpg-error-1.17
+	!app-eselect/eselect-pinentry
 	>=dev-libs/libassuan-2.1
 	>=dev-libs/libgcrypt-1.6.3
+	>=dev-libs/libgpg-error-1.17
 	caps? ( sys-libs/libcap )
 	efl? ( dev-libs/efl:0 )
 	fltk? ( x11-libs/fltk:1 )
 	gnome3? ( app-crypt/gcr )
 	gnome-keyring? ( app-crypt/libsecret )
-	gtk? ( x11-libs/gtk+:2 )
-	qt5? ( dev-qt/qtwidgets:5 )
+	gtk? (
+		app-crypt/gcr
+		x11-libs/gtk+:2
+	)
 	ncurses? ( sys-libs/ncurses:0= )
-	static? ( >=sys-libs/ncurses-5.7-r5:0=[static-libs,-gpm] )
-	!app-eselect/eselect-pinentry
+	qt5? (
+		dev-qt/qtcore:5
+		dev-qt/qtgui:5
+		dev-qt/qtwidgets:5
+	)
 "
 
 DEPEND="${CDEPEND}
@@ -59,10 +65,6 @@ RDEPEND="${CDEPEND}"
 REQUIRED_USE="
 	|| ( ncurses efl fltk gnome3 gtk qt5 )
 	gnome-keyring? ( || ( gtk gnome3 ) )
-	efl? ( !static )
-	gtk? ( !static )
-	qt5? ( !static )
-	static? ( ncurses )
 "
 
 S="${WORKDIR}/${MY_S}"
@@ -82,7 +84,6 @@ src_prepare() {
 
 src_configure() {
 	local myconf=()
-	use static && append-ldflags -static
 	append-cxxflags -std=gnu++11
 
 	if use qt5; then
