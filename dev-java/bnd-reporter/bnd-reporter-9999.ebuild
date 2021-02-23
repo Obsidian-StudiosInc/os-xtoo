@@ -1,4 +1,4 @@
-# Copyright 2019-2020 Obsidian-Studios, Inc.
+# Copyright 2019-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -57,4 +57,8 @@ java_prepare() {
 	sed -i -e '13d;114,116d' \
 		src/biz/aQute/bnd/reporter/exporter/ReportExporterBuilder.java \
 		|| die "Failed to remove jtwig support"
+
+	sed -i -e "s|printer.PrettyP|printer.configuration.PrettyP|" \
+		src/biz/aQute/bnd/reporter/codesnippet/JavaSnippetReader.java \
+		|| die "Failed change javaparser-core import"
 }
