@@ -27,17 +27,19 @@ CP_DEPEND="
 	dev-java/apple-java-extensions-bin:0
 	dev-java/asm:9
 	dev-java/commons-bcel:0
-	dev-java/commons-lang:2
 	dev-java/commons-lang:3
 	dev-java/commons-text:0
 	dev-java/dom4j:2
+	dev-java/gson:0
 	dev-java/jcip-annotations:0
-	<dev-java/jformatstring-2.0:0
 	dev-java/jsr305:0
-	dev-java/json-java:0
 	dev-java/slf4j-api:0
 	~dev-java/spotbugs-annotations-${PV}:${SLOT}
 "
+#	<dev-java/jformatstring-2.0:0
+#	dev-java/commons-lang:2
+#	dev-java/json-java:0
+
 
 DEPEND="${CP_DEPEND}
 	>=virtual/jdk-9"
