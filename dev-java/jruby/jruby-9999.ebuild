@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Obsidian-Studios, Inc.
+# Copyright 2016-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Copyright 1999-2014 Gentoo Foundation
@@ -15,7 +15,7 @@ fi
 
 SLOT="0"
 
-RUBY_VERSION=2.7
+RUBY_VERSION=3.0
 RUBY_REVISION=0
 
 CP_DEPEND="
@@ -23,7 +23,6 @@ CP_DEPEND="
 	dev-java/asm:9
 	dev-java/commons-bsf:0
 	dev-java/backport9:0
-	dev-java/bytelist:0
 	dev-java/dirgra:0
 	dev-java/options:0
 	dev-java/invokebinder:0
@@ -43,8 +42,6 @@ CP_DEPEND="
 	dev-java/nailgun-server:0
 	dev-java/osgi-core-api:4
 	dev-java/slf4j-api:0
-	dev-java/snakeyaml:0
-	dev-java/unsafe-fences:0
 "
 
 inherit eutils java-pkg
