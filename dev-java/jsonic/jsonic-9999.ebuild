@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -13,7 +13,7 @@ fi
 
 CP_DEPEND="
 	dev-java/commons-beanutils:0
-	dev-java/guice:4
+	dev-java/guice:5
 	dev-java/tomcat-servlet-api:3.0
 "
 
