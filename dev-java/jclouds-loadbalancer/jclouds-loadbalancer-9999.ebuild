@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Obsidian-Studios, Inc.
+# Copyright 2016-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -20,7 +20,7 @@ SLOT="0"
 
 CP_DEPEND="
 	dev-java/guava:30
-	dev-java/guice:4
+	dev-java/guice:5
 	dev-java/javax-annotation:0
 	dev-java/javax-inject:0
 	~dev-java/jclouds-core-${PV}:${SLOT}
