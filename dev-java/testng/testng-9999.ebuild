@@ -1,4 +1,4 @@
-# Copyright 2017-2019 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -14,7 +14,7 @@ fi
 CP_DEPEND="
 	dev-java/ant-core:0
 	dev-java/bsh:0
-	dev-java/guice:4
+	dev-java/guice:5
 	dev-java/jcommander:0
 	dev-java/jsr305:0
 	dev-java/junit:4
