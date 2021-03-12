@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -28,3 +28,14 @@ LICENSE="Apache-2.0"
 SLOT="0"
 
 S="${WORKDIR}/${MY_S}"
+
+java_prepare() {
+	sed -i -e '17iimport java.util.Comparator;' \
+		-e '28i\\tprivate Comparator<String> filenameComparator;' \
+		-e '56i\\t@Override' \
+		-e '56i\\tpublic void setFilenameComparator( final Comparator<String> filenameComparator ) {' \
+		-e '56i\\t\tthis.filenameComparator = filenameComparator;' \
+		-e '56i\\t}' \
+		src/main/java/org/sonatype/plexus/build/incremental/EmptyScanner.java \
+		|| die "Failed to add missing abstract method"
+}
