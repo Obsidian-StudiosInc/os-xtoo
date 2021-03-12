@@ -1,4 +1,4 @@
-# Copyright 2018 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -16,7 +16,7 @@ if [[ ${PV} != *9999* ]]; then
 	MY_S="${MY_PN}-releases-${PV}"
 fi
 
-GUICE_SLOT="4"
+GUICE_SLOT="5"
 
 CP_DEPEND="
 	dev-java/cdi-api:0
