@@ -50,6 +50,7 @@ else
 		dev-java/jakarta-mail:0
 		dev-java/jakarta-persistence-api:0
 		dev-java/jakarta-xml-ws-api:0
+		dev-java/tomcat-jakartaee-migration:0
 	"
 fi
 
