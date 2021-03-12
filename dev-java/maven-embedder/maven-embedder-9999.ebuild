@@ -1,4 +1,4 @@
-# Copyright 2018-2020 Obsidian-Studios, Inc.
+# Copyright 2018-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -24,7 +24,7 @@ SLF4J_SLOT="0"
 CP_DEPEND="
 	dev-java/commons-cli:1
 	dev-java/commons-lang:3
-	dev-java/guice:4
+	dev-java/guice:5
 	dev-java/javax-inject:0
 	dev-java/logback-core:0
 	~dev-java/maven-artifact-${PV}:${SLOT}
