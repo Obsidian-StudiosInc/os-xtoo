@@ -15,8 +15,8 @@ RESTRICT="preserve-libs strip"
 if [[ ${PV} == *_pre* ]]; then
 	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
 	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
-elif [[ ${PV} == 16_rc* ]]; then
-	BASE_URI+="GA/jdk${SLOT}/7863447f0ab643c585b9bdebf67c69db/${PV##*_rc}/GPL"
+elif [[ ${PV} == 16* ]]; then
+	BASE_URI+="GA/jdk${SLOT}/7863447f0ab643c585b9bdebf67c69db/${PV/1/3}/GPL"
 	MY_PV="${PV%%_*}"
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
