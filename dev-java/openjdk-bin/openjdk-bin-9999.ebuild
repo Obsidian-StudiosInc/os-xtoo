@@ -15,16 +15,20 @@ RESTRICT="preserve-libs strip"
 if [[ ${PV} == *_pre* ]]; then
 	BASE_URI+="early_access/jdk${SLOT}/${PV##*_pre}/GPL"
 	MY_PV="${PV%%_*}-ea+${PV##*_pre}"
-elif [[ ${PV} == 16* ]]; then
+elif [[ ${PV} == 16 ]]; then
 	BASE_URI+="GA/jdk${SLOT}/7863447f0ab643c585b9bdebf67c69db/${PV/1/3}/GPL"
 	MY_PV="${PV%%_*}"
 elif [[ ${PV} == *_rc* ]]; then
 	BASE_URI+="GA/jdk${SLOT}/${PV##*_rc}/GPL"
 	MY_PV="${PV%%_*}"
-elif [[ ${PV} == 11* ]] || [[ ${PV} == 15* ]]; then
+elif [[ ${PV} == 11* ]] || [[ ${PV} == 15* ]] || [[ ${PV} == 16* ]]; then
 	MY_PV="${PV/p/}"
 	BASE_URI="https://github.com/AdoptOpenJDK/openjdk${SLOT}-binaries/releases/download/jdk-${PV/_p/+}"
-	MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
+	if [[ ${PV} == 11* ]] || [[ ${PV} == 15* ]]; then
+		MY_TZ="OpenJDK${SLOT}U-jdk_x64_linux_hotspot_${MY_PV}"
+	else
+		MY_TZ="OpenJDK${SLOT}-jdk_x64_linux_hotspot_${MY_PV}"
+	fi
 else
 	BASE_URI+="GA/jdk${SLOT}/GPL"
 	MY_PV="${PV}"
