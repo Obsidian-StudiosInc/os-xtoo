@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -34,7 +34,7 @@ S="${WORKDIR}/${MY_S}/core"
 JAVA_RM_FILES=( src/main/java/org/easymock/internal/AndroidClassProxyFactory.java )
 
 java_prepare(){
-	sed -i -e '134,136d' \
+	sed -i -e '154,156d' \
 		src/main/java/org/easymock/internal/MocksControl.java \
 		|| die "Failed to sed remove AndroidClassProxyFactory usage"
 }
