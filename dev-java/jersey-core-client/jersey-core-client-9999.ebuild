@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Obsidian-Studios, Inc.
+# Copyright 2016-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -43,7 +43,7 @@ java_prepare() {
 		-p "org.glassfish.jersey.internal.l10n" \
 		|| die "Failed to generate java files from resources"
 
-	sed -i -e '465d;470d' \
+	sed -i -e '470d;475d' \
 		src/main/java/org/glassfish/jersey/client/JerseyInvocation.java \
 		|| die "Could not remove @Override"
 
