@@ -3,11 +3,6 @@ dev-java/classmate
 dev-java/commons-configuration
 dev-java/ezmorph
 dev-java/groovy
-dev-java/jackson-annotations
-dev-java/jackson-databind
-dev-java/jackson-dataformat-xml
-dev-java/jackson-dataformat-yaml
-dev-java/jackson-module-jaxb-annotations
 dev-java/jcodings
 dev-java/jgroups
 dev-java/joni
