@@ -1,1 +1,0 @@
-jersey-container-netty-http-9999.ebuild
