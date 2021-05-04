@@ -1,4 +1,5 @@
 dev-java/classmate
+dev-java/codemodel
 dev-java/commons-configuration
 dev-java/commons-fileupload
 dev-java/dtdparser
@@ -9,6 +10,7 @@ dev-java/fastinfoset
 dev-java/groovy
 dev-java/httpcomponents-client
 dev-java/httpcomponents-core
+dev-java/istack-commons-buildtools
 dev-java/jboss-logmanager
 dev-java/jboss-logging
 dev-java/jcodings
@@ -25,6 +27,7 @@ dev-java/netty-codec-http
 dev-java/netty-handler
 dev-java/oracle-jdk-bin:11
 dev-java/stax2-api
+dev-java/stax-ex
 dev-java/xerces
 dev-java/xstream
 dev-util/netbeans:11
