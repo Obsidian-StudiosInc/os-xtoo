@@ -23,7 +23,7 @@ SLOT="0"
 
 IUSE="+X audio avahi +bmp connman cxx dav1d dds debug doc drm egl elogind
 	examples fbcon +fontconfig fribidi gif +gles2 glib gnutls gstreamer
-	harfbuzz hyphen +ico ibus jpeg2k libressl mono neon lua luajit nls
+	harfbuzz hyphen +ico ibus jpeg2k mono neon lua luajit nls
 	opengl ssl pdf physics pixman +png +ppm postscript psd pulseaudio
 	rawphoto scim sdl sound static-libs +svg systemd system-lz4 test tga
 	tiff tslib v4l2 vnc wayland webp xcf xim xpm xpresent"
