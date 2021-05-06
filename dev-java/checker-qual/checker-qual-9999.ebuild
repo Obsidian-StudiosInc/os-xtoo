@@ -22,9 +22,4 @@ HOMEPAGE="https://${MY_PN/-/}.org/"
 LICENSE="Apache-2.0"
 SLOT="0"
 
-S="${WORKDIR}/${MY_S}/"
-
-src_compile() {
-	JAVA_SRC_DIR="$(find {framework,dataflow,checker}/src -name qual -type d)"
-	java-pkg-simple_src_compile
-}
+S="${WORKDIR}/${MY_S}/${PN}"
