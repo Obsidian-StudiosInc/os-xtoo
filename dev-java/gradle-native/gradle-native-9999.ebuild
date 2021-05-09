@@ -9,9 +9,11 @@ NP_SLOT="0"
 CP_DEPEND="
 	dev-java/commons-io:0
 	dev-java/jansi:0
+	dev-java/javax-inject:0
 	dev-java/jsr305:0
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	dev-java/guava:30
 	dev-java/native-platform:${NP_SLOT}
