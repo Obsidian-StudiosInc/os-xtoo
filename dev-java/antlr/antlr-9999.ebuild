@@ -19,7 +19,7 @@ if [[ ${PV} != 9999 ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/antlr:3
+	dev-java/antlr:3.5
 	dev-java/icu4j:0
 	dev-java/javax-json-api:0
 	dev-java/stringtemplate:4
@@ -43,7 +43,7 @@ java_prepare() {
 		"${S}/tool/src/org/antlr/v4/unicode/" \
 		|| die "Failed to copy pre-generated UnicodeData.java"
 
-	antlr3 -fo tool/src/ tool/src/org/antlr/v4/codegen/*.g \
+	antlr3.5 -fo tool/src/ tool/src/org/antlr/v4/codegen/*.g \
 		tool/src/org/antlr/v4/parse/*.g \
 		|| die "Failed to compile antlr grammar files"
 
@@ -58,9 +58,9 @@ java_prepare() {
 		tool/src/org/antlr/v4/tool/GrammarTransformPipeline.java \
 		|| die "Failed to sed/fix cast and method renames"
 
-	sed -i -e "s|input.range()|input.index()|g" \
-		tool/src/ANTLRParser.java \
-		|| die "Failed to sed/fix method rename"
+	sed -i -e "s|Token.EOF_TOKEN|new CommonToken(EOF)|" \
+		tool/src/ActionSplitter.java \
+		|| die "Failed to sed/fix symbol rename"
 }
 
 src_compile() {
