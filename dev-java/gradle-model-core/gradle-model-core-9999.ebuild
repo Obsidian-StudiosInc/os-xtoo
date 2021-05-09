@@ -16,6 +16,7 @@ CP_DEPEND="
 	~dev-java/gradle-logging-${PV}:${SLOT}
 	~dev-java/gradle-messaging-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-problems-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	dev-java/groovy:0
 	dev-java/guava:30
