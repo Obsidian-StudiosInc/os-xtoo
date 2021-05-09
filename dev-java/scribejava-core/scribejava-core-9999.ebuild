@@ -22,6 +22,9 @@ CP_DEPEND="
 	dev-java/commons-codec:0
 	dev-java/jackson-core:${JACKSON_SLOT}
 	dev-java/jackson-databind:${JACKSON_SLOT}
+	dev-java/jakarta-xml-bind-api:0
+	dev-java/jaxb-api:0
+	~dev-java/scribejava-java8-${PV}:${SLOT}
 "
 
 inherit java-pkg
