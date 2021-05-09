@@ -13,6 +13,7 @@ CP_DEPEND="
 	~dev-java/gradle-build-operations-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	dev-java/guava:30
 	dev-java/javax-inject:0
