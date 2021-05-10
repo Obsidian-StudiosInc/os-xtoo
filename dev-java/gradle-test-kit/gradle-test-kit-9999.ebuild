@@ -9,6 +9,7 @@ CP_DEPEND="
 	dev-java/commons-io:0
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-tooling-api-${PV}:${SLOT}
 	~dev-java/gradle-wrapper-${PV}:${SLOT}
 	dev-java/jsr305:0
