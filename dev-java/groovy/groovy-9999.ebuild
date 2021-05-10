@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -24,6 +24,7 @@ CLI_SLOT="1"
 CP_DEPEND="
 	dev-java/ant-ivy:0
 	dev-java/antlr:0
+	dev-java/antlr4-optimized:0
 	dev-java/asm:${ASM_SLOT}
 	dev-java/commons-cli:${CLI_SLOT}
 	dev-java/jansi:0
@@ -40,40 +41,23 @@ LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}"
 
-#PATCHES=( "${FILESDIR}/java7.patch" )
+JAVA_SRC_DIR="src/main subprojects/parser-antlr4"
 
-JAVA_SRC_DIR="src/main"
 JAVA_CLASSPATH_EXTRA="${JAVA_RES_DIR}"
-# Needed for DefaultGroovyMethods.java
-# TODO: merge upstream changes for > 1.7, cannot use full file
-JAVA_RELEASE="7"
 JAVA_RES_DIR="resources"
 
-# Fails to build due to release 7
-# reference to plus is ambiguous in v8
-JAVA_RM_FILES=(
-	src/main/java/org/codehaus/groovy/vmplugin/v8
-	src/main/java/org/codehaus/groovy/vmplugin/v9
-)
-
-ANTLR_GRAMMAR_FILES=(
-	org/codehaus/groovy/antlr/groovy.g
-	org/codehaus/groovy/antlr/java/java.g
-)
-
-# This function generates the ANTLR grammar files.
-generate_antlr_grammar() {
-	for grammar_file in "${@}"; do
-		local my_grammar_file=$(basename ${grammar_file})
-
-		einfo "Generating \"${my_grammar_file}\" grammar file"
-		local my_grammar_dir=$(dirname ${grammar_file})
-
-		cd "${S}/src/main/antlr2/${my_grammar_dir}" || die
-		antlr ${my_grammar_file} || die
-
-		cd "${S}" || die
+java_prepare() {
+	local f
+	for f in groovy java/java; do
+		antlr -o src/main/java/org/codehaus/groovy/ \
+			src/main/antlr2/org/codehaus/groovy/antlr/${f}.g \
+			|| die "Failed to generate files via antlr"
 	done
+
+	mv src/antlr/*.g4 src/main/java/ || die "Failed to move files"
+	antlr4-optimized -visitor -package org.apache.groovy.parser.antlr4 \
+		src/main/java/*.g4 \
+		|| die "Failed to generate files via antlr4"
 
 	sed -i -e "s|(T\[\]) plus|(T\[\]) DefaultGroovyMethods.plus|g" \
 		src/main/java/org/codehaus/groovy/runtime/DefaultGroovyMethods.java \
@@ -82,7 +66,6 @@ generate_antlr_grammar() {
 
 src_compile() {
 	JAVA_NO_JAR=1
-	generate_antlr_grammar "${ANTLR_GRAMMAR_FILES[@]}"
 	java-pkg-simple_src_compile
 
 	# Temp needs to be moved to groovy eclass
@@ -90,15 +73,16 @@ src_compile() {
 	sources=groovy_sources.lst
 	classes=target/classes
 	find "${S}/src/main" -name \*.groovy > ${sources}
-	sed -i -e "s|\$GROOVY_HOME/lib/@GROOVYJAR@|${S}/${classes}:$(java-pkg_getjars antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},picocli)|" \
+#	find "${S}/subprojects/parser-antlr4" -name \*.groovy >> ${sources}
+	sed -i -e "s|\$GROOVY_HOME/lib/@GROOVYJAR@|${S}/${classes}:$(java-pkg_getjars antlr4-optimized,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},picocli)|" \
 		"src/bin/startGroovy" \
 		|| die "Could not modify startGroovy"
 #	java -cp ${classes} org.codehaus.groovy.tools.GroovyStarter \
 #		-d ${classes} \
 	chmod 775 "src/bin/groovyc" "src/bin/startGroovy"\
 		|| die "Failed to make groovyc,startGroovy executable"
-	"src/bin/groovyc" -d ${classes} -J--release=7 \
-		-cp "${classes}:$(java-pkg_getjars ant-ivy,commons-cli-${CLI_SLOT},picocli)" \
+	"src/bin/groovyc" -d ${classes} \
+		-cp "${classes}:$(java-pkg_getjars antlr,ant-ivy,commons-cli-${CLI_SLOT},picocli)" \
 		@${sources} \
 		|| die "Failed to compile groovy files"
 
