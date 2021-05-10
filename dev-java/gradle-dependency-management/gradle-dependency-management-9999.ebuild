@@ -26,6 +26,7 @@ CP_DEPEND="
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-execution-${PV}:${SLOT}
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
@@ -33,6 +34,7 @@ CP_DEPEND="
 	~dev-java/gradle-model-core-${PV}:${SLOT}
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-problems-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-resources-http-${PV}:${SLOT}
 	~dev-java/gradle-security-${PV}:${SLOT}
