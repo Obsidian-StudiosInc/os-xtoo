@@ -25,6 +25,7 @@ CP_DEPEND="
 	~dev-java/gradle-execution-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-file-watching-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-jvm-services-${PV}:${SLOT}
@@ -36,6 +37,7 @@ CP_DEPEND="
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
+	~dev-java/gradle-problems-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
 	~dev-java/gradle-worker-processes-${PV}:${SLOT}
@@ -50,6 +52,7 @@ CP_DEPEND="
 	dev-java/jsr305:0
 	dev-java/native-platform:0
 	dev-java/slf4j-api:0
+	dev-java/tomlj:0
 "
 
 inherit gradle
@@ -68,4 +71,13 @@ java_prepare() {
 	sed -i -e "s|RemappingClassAdapter|ClassRemapper|" \
 		src/main/java/org/gradle/process/internal/worker/child/WorkerProcessClassPathProvider.java \
 		|| die "Failed to sed/update asm api changes"
+
+	sed -i -e "s|groovy.xml.Xml|groovy.util.Xml|g " \
+		src/main/java/org/gradle/internal/xml/XmlTransformer.java \
+		|| die "Failed to sed/downgrade groovy xml"
+
+	sed -i -e "s|groovy.xml.Xml|groovy.util.Xml|g " \
+		src/main/java/org/gradle/api/internal/project/antbuilder/AntBuilderDelegate.java \
+		|| die "Failed to sed/downgrade groovy xml"
+
 }
