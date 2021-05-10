@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Obsidian-Studios, Inc.
+# Copyright 2016-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -28,16 +28,6 @@ HOMEPAGE="${BASE_URI}"
 LICENSE="Apache-2.0"
 
 S="${WORKDIR}/${MY_S}/subprojects/${PN}"
-
-java_prepare() {
-	sed -i -e "s|yield(value|this.yield(value|" \
-		src/main/java/groovy/xml/MarkupBuilder.java \
-		|| die "Failed to sed/fix call to yield"
-
-	sed -i -e "s|yield(value.to|this.yield(value.to|" \
-		src/main/java/groovy/xml/MarkupBuilderHelper.java \
-		|| die "Failed to sed/fix call to yield"
-}
 
 src_compile() {
 	java-pkg-simple_src_compile
