@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -24,6 +24,7 @@ CP_DEPEND="
 	dev-java/antlr:0
 	~dev-java/groovy-${PV}:${SLOT}
 	~dev-java/groovy-xml-${PV}:${SLOT}
+	dev-java/spotbugs-annotations:0
 "
 
 inherit java-pkg
@@ -36,11 +37,23 @@ S="${WORKDIR}/${MY_S}/subprojects/${PN}"
 
 JAVA_SRC_DIR="src/main"
 
-java_prepare() {
-	sed -i -e "s|yield(R|this.yield(R|" \
-		src/main/groovy/groovy/text/markup/BaseTemplate.java \
-		|| die "Failed to sed/fix call to yield"
-}
+# has issues...
+# [Static type checking] -
+# Cannot find matching method org.codehaus.groovy.control.ParserPlugin#
+#	buildAST(java.lang.CharSequence,
+#		org.codehaus.groovy.control.CompilerConfiguration,
+#		groovy.lang.GroovyClassLoader,
+#		org.codehaus.groovy.control.ErrorCollector).
+# Please check if the declared type is correct and if the method exists.
+JAVA_RM_FILES=(
+	src/main/groovy/groovy/text/markup/MarkupTemplateTypeCheckingExtension.groovy
+)
+
+#java_prepare() {
+#	sed -i -e "s|buildAST(|buildAST((CharSequence)|" \
+#		src/main/groovy/groovy/text/markup/MarkupTemplateTypeCheckingExtension.groovy \
+#		|| die "Failed to sed/fix type issue"
+#}
 
 src_compile() {
 	java-pkg-simple_src_compile
