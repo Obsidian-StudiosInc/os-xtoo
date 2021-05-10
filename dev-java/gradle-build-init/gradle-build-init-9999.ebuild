@@ -26,6 +26,7 @@ CP_DEPEND="
 	~dev-java/gradle-plugins-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-wrapper-${PV}:${SLOT}
+	~dev-java/gradle-workers-${PV}:${SLOT}
 	dev-java/groovy:${GROOVY_SLOT}
 	dev-java/groovy-templates:${GROOVY_SLOT}
 	dev-java/guava:30
@@ -40,15 +41,16 @@ CP_DEPEND="
 	dev-java/maven-settings:${MAVEN_SLOT}
 	dev-java/maven-settings-builder:${MAVEN_SLOT}
 	dev-java/plexus-classworlds:0
-	dev-java/plexus-container-default:0
 	dev-java/plexus-utils:0
+	dev-java/sisu-plexus:0
 	dev-java/slf4j-api:0
 "
+#	dev-java/plexus-container-default:0
 
 inherit gradle
 
 java_prepare() {
 	sed -i -e "s|sonatype|eclipse|g" -e "s|aether.util|aether|" \
-		src/main/java/org/gradle/buildinit/plugins/internal/maven/MavenProjectsCreator.java \
+		src/main/java/org/gradleinternal/buildinit/plugins/internal/maven/MavenProjectsCreator.java \
 		|| die "Failed to sed/swap sonatype imports with eclipse"
 }
