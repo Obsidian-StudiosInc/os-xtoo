@@ -55,6 +55,7 @@ LIB_DEPEND="
 	~dev-java/gradle-execution-${PV}:${SLOT}
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
 	~dev-java/gradle-file-watching-${PV}:${SLOT}
+	~dev-java/gradle-file-temp-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-installation-beacon-${PV}:${SLOT}
@@ -67,6 +68,7 @@ LIB_DEPEND="
 	~dev-java/gradle-native-${PV}:${SLOT}
 	~dev-java/gradle-normalization-java-${PV}:${SLOT}
 	~dev-java/gradle-persistent-cache-${PV}:${SLOT}
+	~dev-java/gradle-problems-${PV}:${SLOT}
 	~dev-java/gradle-process-services-${PV}:${SLOT}
 	~dev-java/gradle-resources-${PV}:${SLOT}
 	~dev-java/gradle-snapshots-${PV}:${SLOT}
@@ -109,7 +111,6 @@ PLUGINS_DEPEND="
 	~dev-java/gradle-ear-${PV}:${SLOT}
 	~dev-java/gradle-ivy-${PV}:${SLOT}
 	~dev-java/gradle-jacoco-${PV}:${SLOT}
-	~dev-java/gradle-javascript-${PV}:${SLOT}
 	~dev-java/gradle-language-groovy-${PV}:${SLOT}
 	~dev-java/gradle-language-java-${PV}:${SLOT}
 	~dev-java/gradle-language-jvm-${PV}:${SLOT}
