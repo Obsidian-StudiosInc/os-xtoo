@@ -1,1 +1,0 @@
-scribejava-java8-9999.ebuild
