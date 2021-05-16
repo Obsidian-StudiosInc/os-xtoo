@@ -24,6 +24,7 @@ dev-java/nailgun
 dev-java/nekohtml
 dev-java/netty-codec
 dev-java/netty-codec-http
+dev-java/netty-common
 dev-java/netty-handler
 dev-java/oracle-jdk-bin:11
 dev-java/stax2-api
