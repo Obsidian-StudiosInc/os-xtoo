@@ -34,6 +34,7 @@ CP_DEPEND="
 GROOVY_DEPS="
 	dev-java/ant-core:0
 	dev-java/antlr:0
+	dev-java/antlr4-optimized:0
 	dev-java/asm:${ASM_SLOT}
 	dev-java/commons-cli:${CLI_SLOT}
 	dev-java/groovy:0
@@ -63,7 +64,7 @@ java_prepare() {
 	# Unable to use groovy due to classpath issues
 	# the following does not work, but should
 	# groovy -cp "$(java-pkg_getjars --build-only groovy-ant)"
-	java -cp "$(java-pkg_getjars --build-only ant-core,antlr,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant,picocli)" \
+	java -cp "$(java-pkg_getjars --build-only ant-core,antlr,antlr4-optimized,asm-${ASM_SLOT},commons-cli-${CLI_SLOT},groovy,groovy-ant,picocli)" \
 		groovy.ui.GroovyMain src/main/script/codegen.groovy \
 		|| die "groovy codegen failed"
 }
