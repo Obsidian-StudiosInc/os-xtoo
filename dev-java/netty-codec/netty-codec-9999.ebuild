@@ -21,6 +21,7 @@ SLOT="${PV/.${PV#*.*.*}/}"
 PROTOBUF_SLOT="0"
 
 CP_DEPEND="
+	dev-java/brotli4j:0
 	dev-java/compress-lzf:0
 	dev-java/jboss-marshalling:0
 	dev-java/jzlib:0
