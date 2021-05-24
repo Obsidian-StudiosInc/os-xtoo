@@ -7,6 +7,7 @@ dev-java/eclipse-ecj
 dev-java/ehcache
 dev-java/ezmorph
 dev-java/fastinfoset
+dev-java/freemarker
 dev-java/groovy
 dev-java/httpcomponents-client
 dev-java/httpcomponents-core
