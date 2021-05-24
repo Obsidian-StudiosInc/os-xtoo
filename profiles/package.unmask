@@ -30,6 +30,7 @@ dev-java/netty-handler
 dev-java/oracle-jdk-bin:11
 dev-java/stax2-api
 dev-java/stax-ex
+dev-java/werken-xpath
 dev-java/xerces
 dev-java/xstream
 dev-util/netbeans:11
