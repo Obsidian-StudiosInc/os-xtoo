@@ -1,4 +1,4 @@
-# Copyright 2019-2020 Obsidian-Studios, Inc.
+# Copyright 2019-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -16,7 +16,7 @@ if [[ ${PV} != *9999* ]]; then
 fi
 
 CP_DEPEND="
-	dev-java/eclipse-osgi:4.18
+	dev-java/eclipse-osgi:4.19
 	dev-java/osgi-core-api:5
 	dev-java/slf4j-api:0
 "
