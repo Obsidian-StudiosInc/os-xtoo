@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,7 +8,7 @@ NB_CLUSTER="ide"
 inherit java-netbeans
 
 CP_DEPEND="
-	dev-java/eclipse-equinox-common:4.18
+	dev-java/eclipse-equinox-common:4.19
 	dev-java/eclipse-mylyn-tasks-core:3
 	dev-java/javax-annotation:0
 	~nb-ide/netbeans-bugtracking-${PV}:${SLOT}
