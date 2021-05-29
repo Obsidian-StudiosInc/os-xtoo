@@ -20,8 +20,10 @@ SLOT="0"
 CP_DEPEND="
 	dev-java/commons-lang:3
 	dev-java/guice:5
+	dev-java/javax-annotation:0
 	dev-java/javax-inject:0
 	~dev-java/maven-resolver-api-${PV}:${SLOT}
+	~dev-java/maven-resolver-named-locks-${PV}:${SLOT}
 	~dev-java/maven-resolver-spi-${PV}:${SLOT}
 	~dev-java/maven-resolver-util-${PV}:${SLOT}
 	dev-java/sisu-inject:0
