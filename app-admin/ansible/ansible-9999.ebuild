@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 # Based on ebuild from gentoo main tree
@@ -26,9 +26,9 @@ else
 	MY_S="${MY_P/v/}"
 fi
 
-PYTHON_COMPAT=( python3_{6,7} )
+PYTHON_COMPAT=( python3_{8,9} )
 
-inherit distutils-r1 eutils ${ECLASS}
+inherit distutils-r1 ${ECLASS}
 
 DESCRIPTION="Deployment, config management, and command execution framework"
 HOMEPAGE="https://${PN}.com/"
@@ -36,11 +36,9 @@ LICENSE="GPL-3"
 SLOT="0"
 
 RDEPEND="
-	app-portage/gentoolkit:0
 	dev-python/paramiko[${PYTHON_USEDEP}]
 	dev-python/jinja[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	dev-python/cryptography[${PYTHON_USEDEP}]
 	dev-python/httplib2[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
@@ -48,10 +46,16 @@ RDEPEND="
 	dev-python/pexpect[${PYTHON_USEDEP}]
 	net-misc/sshpass
 	virtual/ssh
+	!app-admin/ansible-base
 "
 DEPEND="
-	dev-python/setuptools[${PYTHON_USEDEP}]
+	!app-admin/ansible-base
 	>=dev-python/packaging-16.6[${PYTHON_USEDEP}]
 "
 
 S="${WORKDIR}/${MY_S}"
+
+python_compile() {
+	export ANSIBLE_SKIP_CONFLICT_CHECK=1
+	distutils-r1_python_compile
+}
