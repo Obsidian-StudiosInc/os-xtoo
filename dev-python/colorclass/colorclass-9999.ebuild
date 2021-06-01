@@ -1,9 +1,9 @@
-# Copyright 2019 Obsidian-Studios, Inc.
+# Copyright 2019-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
 
-PYTHON_COMPAT=( python3_{6,7} )
+PYTHON_COMPAT=( python3_{9,10} )
 
 BASE_URI="https://github.com/Robpol86/${PN}"
 
