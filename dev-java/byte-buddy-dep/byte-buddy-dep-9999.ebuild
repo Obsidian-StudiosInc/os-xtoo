@@ -17,6 +17,7 @@ fi
 
 CP_DEPEND="
 	dev-java/asm:9
+	dev-java/jna:5
 	dev-java/spotbugs-annotations:0
 "
 
