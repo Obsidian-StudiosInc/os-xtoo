@@ -19,7 +19,10 @@ fi
 
 SLOT="${PV/.${PV#*.*.*}/}"
 
-CP_DEPEND="~dev-java/jetty-util-${PV}:${SLOT}"
+CP_DEPEND="
+	~dev-java/jetty-jmx-${PV}:${SLOT}
+	~dev-java/jetty-util-${PV}:${SLOT}
+"
 
 inherit java-pkg
 
