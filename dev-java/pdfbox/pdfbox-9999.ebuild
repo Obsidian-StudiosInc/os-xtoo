@@ -17,6 +17,7 @@ BC_SLOT="0"
 CP_DEPEND="
 	dev-java/bcpkix:${BC_SLOT}
 	dev-java/bcprov:${BC_SLOT}
+	dev-java/bcutil:${BC_SLOT}
 	dev-java/commons-logging:0
 	~dev-java/fontbox-${PV}:${SLOT}
 "
