@@ -22,6 +22,7 @@ CP_DEPEND="
 	~dev-java/gradle-build-option-${PV}:${SLOT}
 	~dev-java/gradle-cli-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
+	~dev-java/gradle-data-structures-${PV}:${SLOT}
 	~dev-java/gradle-execution-${PV}:${SLOT}
 	~dev-java/gradle-files-${PV}:${SLOT}
 	~dev-java/gradle-file-collections-${PV}:${SLOT}
