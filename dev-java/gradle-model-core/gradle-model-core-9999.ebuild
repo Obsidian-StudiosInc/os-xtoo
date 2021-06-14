@@ -11,6 +11,7 @@ CP_DEPEND="
 	~dev-java/gradle-base-annotations-${PV}:${SLOT}
 	~dev-java/gradle-base-services-${PV}:${SLOT}
 	~dev-java/gradle-base-services-groovy-${PV}:${SLOT}
+	~dev-java/gradle-data-structures-${PV}:${SLOT}
 	~dev-java/gradle-core-api-${PV}:${SLOT}
 	~dev-java/gradle-hashing-${PV}:${SLOT}
 	~dev-java/gradle-logging-${PV}:${SLOT}
@@ -34,6 +35,6 @@ java_prepare() {
 		-e 's|return kotlinFunction0CanBeLoaded|return false|' \
 		-e 's|((kotlin.jvm.functions.Function0) value).invoke()|null|' \
 		-e 's|value instanceof kotlin.jvm.functions.Function0|false|' \
-		src/main/java/org/gradle/util/DeferredUtil.java \
+		src/main/java/org/gradle/util/internal/DeferredUtil.java \
 		|| die "Failed to disable kotlin support"
 }
