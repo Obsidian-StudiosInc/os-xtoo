@@ -1,1 +1,0 @@
-maven-resolver-named-locks-9999.ebuild
