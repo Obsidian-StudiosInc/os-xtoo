@@ -63,10 +63,8 @@ java_prepare() {
 		|| die "Failed to copy res/META-INF/jasper.jar/*"
 
 	# temp till bump ecj
-	if [[ ${SLOT} == 10 ]]; then
-		sed -i -e "s|VERSION_16|VERSION_15|" \
-			java/org/apache/jasper/compiler/JDTCompiler.java \
-			|| die "Failed to sed/modify file"
-	fi
+	sed -i -e "s|VERSION_16|VERSION_15|" \
+		java/org/apache/jasper/compiler/JDTCompiler.java \
+		|| die "Failed to sed/modify file"
 
 }
