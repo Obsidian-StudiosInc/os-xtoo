@@ -20,7 +20,7 @@ fi
 SLOT="${PV/.${PV#*.*.*}/}"
 
 EEMF_SLOT="2"
-OSGI_SLOT="6"
+OSGI_SLOT="7"
 
 CP_DEPEND="
 	~dev-java/eclipse-core-commands-${PV}:${SLOT}
@@ -41,6 +41,7 @@ CP_DEPEND="
 	~dev-java/eclipse-equinox-common-${PV}:${SLOT}
 	~dev-java/eclipse-equinox-registry-${PV}:${SLOT}
 	~dev-java/eclipse-osgi-${PV}:${SLOT}
+	~dev-java/eclipse-osgi-services-${PV}:${SLOT}
 	dev-java/javax-annotation:0
 	dev-java/javax-inject:0
 	dev-java/osgi-core-api:${OSGI_SLOT}
