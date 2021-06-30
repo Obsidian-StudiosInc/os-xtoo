@@ -22,7 +22,7 @@ SLOT="${PV%%.*}"
 IUSE="systemd extra-webapps"
 
 BND_SLOT="5"
-ECLIPSE_SLOT="4.19"
+ECLIPSE_SLOT="4.20"
 SAPI_SLOT="4.0"
 if [[ ${SLOT} != 9 ]]; then
 	SAPI_SLOT="5.0"
