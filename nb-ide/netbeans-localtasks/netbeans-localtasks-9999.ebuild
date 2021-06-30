@@ -8,7 +8,7 @@ NB_CLUSTER="ide"
 inherit java-netbeans
 
 CP_DEPEND="
-	dev-java/eclipse-equinox-common:4.19
+	dev-java/eclipse-equinox-common:4.20
 	dev-java/eclipse-mylyn-tasks-core:3
 	dev-java/javax-annotation:0
 	~nb-ide/netbeans-bugtracking-${PV}:${SLOT}
