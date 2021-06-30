@@ -23,7 +23,7 @@ fi
 
 CP_DEPEND="
 	dev-java/ant-core:0
-	dev-java/eclipse-ecj:4.19
+	dev-java/eclipse-ecj:4.20
 	~dev-java/tomcat-api-${PV}:${SLOT}
 	~dev-java/tomcat-jasper-el-${PV}:${SLOT}
 	~dev-java/tomcat-juli-${PV}:${SLOT}
