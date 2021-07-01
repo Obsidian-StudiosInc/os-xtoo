@@ -1,1 +1,0 @@
-eclipse-urischeme-9999.ebuild
