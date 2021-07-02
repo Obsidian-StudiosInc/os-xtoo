@@ -13,7 +13,7 @@ MY_P="${MY_PN}_${MY_PV}"
 BASE_URI="https://gitlab.ow2.org/asm/asm"
 
 if [[ ${PV} != 9999 ]]; then
-	SRC_URI="${BASE_URI}/repository/${MY_P}/archive.tar.gz -> ${P}.tar.gz"
+	SRC_URI="${BASE_URI}/-/archive/${MY_P}/${MY_P}.tar.gz -> ${P}.tar.gz"
 fi
 
 CP_DEPEND="
@@ -28,8 +28,6 @@ HOMEPAGE="http://forge.ow2.org/projects/asm/"
 LICENSE="Apache-2.0"
 SLOT="${PV%%.*}"
 
-S="${WORKDIR}/${P}"
-
 JAVA_SRC_DIR="
 	asm/src/main/java
 	asm-analysis/src/main/java
@@ -40,15 +38,7 @@ JAVA_SRC_DIR="
 "
 
 src_unpack() {
-	if [[ ${PV} == *9999* ]]; then
-		git-r3_src_unpack
-		default
-	else
-		local tgz
-		tgz="${P}.tar.gz"
-		mkdir -p "${S}" || die "Failed to mkdir ${S}"
-		echo ">>> Unpacking ${tgz} to ${PWD}"
-		tar -xzf "${DISTDIR}/${tgz}" --strip-components=1 -C "${S}" \
-			|| die "Failed to unpack ${DISTDIR}/${tgz}"
-	fi
+	default
+	cd "${WORKDIR}" || die "Failed to change directories"
+	mv asm-* ${P} || die "Failed to rename directory"
 }
