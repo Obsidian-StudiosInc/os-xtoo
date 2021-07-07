@@ -61,10 +61,4 @@ java_prepare() {
 
 	cp -r res/META-INF/jasper.jar/* resources/META-INF \
 		|| die "Failed to copy res/META-INF/jasper.jar/*"
-
-	# temp till bump ecj
-	sed -i -e "s|VERSION_16|VERSION_15|" \
-		java/org/apache/jasper/compiler/JDTCompiler.java \
-		|| die "Failed to sed/modify file"
-
 }
