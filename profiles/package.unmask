@@ -20,6 +20,7 @@ dev-java/jcodings
 dev-java/jettison
 dev-java/jgroups
 dev-java/joni
+dev-java/jvyamlb
 dev-java/kryo
 dev-java/ldapsdk
 dev-java/minlog
