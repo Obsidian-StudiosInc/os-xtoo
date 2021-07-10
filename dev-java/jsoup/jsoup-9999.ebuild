@@ -1,4 +1,4 @@
-# Copyright 2017-2020 Obsidian-Studios, Inc.
+# Copyright 2017-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -11,6 +11,8 @@ if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/${P}.tar.gz"
 	MY_S="${PN}-${P}"
 fi
+
+CP_DEPEND="dev-java/jsr305:0"
 
 inherit java-pkg
 
