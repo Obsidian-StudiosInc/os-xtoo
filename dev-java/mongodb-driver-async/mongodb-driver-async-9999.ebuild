@@ -1,4 +1,4 @@
-# Copyright 2016-2020 Obsidian-Studios, Inc.
+# Copyright 2016-2021 Obsidian-Studios, Inc.
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="7"
@@ -8,7 +8,7 @@ JAVA_PKG_IUSE="doc source"
 MY_PN="mongo-java-driver"
 MY_P="${MY_PN}-r${PV}"
 
-BASE_URI="https://github.com/${PN##*-}/${MY_PN}"
+BASE_URI="https://github.com/${PN%%-*}/${MY_PN}"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI="${BASE_URI}/archive/r${PV}.tar.gz -> ${MY_P}.tar.gz"
